@@ -1,1 +1,67 @@
-<p>login works!</p>
+<div class="container-fluid ps-md-0">
+  <div class="row g-0">
+    <div class="col-md-4 col-lg-6 d-flex flex-column align-items-center justify-content-center">
+			<h1>Not a member?</h1>
+			<button [routerLink]="['/register']" pButton label="Register"  (click)="show()" class="p-button text-uppercase fw-bold mb-2" type="submit"></button>
+		</div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Welcome back!</h3>
+
+              <!-- Sign In Form -->
+              <form [formGroup]="login">
+
+
+                <!-- Username -->
+								<div class="form-floating mb-3">
+									
+									<div  class="p-inputgroup">
+										<span class="p-inputgroup-addon "><i class="pi pi-user"></i></span>
+										<input type="username" [ngClass]="{'ng-invalid ng-dirty': login.controls['username'].touched && login.controls['username'].invalid}" class="w-100 " formControlName="username"  pInputText placeholder="Username"> 
+								</div>
+									<div  *ngIf="login.controls['username'].touched && login.controls['username'].invalid">
+										<small *ngIf="login.controls['username'].errors?.['required']" class="p-error block">Username is required</small>
+										<small *ngIf="login.controls['username'].errors?.['pattern']" class="p-error block">Invalid username</small>
+									</div>  
+								</div>
+
+
+								<!-- Password -->
+								<div class="form-floating mb-3">
+									
+									<div  class="p-inputgroup">
+										<span class="p-inputgroup-addon "><i class="pi pi-key"></i></span>
+										<input type="password" [ngClass]="{'ng-invalid ng-dirty': login.controls['password'].touched && login.controls['password'].invalid}" class="w-100 ng-invalid ng-dirty" formControlName="password" pInputText placeholder="Password">         
+								</div>
+									<div  *ngIf="login.controls['password'].touched && login.controls['password'].invalid">
+										<small *ngIf="login.controls['password'].errors?.['required']" class="p-error block">Password is required</small>
+									</div> 
+								</div>
+								
+                
+
+                <div class="mb-3 d-flex align-items-center">
+									<p-inputSwitch class="me-3 d-flex align-items-center "></p-inputSwitch>
+                  <label class="form-check-label " for="rememberPasswordCheck">
+                    Remember me
+                  </label>
+                </div>
+
+                <div class="d-grid">
+                  <button pButton label="Log in" [disabled]="login.invalid" (click)="show()" class="p-button text-uppercase fw-bold mb-2" type="submit"></button>
+                  <div class="text-center">
+                    <a class="small" href="#">Forgot password?</a>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
