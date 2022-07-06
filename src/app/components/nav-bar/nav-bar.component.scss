@@ -1,0 +1,74 @@
+header {
+  background: linear-gradient(
+      160deg,
+      rgba(28, 28, 40, 0.8) 0%,
+      rgba(28, 28, 40, 0) 77.78%
+    ),
+    url("/img/346520\ 1.jpg");
+
+  transition-duration: 2s;
+}
+
+.Logo {
+  margin-right: 8px;
+}
+
+.navbar-brand {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.nav-link {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+}
+.nav-link:hover {
+  color: #7b61ff;
+}
+
+.active {
+  color: #7b61ff;
+}
+
+/* search navbar setting */
+.search-container {
+  position: relative;
+  width: 219px;
+}
+.form-control {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 34px;
+  line-height: 1;
+  box-sizing: border-box;
+  outline: none;
+  color: #acb1c6;
+}
+#search-btn {
+  background: linear-gradient(267.28deg, #7b61ff 24%, #aa82ff 73.95%);
+  position: absolute;
+  right: 4px;
+  top: 2.5px;
+  bottom: 5px;
+  border: 0;
+  color: #fff;
+  outline: none;
+  margin: 0;
+  padding: 0 10px;
+  border-radius: 100px;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+}
+/* to disable the focus in bootstrarp */
+.form-control:focus {
+  box-shadow: none;
+}
+#search-btn:focus {
+  box-shadow: none;
+}

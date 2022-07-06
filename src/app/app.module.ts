@@ -14,24 +14,19 @@ import { ShopModule } from './pages/shop/shop.module';
 import { StaticModule } from './pages/static/static.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavBarComponent,
-    FooterComponent,
-    AuthComponent
-  ],
+  declarations: [AppComponent, NavBarComponent, FooterComponent, AuthComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,    
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     AuthModule,
     HomeModule,
     ShopModule,
-    StaticModule
+    StaticModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
