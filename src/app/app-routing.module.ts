@@ -10,6 +10,16 @@ const routes: Routes = [
   { path: 'about', component: AboutUsComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'products', component: ProductComponent },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./pages/auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'shop',
+    loadChildren: () =>
+      import('./pages/shop/shop.module').then((m) => m.ShopModule),
+  },
 ];
 
 @NgModule({

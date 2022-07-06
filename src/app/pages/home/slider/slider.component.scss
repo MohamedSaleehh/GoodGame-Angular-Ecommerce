@@ -1,0 +1,70 @@
+#header-text {
+  margin-top: 20%;
+}
+#Text1 {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+#Text2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: white;
+  margin-top: 24px;
+}
+
+#HeaderBtn {
+  background: linear-gradient(267.28deg, #7b61ff 24%, #aa82ff 73.95%);
+  backdrop-filter: blur(4px);
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  padding: 16px 40px;
+  margin-top: 48px;
+  margin-bottom: 226px;
+}
+#scroll {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+.downward-arrow {
+  animation: bounce 2s ease infinite;
+}
+@keyframes bounce {
+  0%,
+  25%,
+  55%,
+  75%,
+  100% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(-20px);
+  }
+  65% {
+    transform: translateY(-10px);
+  }
+  85% {
+    transform: translateY(-5px);
+  }
+}
+
+/* to disable the focus in bootstrarp Header */
+#HeaderBtn:focus {
+  box-shadow: none;
+}
+
+header {
+  background: linear-gradient(
+      160deg,
+      rgba(28, 28, 40, 0.8) 0%,
+      rgba(28, 28, 40, 0) 77.78%
+    ),
+    url("../../../../assets/imgs/346439\ 1.jpg");
+  background-size: cover;
+  background-position: center;
+  transition-duration: 2s;
+}

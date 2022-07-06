@@ -1,12 +1,23 @@
 <header>
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="Logo" href="#">
-                <img src="../../../assets/imgs/Logo.svg" alt="" width="30" height="24">
+            <a class="Logo" [routerLink]="['/']">
+                <img src="../../../assets/imgs/Logo.svg" alt="" width="30" height="30">
             </a>
             <a class="navbar-brand" href="#">Good Game</a>
+            <a class="mx-1 ms-auto d-lg-none wish_list" [routerLink]="['shop/wishlist']"><img
+                    src="../../../assets/imgs/Wish_list.svg" alt="" width="30" height="30"></a>
+            <a class="d-lg-none cart" [routerLink]="['shop/cart']"><img src="../../../assets/imgs/cart.svg" alt=""
+                    width="30" height="30"></a>
+            <button type="button" id="signInBtn" class="btn btn-primary btn-sm mx-2 d-lg-none"><img class="mx-1 mb-1"
+                    src="../../../assets/imgs/sign.svg" alt="">Sign In</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                     <li class="nav-item">
                         <a class="nav-link" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"
                             [routerLink]="['/']">Home</a>
@@ -18,16 +29,22 @@
                         <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['/privacy']">Privacy Policy</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" [routerLinkActive]="'active'" style="margin-right:56px;"
-                            [routerLink]="['/products']">Our Shop</a>
+                        <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['/products']">Our Shop</a>
                     </li>
                 </ul>
-                <div class="search-container d-flex">
+                <div class="search-container mx-lg-3 ms-auto me-auto">
                     <input class="form-control" type="text" placeholder="Search..." aria-label="Search">
                     <button id="search-btn" class="btn" type="submit"><img src="../../../assets/imgs/Search.svg" alt=""
                             style="margin-left:-2px; margin-bottom: 3px;"></button>
                 </div>
             </div>
+            <a class="mx-1 ms-auto d-none d-lg-block wish_list" [routerLink]="['shop/wishlist']"><img
+                    src="../../../assets/imgs/Wish_list.svg" alt="" width="30" height="30"></a>
+            <a class="d-none d-lg-block cart" [routerLink]="['shop/cart']"><img src="../../../assets/imgs/cart.svg"
+                    alt="" width="30" height="30"></a>
+            <button type="button" [routerLink]="['auth/login']" id="signInBtn"
+                class="btn btn-primary btn-sm mx-2 d-none d-lg-block signin"><img class="mx-1 mb-1"
+                    src="../../../assets/imgs/sign.svg" alt="">LOGIN</button>
         </div>
     </nav>
 </header>
