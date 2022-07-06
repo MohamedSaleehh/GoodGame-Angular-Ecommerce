@@ -13,6 +13,8 @@ import { HomeModule } from './pages/home/home.module';
 import { ShopModule } from './pages/shop/shop.module';
 import { StaticModule } from './pages/static/static.module';
 
+import {DataViewModule} from 'primeng/dataview';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { StaticModule } from './pages/static/static.module';
     AuthModule,
     HomeModule,
     ShopModule,
-    StaticModule
+    StaticModule,
+    DataViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]

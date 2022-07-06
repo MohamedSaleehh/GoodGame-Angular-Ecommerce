@@ -1,1 +1,22 @@
-<p>product-details works!</p>
+<div class="row m-5">
+    <ng-container *ngIf="!loading">
+        <div class="border  col-3">
+            <div class="w-100">
+
+                <figure>
+                    <img [src]="product?.image" alt="" class="w-100">
+                </figure>
+            </div>
+        </div>
+        <div class="mx-auto border col-7">
+            <h2>{{product?.title || ''}}</h2>
+            <h4>{{product?.price || ''}}</h4>
+            <p>{{product?.description || ''}}</p>
+            <button  role="button"> add to cart</button>
+
+        </div>
+    </ng-container>
+    <div *ngIf="loading" class="spinner-border mx-auto mt-5" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>

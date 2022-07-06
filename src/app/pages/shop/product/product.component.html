@@ -1,1 +1,22 @@
-<p>product works!</p>
+<div class="container">
+<div class="mycard my-4">
+    <ul class="ul">
+        <li><i class="bx bx-drink"></i></li>
+        <li><i class="bx bx-drink"></i></li>
+        <li><i class="bx bx-drink"></i></li>
+        <li><i class="bx bx-drink"></i></li>
+    </ul>
+    <img class="w-100" src="{{ productData.image}}" alt="">
+    <div class="con-text">
+        <h2>{{productData.name}}</h2>
+        <h3>
+             {{productData.price | free}}
+
+             <h4 class="my-2" *ngIf="productData.quantity>0">Quantity: {{productData.quantity | stock}}</h4>
+             <h4 class="my-2" *ngIf="productData.quantity<=0"> {{productData.quantity | stock}}</h4>
+            
+        </h3>
+
+    </div>
+</div>
+</div>
