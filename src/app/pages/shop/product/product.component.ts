@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-product',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  @Output() messageFromChild = new EventEmitter<string>()
+  @Input('productData')productData:any;
+
+  constructor(private route:Router,private apiService:ApiService) { }
 
   ngOnInit(): void {
+  }
+
+  navigateToDetails(){
+    this.apiService.setProductId(this.productData.id)
   }
 
 }

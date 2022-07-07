@@ -1,1 +1,20 @@
-<p>product-list works!</p>
+<div >
+    <ng-container *ngIf="!loading" >
+        <div class="row justify-content-center text-center">
+            
+            <div class="col-md-8 col-lg-6">
+                <div class="header">
+                    <h3>Featured Product</h3>
+                    <h2>Popular Products</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row  mx-auto" >
+            <app-product *ngFor="let product of productlist" [productData]="product" (messageFromChild)="actionFromParent($event)" class=" col-lg-4 col-md-6 col-xl-3"></app-product>
+        </div>
+    </ng-container>
+    <div *ngIf="loading" class="spinner-border mx-auto mt-5" role="status" style="text-align: center;">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+
+</div>
