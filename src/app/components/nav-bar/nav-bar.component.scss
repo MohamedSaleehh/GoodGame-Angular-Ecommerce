@@ -1,3 +1,14 @@
+.navbar {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.navbar-inverse {
+  background-color: #1c1c27;
+}
 .Logo {
   margin-right: 8px;
 }
@@ -8,6 +19,18 @@
 .cart {
   margin-bottom: 6px;
   margin-left: 6px;
+}
+.wish-notif {
+  vertical-align: middle;
+  margin-left: -8.5px;
+  margin-top: 8px;
+  font-size: 13px;
+}
+.cart-notif {
+  vertical-align: middle;
+  margin-left: -10.5px;
+  margin-top: 8px;
+  font-size: 13px;
 }
 
 .navbar-brand {
@@ -29,6 +52,7 @@
 .active {
   color: #aa82ff;
 }
+
 .navbar-toggler {
   border-color: white;
   color: rgba(255, 255, 255, 0.8);
@@ -69,7 +93,7 @@
   height: 28px;
 }
 #signInBtn {
-  background: #7b61ff;
+  background: linear-gradient(267.28deg, #7b61ff 24%, #aa82ff 73.95%);
   border-radius: 20px;
   border: none;
   width: 90px;

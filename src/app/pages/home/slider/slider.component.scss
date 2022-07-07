@@ -1,3 +1,29 @@
+header {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+      160deg,
+      rgba(28, 28, 40, 0.8) 80%,
+      rgba(28, 28, 40, 0) 100%
+    ),
+    url("../../../../assets/imgs/346439\ 1.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
 #header-text {
   margin-top: 20%;
 }
@@ -55,16 +81,4 @@
 /* to disable the focus in bootstrarp Header */
 #HeaderBtn:focus {
   box-shadow: none;
-}
-
-header {
-  background: linear-gradient(
-      160deg,
-      rgba(28, 28, 40, 0.8) 0%,
-      rgba(28, 28, 40, 0) 77.78%
-    ),
-    url("../../../../assets/imgs/346439\ 1.jpg");
-  background-size: cover;
-  background-position: center;
-  transition-duration: 2s;
 }
