@@ -16,15 +16,10 @@ import { StaticModule } from './pages/static/static.module';
 import {DataViewModule} from 'primeng/dataview';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavBarComponent,
-    FooterComponent,
-    AuthComponent
-  ],
+  declarations: [AppComponent, NavBarComponent, FooterComponent, AuthComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,    
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -35,6 +30,6 @@ import {DataViewModule} from 'primeng/dataview';
     DataViewModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
