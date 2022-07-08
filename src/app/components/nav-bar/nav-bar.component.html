@@ -1,55 +1,150 @@
-<nav class="navbar navbar-expand-lg navone" (scroll)="onWindowScroll();">
-    <div class="container">
-        <a class="Logo" [routerLink]="['/']">
-            <img src="../../../assets/imgs/Logo.svg" alt="" width="30" height="30">
-        </a>
-        <a class="navbar-brand" href="#">Good Game</a>
-        <a class="mx-1 ms-auto d-lg-none wish_list" [routerLink]="['shop/wishlist']"><img
-                src="../../../assets/imgs/Wish_list.svg" alt="" width="30" height="30"><span
-                class="position-absolute translate-middle badge wish-notif">2</span></a>
-        <a class="d-lg-none cart" [routerLink]="['shop/cart']"><img src="../../../assets/imgs/cart.svg" alt=""
-                width="30" height="30"><span class="position-absolute translate-middle badge cart-notif">2</span></a>
-        
+<nav class="navbar navbar-expand-lg fixed" (scroll)="onWindowScroll()">
+  <div class="container">
+    <a class="Logo" [routerLink]="['/']">
+      <img src="../../../assets/imgs/Logo.svg" alt="" width="30" height="30" />
+    </a>
+    <a class="navbar-brand" href="#">Good Game</a>
+    <a class="mx-1 ms-auto d-lg-none wish_list" [routerLink]="['shop/wishlist']"
+      ><img
+        src="../../../assets/imgs/Wish_list.svg"
+        alt=""
+        width="30"
+        height="30"
+      /><span class="position-absolute translate-middle badge wish-notif"
+        >2</span
+      ></a
+    >
+    <a class="d-lg-none cart" [routerLink]="['shop/cart']"
+      ><img
+        src="../../../assets/imgs/cart.svg"
+        alt=""
+        width="30"
+        height="30"
+      /><span class="position-absolute translate-middle badge cart-notif"
+        >2</span
+      ></a
+    >
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav m-auto mb-2 mb-lg-0  align-items-center">
-                <li class="nav-item">
-                    <a class="nav-link" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"
-                        [routerLink]="['/']">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['/shop/productlist']">Shop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " [routerLinkActive]="'active'" [routerLink]="['/shop/productlist']">Login / Register </a>
-                </li>
-
-            </ul>
-            <div class="search-container mx-lg-3 ms-auto me-auto">
-                <input class="form-control" type="text" placeholder="Search..." aria-label="Search">
-                <button id="search-btn" class="btn" type="submit"><img src="../../../assets/imgs/Search.svg" alt=""
-                        style="margin-left:-2px; margin-bottom: 3px;"></button>
-            </div>
-        </div>
-
-
-
-
-        <a class="mx-1 ms-auto d-none d-lg-block wish_list" [routerLink]="['shop/wishlist']"><img
-                src="../../../assets/imgs/Wish_list.svg" alt="" width="30" height="30"><span
-                class="position-absolute translate-middle badge wish-notif">2</span></a>
-        <a class="d-none d-lg-block cart" [routerLink]="['shop/cart']">
-            <img src="../../../assets/imgs/cart.svg" alt=""
-                width="30" height="30"><span class="position-absolute translate-middle badge cart-notif">
-                2</span>
-            </a>
-
+    <div
+      *ngIf="!toggled"
+      class="navbar-toggler ms-5"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      (click)="toggleAdd()"
+    >
+      <span class="navbar-toggler-icon"></span>
     </div>
+    <div
+      *ngIf="toggled"
+      class="navbar-toggler ms-5"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      (click)="toggleRemove()"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto mb-lg-0 align-items-center">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLinkActive]="'active'"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="['/']"
+            >Home</a
+          >
+        </li>
+        <!-- <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLinkActive]="'active'"
+            [routerLink]="['/about']"
+            >About</a
+          >
+        </li> -->
+        <!-- <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLinkActive]="'active'"
+            [routerLink]="['/privacy']"
+            >Privacy Policy</a
+          >
+        </li> -->
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLinkActive]="'active'"
+            [routerLink]="['/shop/productlist']"
+            >Our Shop</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-none-xl" [routerLinkActive]="'active'"
+            >Log In<i class="fa-regular fa-user ms-1"></i
+          ></a>
+        </li>
+      </ul>
+      <div class="search-container mx-lg-3 ms-auto me-auto">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Search..."
+          aria-label="Search"
+        />
+        <button id="search-btn" class="btn" type="submit">
+          <img
+            src="../../../assets/imgs/Search.svg"
+            alt=""
+            style="margin-left: -2px; margin-bottom: 3px"
+          />
+        </button>
+        <!-- <button
+      type="button"
+      id="signInBtn"
+      class="btn btn-primary btn-sm mx-2 d-lg-none"
+    >
+      <img class="mx-1 mb-1" src="../../../assets/imgs/sign.svg" alt="" />Sign
+      In
+    </button> -->
+      </div>
+    </div>
+    <a
+      class="mx-1 ms-auto d-none d-lg-block wish_list"
+      [routerLink]="['shop/wishlist']"
+      ><img
+        src="../../../assets/imgs/Wish_list.svg"
+        alt=""
+        width="30"
+        height="30"
+      /><span class="position-absolute translate-middle badge wish-notif"
+        >2</span
+      ></a
+    >
+    <a class="d-none d-lg-block cart" [routerLink]="['shop/cart']"
+      ><img
+        src="../../../assets/imgs/cart.svg"
+        alt=""
+        width="30"
+        height="30"
+      /><span class="position-absolute translate-middle badge cart-notif">
+        2</span
+      ></a
+    >
+    <!-- <button
+      type="button"
+      [routerLink]="['auth/login']"
+      id="signInBtn"
+      class="btn btn-primary btn-sm mx-2 d-none d-lg-block signin"
+    >
+      <img class="mx-1 mb-1" src="../../../assets/imgs/sign.svg" alt="" />Log In
+    </button> -->
+  </div>
 </nav>
