@@ -1,14 +1,20 @@
+//modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { AuthRoutingModule } from './auth-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
+//components
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
-import {InputSwitchModule} from 'primeng/inputswitch';
-import {ButtonModule} from 'primeng/button';
-import {InputTextModule} from 'primeng/inputtext';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//material modules
+import {MatButtonModule} from '@angular/material/button';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
+
 
 @NgModule({
   declarations: [
@@ -18,11 +24,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    InputSwitchModule,
-    ButtonModule,
-    InputTextModule,
-    FormsModule,
     ReactiveFormsModule,
+    MatButtonModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    
   ]
 })
 export class AuthModule { }
