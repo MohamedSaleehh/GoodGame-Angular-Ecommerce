@@ -4,30 +4,23 @@
       <img src="../../../assets/imgs/Logo.svg" alt="" width="30" height="30" />
     </a>
     <a class="navbar-brand" href="#">Good Game</a>
-    <a class="mx-1 ms-auto d-lg-none wish_list" [routerLink]="['shop/wishlist']"
-      ><img
-        src="../../../assets/imgs/Wish_list.svg"
-        alt=""
-        width="30"
-        height="30"
-      /><span class="position-absolute translate-middle badge wish-notif"
-        >2</span
+    <a class="mx-1 ms-auto d-lg-none wish_list position-relative mt-2 mb-2" [routerLink]="['shop/cart']"
+      >
+      <i class="fa fa-heart "></i
+        >
+      <span class="position-absolute translate-middle badge wish-notif d-flex justify-content-center align-items-center"
+        >{{ wishCounter }}</span
       ></a
     >
-    <a class="d-lg-none cart" [routerLink]="['shop/cart']"
-      ><img
-        src="../../../assets/imgs/cart.svg"
-        alt=""
-        width="30"
-        height="30"
-      /><span class="position-absolute translate-middle badge cart-notif"
-        >2</span
+    <a class="d-lg-none cart position-relative mt-2 mb-2" [routerLink]="['shop/cart']"
+      ><i class="bx bx-drink fas fa-shopping-cart  "></i><span class="position-absolute translate-middle badge cart-notif d-flex justify-content-center align-items-center"
+        >{{cartCounter}}</span
       ></a
     >
 
     <div
       *ngIf="!toggled"
-      class="navbar-toggler ms-5"
+      class="navbar-toggler ms-3"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent"
@@ -40,7 +33,7 @@
     </div>
     <div
       *ngIf="toggled"
-      class="navbar-toggler ms-5"
+      class="navbar-toggler ms-3"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent"
@@ -52,7 +45,7 @@
       <span class="navbar-toggler-icon"></span>
     </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav m-auto mb-lg-0 align-items-center">
+      <ul class="navbar-nav mx-auto mb-lg-0 align-items-center navbar_ul">
         <li class="nav-item">
           <a
             class="nav-link"
@@ -117,25 +110,18 @@
       </div>
     </div>
     <a
-      class="mx-1 ms-auto d-none d-lg-block wish_list"
-      [routerLink]="['shop/wishlist']"
-      ><img
-        src="../../../assets/imgs/Wish_list.svg"
-        alt=""
-        width="30"
-        height="30"
-      /><span class="position-absolute translate-middle badge wish-notif"
-        >2</span
+      class="mx-1 ms-auto d-none d-lg-block wish_list mt-2 mb-2 position-relative"
+      [routerLink]="['shop/cart']"
+      ><i class="fa fa-heart "></i
+        ><span class="position-absolute  badge wish-notif d-flex justify-content-center align-items-center"
+        >{{ wishCounter }}</span
       ></a
     >
-    <a class="d-none d-lg-block cart" [routerLink]="['shop/cart']"
-      ><img
-        src="../../../assets/imgs/cart.svg"
-        alt=""
-        width="30"
-        height="30"
-      /><span class="position-absolute translate-middle badge cart-notif">
-        2</span
+    <a class="d-none d-lg-block cart mt-2 mb-2 position-relative" [routerLink]="['shop/cart']"
+      >
+      <i class="bx bx-drink fas fa-shopping-cart  "></i>
+      <span class="position-absolute d-flex justify-content-center align-items-center  badge cart-notif">
+        {{cartCounter}}</span
       ></a
     >
     <!-- <button

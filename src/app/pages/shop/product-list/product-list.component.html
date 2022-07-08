@@ -1,5 +1,5 @@
-<div class="cover mt-5 ">
-    <div class="container-fluid my-5 text-light">
+<div class="cover   ">
+    <div class="container-fluid my-5 text-light ">
         <h3 class="display-5 mb-2 text-center text-uppercase font-weight-bold">All Products</h3>
         <div class="mb-5">
             <a class="text-light " [routerLink]="['/']"><i class="fas fa-arrow-left mr-2 text-light"></i> Home Page</a>
@@ -10,8 +10,9 @@
 <div class="container my-5" >
     <ng-container *ngIf="!loading" >
         <div class=" row" >
-            <app-product *ngFor="let product of productlist" [productData]="product" 
-            (messageFromChild)="actionFromParent($event)" 
+            <app-product *ngFor="let product of productlist" [productData]="product"
+            (messageFromChild)="actionFromParent($event)"
+            [addedTOWishList]="wishList.indexOf(product._id) >= 0"
             class=" col-lg-3 col-md-4 col-xl-3 col-12 d-flex justify-content-center">
         </app-product>
 

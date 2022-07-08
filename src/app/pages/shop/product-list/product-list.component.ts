@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-
+  wishList: Array<Product> = [];
   productlist:Array<Product>=[]
   sub:any;
   loading: boolean = false;
@@ -25,7 +25,7 @@ export class ProductListComponent implements OnInit {
       },
     (err:any)=>{
       console.log("erorr");
-      
+
     },() => {
       this.loading = false;
     })
@@ -39,7 +39,7 @@ export class ProductListComponent implements OnInit {
   actionFromParent(data:any){
     console.log(data, "from parent");
     console.log("mlcd,m,dm");
-    
+
   }
 
 }

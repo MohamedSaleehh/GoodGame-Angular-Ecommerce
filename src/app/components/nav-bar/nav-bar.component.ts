@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
+import { WishListService } from './../../services/wish-list.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,10 +10,12 @@ import { HostListener } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
   toggled: boolean = false;
+  wishCounter: number = 0;
+  cartCounter:number =0;
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     let element = document.querySelector('.navbar') as HTMLElement;
-    if (window.pageYOffset > 10) {
+    if (window.pageYOffset > 50) {
       element.classList.add('navbar-inverse');
     } else {
       element.classList.remove('navbar-inverse');
@@ -31,7 +35,15 @@ export class NavBarComponent implements OnInit {
     toggle.classList.remove('navbar-toggler');
     // element.classList.remove('navbar-inverse');
   }
-  constructor() {}
+  constructor(private _wishListService:WishListService ,private _CartService:CartService) {
+    this._wishListService.getCounter().subscribe((wishCount) => {
+      this.wishCounter = wishCount;
+    });
+    this._CartService.getCounter().subscribe((cartCount) =>{
+      this.cartCounter = cartCount;
+    })
+
+  }
 
   ngOnInit(): void {}
 }

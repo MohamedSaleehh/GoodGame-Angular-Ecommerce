@@ -14,22 +14,28 @@
 .wish_list {
   margin-bottom: 6px;
 }
-
 .cart {
   margin-bottom: 6px;
   margin-left: 6px;
 }
 .wish-notif {
-  vertical-align: middle;
-  margin-left: -8.5px;
-  margin-top: 8px;
+  bottom: 81%;
+  /* top: -35%; */
+  left: 65%;
   font-size: 13px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #00ff01;
 }
 .cart-notif {
-  vertical-align: middle;
-  margin-left: -10.5px;
-  margin-top: 8px;
+  bottom: 21px;
+  left: 15px;
   font-size: 13px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #00ff01;
 }
 
 .navbar-brand {
@@ -111,3 +117,10 @@
 #signInBtn:focus {
   box-shadow: none;
 }
+.fa-heart,.fa-shopping-cart{
+  color: white;
+  font-size: 1.4rem;
+}
+// .navbar_ul{
+//   margin-right: 23% !important;
+// }

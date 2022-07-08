@@ -38,7 +38,7 @@
                                     <td data-th="Product">
                                         <div class="row ">
                                             <div class="col-md-3 text-left cursor-pointer">
-                                                <img src="{{product.image}}" alt=""
+                                                <img src="{{product.image}}" alt="img"
                                                     class="img-fluid d-none d-md-block rounded mb-2 shadow ">
                                             </div>
                                             <div class="col-md-9 text-left mt-sm-2 cursor-pointer">
@@ -50,7 +50,7 @@
                                     <td data-th="Price" class="green-col">
                                         <div class="my-4">{{product.price}}LE</div>
                                     </td>
-                                    <td data-th="Quantity">
+                                    <!-- <td data-th="Quantity">
                                         <div class="my-4">
 
                                             <button (click)="increment(product)" (click)="totalprice()">+</button>
@@ -65,6 +65,24 @@
                                                 onmouseout="this.style.color='rgb(168, 62, 62)';
                                                 "
                                                 (click)="removeall(product._id)" (click)="totalprice()"
+                                                ></i>
+                                        </div>
+                                    </td> -->
+                                    <td data-th="Quantity">
+                                        <div class="my-4">
+
+                                            <button (click)="increaseQuantity(product._id)" >+</button>
+                                            <p class="green-col">{{product.quantity}}</p>
+                                            <button (click)="decreaseQuantity(product._id)" >-</button>
+                                        </div>
+                                    </td>
+                                    <td class="actions" data-th="">
+                                        <div class="text-right my-4">
+                                            <i class="fas fa-trash m-1 fa-2x cursor-pointer"
+                                                style="color: rgb(168, 62, 62);" onmouseover="this.style.color='red';"
+                                                onmouseout="this.style.color='rgb(168, 62, 62)';
+                                                "
+                                                (click)="remove(product._id)"
                                                 ></i>
                                         </div>
                                     </td>
@@ -106,7 +124,7 @@
                     </div>
                     <div *ngIf="myproducts.length > 0" class="d-block mx-auto float-right text-center">
                         <h5>Total:</h5>
-                        <h2>{{totalPrice}}</h2>
+                        <h2>{{total}}</h2>
 
                     </div>
                     <div *ngIf="myproducts.length > 0" class="row mt-4 d-flex align-items-center">
@@ -143,7 +161,42 @@
                             </thead>
                             <tbody class="text-light">
 
-                                <tr>
+                                <tr *ngFor="let wishProd of wishListArr">
+                                    <td data-th="Product">
+                                        <div class="row">
+                                            <div class="col-md-3 text-left cursor-pointer">
+                                                <img src="{{wishProd.image}}" alt=""
+                                                    class="img-fluid d-none d-md-block rounded mb-2 shadow ">
+                                            </div>
+                                            <div class="col-md-9 text-left my-1">
+                                                <p class="font-weight-light">{{wishProd.name}}</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-th="Price" class="green-col">
+                                        <div class="row my-1">
+                                            <div>{{wishProd.price}}LE</div>
+                                        </div>
+                                    </td>
+                                    <td data-th="Quantity">
+                                        <div class="">
+                                            <i class="cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x"
+                                                style="color: #97de95;" onmouseover="this.style.color='#00ff01';"
+                                                onmouseout="this.style.color='#97de95';
+                                            "></i>
+                                        </div>
+                                    </td>
+                                    <td class="actions" data-th="">
+                                        <div class="text-right">
+                                            <i class="fas fa-trash m-1 fa-2x cursor-pointer"
+                                                style="color: rgb(168, 62, 62);" onmouseover="this.style.color='red';"
+                                                onmouseout="this.style.color='rgb(168, 62, 62)';
+                                                "
+                                                (click)="delete(wishProd._id)"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- <tr>
                                     <td data-th="Product">
                                         <div class="row">
                                             <div class="col-md-3 text-left cursor-pointer">
@@ -380,41 +433,7 @@
                                                 "></i>
                                         </div>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td data-th="Product">
-                                        <div class="row">
-                                            <div class="col-md-3 text-left cursor-pointer">
-                                                <img src="https://i.ibb.co/zhy55fD/Free-Fire-pn.webp" alt=""
-                                                    class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                                            </div>
-                                            <div class="col-md-9 text-left my-1">
-                                                <p class="font-weight-light">Brand Name</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Price" class="green-col">
-                                        <div class="row my-1">
-                                            <div>$49.00</div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Quantity">
-                                        <div class="">
-                                            <i class="cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x"
-                                                style="color: #97de95;" onmouseover="this.style.color='#00ff01';"
-                                                onmouseout="this.style.color='#97de95';
-                                            "></i>
-                                        </div>
-                                    </td>
-                                    <td class="actions" data-th="">
-                                        <div class="text-right">
-                                            <i class="fas fa-trash m-1 fa-2x cursor-pointer"
-                                                style="color: rgb(168, 62, 62);" onmouseover="this.style.color='red';"
-                                                onmouseout="this.style.color='rgb(168, 62, 62)';
-                                                "></i>
-                                        </div>
-                                    </td>
-                                </tr>
+                                </tr> -->
 
 
                             </tbody>

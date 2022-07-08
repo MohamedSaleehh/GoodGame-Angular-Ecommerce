@@ -14,14 +14,14 @@ export class ApiService {
   constructor(private httpClient :HttpClient) { }
 
   getProducts() : Observable<any>{
-    return this.httpClient.get("https://gg-store.herokuapp.com/products/index") 
+    return this.httpClient.get("https://gg-store.herokuapp.com/products/index")
   }
-  getProductById(id : string) : Observable<any>{
-    return this.httpClient.get(`https://fakestoreapi.com/products/${id}`)
+  getProductById(id : string) {
+    return this.httpClient.get(`https://gg-store.herokuapp.com/products/${id}`)
   }
   setProductId(id: number){
     console.log(id);
-    
+
     this.productId.next(id)
   }
   getProductId(){
