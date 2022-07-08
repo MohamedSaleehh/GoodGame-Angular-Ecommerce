@@ -12,38 +12,16 @@ export class WishListService {
   wishListBehaviorSubject = new BehaviorSubject(this.wishList);
   counter = new BehaviorSubject(this.wishList.length);
   constructor(private http: HttpClient) {}
-  getWishListArr(): Observable<Product[]> {
-    // const headers = new Headers({
-    //   'Content-Type': 'application/json',
-    //   'Authorization': Bearer ${auth_token}
-    // })
-    return this.http.get<Product[]>('https://gg-store.herokuapp.com/wishlist/index',{headers:{
+  getWishListArr(): Observable<any> {
+    
+    return this.http.get('https://gg-store.herokuapp.com/wishlist/index',{headers:{
       token : this.auth_token
     }});
     }
-    // return this.http.get(apiUrl, { headers: headers })
-    // return this.http.get<Product[]>(' https://gg-store.herokuapp.com/wishlist/index').pipe(
-    //   map((res: any[]) => {
-    //     let products: any[] = [];
-    //     res.forEach((item) => products.push(item));
-    //     return products;
-    //   })
-    // );
 
-  addToWishList(Id: string) {
+  addToWishList(Id: string){
     console.log(Id);
-
-    const x= this.http.post(`https://gg-store.herokuapp.com/wishlist/add/${Id}`,{headers:{
-      token : this.auth_token
-    }},{}).subscribe(e =>{
-      console.log(e);
-
-    })
-    console.log(x);
-
-    // this.wishList.push(product);
-    this.wishListBehaviorSubject.next(this.wishList);
-    this.counter.next(this.wishList.length);
+    this.http.post(`https://gg-store.herokuapp.com/wishlist/add/${Id}`,{},{headers:{token:this.auth_token}})
   }
   removeFromWishList(productId: number) {
     // return this.http.delete(`url/${productId}`)
