@@ -1,10 +1,11 @@
 export interface Product {
-    _id: String,
-    name: String,
-    price: Number,
-    description?: String,
-    category: Array<String>,
-    image?: String,
-    quantity: Number,
+    _id: any,
+    name: string,
+    price: number,
+    description?: string,
+    category: Array<string>,
+    image?: string,
+    quantity: number,
     release_date: Date,
+    amount?:any
 }

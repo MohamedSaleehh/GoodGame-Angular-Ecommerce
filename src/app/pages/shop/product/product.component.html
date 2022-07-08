@@ -1,22 +1,23 @@
-<div class="container">
 <div class="mycard my-4">
-    <ul class="ul">
-        <li><i class="bx bx-drink"></i></li>
-        <li><i class="bx bx-drink"></i></li>
-        <li><i class="bx bx-drink"></i></li>
-        <li><i class="bx bx-drink"></i></li>
-    </ul>
+
     <img class="w-100" src="{{ productData.image}}" alt="">
+    <span class="Sold-out" *ngIf="productData.quantity<=0">Sold-out</span>
+    <span class="Free" *ngIf="productData.price<=0">Free</span>
+    <span class="Free" *ngIf="productData.price>0">{{productData.price}} E£</span>
     <div class="con-text">
         <h2>{{productData.name}}</h2>
         <h3>
-             {{productData.price | free}}
+             <!-- {{productData.price | free}} -->
+             <p class="my-2 green-col font-weight-light" *ngIf="productData.quantity>0 && productData.price>0"><small>Only {{productData.quantity | stock}} left</small></p>
+             <!-- <h4 class="my-2" *ngIf="productData.quantity<=0"> {{productData.quantity | stock}}</h4> -->
 
-             <h4 class="my-2" *ngIf="productData.quantity>0">Quantity: {{productData.quantity | stock}}</h4>
-             <h4 class="my-2" *ngIf="productData.quantity<=0"> {{productData.quantity | stock}}</h4>
-            
         </h3>
-
     </div>
+    <ul class="ul">
+        <li  (click)="addtocart(productData)" *ngIf="productData.quantity>0"><i class="bx bx-drink fas fa-shopping-cart "></i></li>
+        <li><i class="bx bx-drink fas fa-heart"></i></li>
+    </ul>
 </div>
-</div>
+
+
+
