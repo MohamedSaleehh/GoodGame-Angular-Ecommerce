@@ -1,5 +1,5 @@
 export interface Product {
-    _id: any,
+    _id: string,
     name: string,
     price: number,
     description?: string,
@@ -7,5 +7,5 @@ export interface Product {
     image?: string,
     quantity: number,
     release_date: Date,
-    amount?:any
+    amount?:number
 }

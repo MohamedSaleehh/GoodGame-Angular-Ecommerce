@@ -20,19 +20,11 @@ export class WishListService {
     }
 
   addToWishList(Id: string){
-    console.log(Id);
-    this.http.post(`https://gg-store.herokuapp.com/wishlist/add/${Id}`,{},{headers:{token:this.auth_token}})
+    return this.http.post(`https://gg-store.herokuapp.com/wishlist/add/${Id}`,{},{headers:{token:this.auth_token}}).subscribe()
   }
-  removeFromWishList(productId: number) {
+  removeFromWishList(productId: string) {
     // return this.http.delete(`url/${productId}`)
-    this.wishList.forEach((e, index) => {
-      if (e._id == productId) {
-        const index = this.wishList.indexOf(e);
-        this.wishList.splice(index, 1);
-      }
-      this.wishListBehaviorSubject.next(this.wishList);
-      this.counter.next(this.wishList.length);
-    });
+    return this.http.delete(`https://gg-store.herokuapp.com/wishlist/remove/${productId}`,{headers:{token:this.auth_token}}).subscribe()
   }
   getWishList(): Observable<Array<Product>>  {
     return this.wishListBehaviorSubject;
