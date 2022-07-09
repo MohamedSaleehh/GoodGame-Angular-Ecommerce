@@ -31,8 +31,6 @@ export class ProductComponent implements OnInit {
   // }
   addtocart(product: Product) {
     this._CartService.addProduct(product)
-    console.log(product);
-    // this._productCardService.addProduct(prod);
 
   }
 
@@ -40,16 +38,13 @@ export class ProductComponent implements OnInit {
 
 
   handleAddToWishList(): any {
-    this._wishListService.addToWishList(this.productData._id);
-     this._wishListService.getWishListArr().subscribe((d)=>{
-      console.log(d);
-
-     })
+    this._wishListService.addToWishList(this.productData._id).subscribe();
+    
     this.addedTOWishList = true;
   }
   handleRemoveToWishList() {
     // console.log(this._wishListService.removeFromWishList(this.productData.id));
-    this._wishListService.removeFromWishList(this.productData._id);
+    this._wishListService.removeFromWishList(this.productData._id).subscribe();
     this.addedTOWishList = !this.addedTOWishList;
   }
 

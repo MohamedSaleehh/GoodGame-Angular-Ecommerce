@@ -15,7 +15,6 @@ export class CartService {
   addProduct(prod: Product) {
     let flag: boolean = false;
     this.products.forEach((e: any) => {
-      console.log('ok');
       if (e._id == prod._id) {
         e.amount++;
         flag = true;

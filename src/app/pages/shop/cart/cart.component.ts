@@ -3,7 +3,7 @@ import { Product } from 'src/app/interfaces/product';
 import { CartService } from 'src/app/services/cart.service';
 import { WishListService } from './../../../services/wish-list.service';
 import { ApiService } from 'src/app/services/api.service';
-import { map } from 'rxjs';
+import { map, Subscriber, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -16,60 +16,39 @@ export class CartComponent implements OnInit {
   wishListArr: Array<any> = [];
   total: number = 0;
   myproducts: Array<Product> = [];
+  sub!: Subscription
 
   // totalPrice: number = 0
   constructor(private _CartService: CartService ,private _wishListService :WishListService,private apiService :ApiService) {
-    // this._CartService.getCart.subscribe(e=>{
-    //   this.myproducts = e
-    //   console.log(this.myproducts,"test")
-    // })
-    // this.totalprice()
-    // this._CartService.getProduct().subscribe((data: any) => {
-    //   this.myproducts = data;
-    //   this.total = this._CartService.getTotalPrice();
-    // });
-    // this._wishListService.getWishList().subscribe((res :any) => {
-    //   this.wishListArr = res;
-    // });
-    // this._wishListService.getWishListArr().subscribe((data:any)=>{
-    //   this.wishListId = data;
-    //   this.wishListId.forEach((e) =>{
-    //   const eess = this.apiService.getProductById(e).subscribe((res)=>{
-    //     this.wishListArr.push(res)
-  
-    //   })
-    // })
-    const ass = this._wishListService.getWishListArr().forEach(data=>{
-      console.log(data);
-      this.wishListId = data;
-      this.wishListId.forEach((e) =>{
-        this.apiService.getProductById(e).forEach((res)=>{
-          this.wishListArr.push(res)
-    
-        })
-    })
-    
-  })
 
-  }
-  updateWishlist(){
-    this.wishListArr=[]
-    this.wishListId.forEach((e) =>{
-      this.apiService.getProductById(e).forEach((res)=>{
-        this.wishListArr.push(res)
-  
-      })
+    this._CartService.getProduct().subscribe((data: any) => {
+      this.myproducts = data;
+      
+    });
+
+    // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+    this.total = this._CartService.getTotalPrice(); // do not put it inside a subscribe, it causes memory overflow
+    // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   
+    this._wishListService.getWishListArr().subscribe(data=>{
+      this.wishListArr = data
   })
   }
+
 
   ngOnInit(): void {
   }
-  delete(_id: string):any {
-    this._wishListService.removeFromWishList(_id);
-    this.updateWishlist()
+  delete(_id: string) {
+    this._wishListService.removeFromWishList(_id).subscribe(data=>{
+      this.wishListArr = data as Array<Product>
+      console.log(data);
+      
+    });
   }
   remove(id: string) {
     this._CartService.removeProduct(id);
+    
+    
 
     this.total = this._CartService.getTotalPrice();
   }

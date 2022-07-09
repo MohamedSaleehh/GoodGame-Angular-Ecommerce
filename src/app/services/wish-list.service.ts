@@ -13,18 +13,17 @@ export class WishListService {
   counter = new BehaviorSubject(this.wishList.length);
   constructor(private http: HttpClient) {}
   getWishListArr(): Observable<any> {
-    
     return this.http.get('https://gg-store.herokuapp.com/wishlist/index',{headers:{
       token : this.auth_token
     }});
     }
 
   addToWishList(Id: string){
-    return this.http.post(`https://gg-store.herokuapp.com/wishlist/add/${Id}`,{},{headers:{token:this.auth_token}}).subscribe()
+    return this.http.post(`https://gg-store.herokuapp.com/wishlist/add/${Id}`,{},{headers:{token:this.auth_token}})
   }
   removeFromWishList(productId: string) {
     // return this.http.delete(`url/${productId}`)
-    return this.http.delete(`https://gg-store.herokuapp.com/wishlist/remove/${productId}`,{headers:{token:this.auth_token}}).subscribe()
+    return this.http.delete(`https://gg-store.herokuapp.com/wishlist/remove/${productId}`,{headers:{token:this.auth_token}})
   }
   getWishList(): Observable<Array<Product>>  {
     return this.wishListBehaviorSubject;
