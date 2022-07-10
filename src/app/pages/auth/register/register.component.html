@@ -25,32 +25,35 @@
               <form [formGroup]="register">
 
 								<!-- First name -->
-								<div class="form-floating mb-3">
-									<div  class="p-inputgroup">
-                    <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
-                      <mat-label class="text-white">First name</mat-label>
-                      <input matInput type="text"  class="text-white" formControlName="firstName"> 
-                      <mat-error  *ngIf="register.controls['firstName'].touched && register.controls['firstName'].invalid">
-                        <mat-error *ngIf="register.controls['firstName'].errors?.['required']" class="p-error block">First name is required</mat-error>
-                        <mat-error *ngIf="register.controls['firstName'].errors?.['pattern']" class="p-error block">Invalid name</mat-error>
-                      </mat-error> 
-                    </mat-form-field>
-								  </div>
-								</div>
-
-								<!-- Last name -->
-								<div class="form-floating mb-3">
-									<div  class="p-inputgroup">
-                    <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
-                      <mat-label class="text-white">Last name</mat-label>
-                      <input matInput type="text"  class="text-white" formControlName="lastName"> 
-                      <mat-error  *ngIf="register.controls['lastName'].touched && register.controls['lastName'].invalid">
-                        <mat-error *ngIf="register.controls['lastName'].errors?.['required']" class="p-error block">Last name is required</mat-error>
-                        <mat-error *ngIf="register.controls['lastName'].errors?.['pattern']" class="p-error block">Invalid name</mat-error>
-                      </mat-error> 
-                    </mat-form-field>
-								  </div>
-								</div>
+                <div class="d-flex justify-content-between">
+                  <div class="form-floating mb-3">
+                    <div  class="p-inputgroup">
+                      <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
+                        <mat-label class="text-white">First name</mat-label>
+                        <input matInput type="text"  class="text-white" formControlName="firstName"> 
+                        <mat-error  *ngIf="register.controls['firstName'].touched && register.controls['firstName'].invalid">
+                          <mat-error *ngIf="register.controls['firstName'].errors?.['required']" class="p-error block">First name is required</mat-error>
+                          <mat-error *ngIf="register.controls['firstName'].errors?.['pattern']" class="p-error block">Invalid name</mat-error>
+                        </mat-error> 
+                      </mat-form-field>
+                    </div>
+                  </div>
+  
+                  <!-- Last name -->
+                  <div class="form-floating mb-3">
+                    <div  class="p-inputgroup">
+                      <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
+                        <mat-label class="text-white">Last name</mat-label>
+                        <input matInput type="text"  class="text-white" formControlName="lastName"> 
+                        <mat-error  *ngIf="register.controls['lastName'].touched && register.controls['lastName'].invalid">
+                          <mat-error *ngIf="register.controls['lastName'].errors?.['required']" class="p-error block">Last name is required</mat-error>
+                          <mat-error *ngIf="register.controls['lastName'].errors?.['pattern']" class="p-error block">Invalid name</mat-error>
+                        </mat-error> 
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+								
 
                 <!-- Username -->
 								<div class="form-floating mb-3">
@@ -61,6 +64,20 @@
                       <mat-error  *ngIf="register.controls['username'].touched && register.controls['username'].invalid">
                         <mat-error *ngIf="register.controls['username'].errors?.['required']" class="p-error block">Username is required</mat-error>
                         <mat-error *ngIf="register.controls['username'].errors?.['pattern']" class="p-error block">Username must be at least 4 characters long, no spaces or special characters</mat-error>
+                      </mat-error> 
+                    </mat-form-field>
+								  </div>
+								</div>
+
+                <!-- Email -->
+								<div class="form-floating mb-3">
+									<div  class="p-inputgroup">
+                    <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
+                      <mat-label class="text-white">Email</mat-label>
+                      <input matInput type="email"  class="text-white" formControlName="email"> 
+                      <mat-error  *ngIf="register.controls['email'].touched && register.controls['email'].invalid">
+                        <mat-error *ngIf="register.controls['email'].errors?.['required']" class="p-error block">Email is required</mat-error>
+                        <mat-error *ngIf="register.controls['email'].errors?.['pattern']" class="p-error block">Invalid email </mat-error>
                       </mat-error> 
                     </mat-form-field>
 								  </div>
@@ -96,7 +113,7 @@
 								
 
                 <div class="d-grid  ">
-                  <button mat-raised-button color="primary" [disabled]="register.invalid" label="Log in"(click)="show()" class="text-uppercase h-100 fw-bold mb-2" type="submit">Register</button>
+                  <button mat-raised-button color="primary" [disabled]="register.invalid" label="Log in"(click)="authenticate()" class="text-uppercase h-100 fw-bold mb-2" type="submit">Register</button>
                   
                 </div>
 

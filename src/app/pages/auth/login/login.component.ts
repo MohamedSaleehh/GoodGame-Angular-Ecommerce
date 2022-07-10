@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,10 +21,24 @@ export class LoginComponent implements OnInit {
     ],
     password: ['', [Validators.required]],
   });
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private authService: AuthService, private router:Router) {
+
+  }
 
   ngOnInit(): void {}
+  authenticate(){
+    this.authService.login(this.login.controls.username.value as string,this.login.controls.password.value as string).subscribe(res=>{
+      if(res){
+        localStorage.setItem("token",(res as any).token)
+        localStorage.setItem("user_info",JSON.stringify((res as any).user_info))
+        this.authService.setLoggedIn(true)
+        this.router.navigate(['/'])
+      }else{
+        
+      }
 
+    })
+  }
   show() {
     console.log(this.login);
   }
