@@ -10,6 +10,7 @@ import { ConfirmedValidator } from '../confirmedValidator.validator';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  errorMessage:string = ''
   register = this.fb.group(
     {
       firstName: ["", [Validators.required, Validators.pattern(/\w*/)]],
@@ -41,17 +42,21 @@ export class RegisterComponent implements OnInit {
                               this.register.controls['lastName'].value,
                               this.register.controls['username'].value ,
                               this.register.controls['email'].value,
-                              this.register.controls['password'].value,).subscribe(res=>{
-      if(res){
-        localStorage.setItem("token",(res as any).token)
-        localStorage.setItem("user_info",JSON.stringify((res as any).user_info))
-        this.authService.setLoggedIn(true)
-        this.router.navigate(['/'])
-      }else{
-        
-      }
+                              this.register.controls['password'].value,).subscribe(
+                                
+      res=>{
+          localStorage.setItem("token",(res as any).token)
+          localStorage.setItem("user_info",JSON.stringify((res as any).user_info))
+          this.authService.setLoggedIn(true)
+          this.router.navigate(['/'])
 
-    })
+      },
+      err=>{
+        if(err.error.code == 11000){
+          this.errorMessage = Object.keys(err.error.keyValue)[0] + ' already exists'
+        }
+      }
+      )
   }
   show() {
     console.log(this.register);

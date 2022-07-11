@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,6 +10,7 @@ import { HostListener } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
   toggled: boolean = false;
+  loggedIn: boolean = false;
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     let element = document.querySelector('.navbar') as HTMLElement;
@@ -31,7 +34,17 @@ export class NavBarComponent implements OnInit {
     toggle.classList.remove('navbar-toggler');
     // element.classList.remove('navbar-inverse');
   }
-  constructor() {}
+  logout(){
+    localStorage.removeItem("token")
+    localStorage.removeItem("user_info")
+    this.authService.setLoggedIn(false)
+  }
+  constructor(private authService: AuthService) {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.loggedIn.subscribe(res=>{
+      this.loggedIn = res
+    })
+  }
 }

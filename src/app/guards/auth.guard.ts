@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
   constructor(private authService:AuthService, private router: Router, private http:HttpClient){}
  
 
-  async canActivate(): Promise<boolean > {
+  canActivate(): boolean  {
     let isLoggedin:boolean = false
     
     this.authService.loggedIn.subscribe(state=>{
@@ -20,22 +20,8 @@ export class AuthGuard implements CanActivate {
     if(isLoggedin){
       return true
     }else{
-      try{
-        const user_id = JSON.parse(localStorage.getItem("user_info") as string).id
-        const url = `https://gg-store.herokuapp.com/users/${user_id}`
-        const res = await firstValueFrom(this.http.get(url)) 
-        if(res){ 
-          return true
-        }
-        this.router.navigate(['/auth/login'])
-        return false
-      }catch{
-        this.router.navigate(['/auth/login'])
-        return false
-      }
-      
-      
-      
+      this.router.navigate(['/auth/login'])
+      return false
     }
   
   }

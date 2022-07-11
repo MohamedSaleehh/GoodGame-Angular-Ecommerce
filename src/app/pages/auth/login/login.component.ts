@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  errorMessage: string = ''
   login = this.fb.group({
     username: [
       '',
@@ -27,17 +28,18 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
   authenticate(){
-    this.authService.login(this.login.controls.username.value as string,this.login.controls.password.value as string).subscribe(res=>{
-      if(res){
+    this.authService.login(this.login.controls.username.value as string,this.login.controls.password.value as string).subscribe(
+      res=>{
         localStorage.setItem("token",(res as any).token)
         localStorage.setItem("user_info",JSON.stringify((res as any).user_info))
         this.authService.setLoggedIn(true)
         this.router.navigate(['/'])
-      }else{
-        
+      },
+      err=>{
+        this.errorMessage = 'Wrong username or password'
       }
 
-    })
+    )
   }
   show() {
     console.log(this.login);
