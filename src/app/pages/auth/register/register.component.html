@@ -1,1 +1,129 @@
-<p>register works!</p>
+
+<div class="cover mt-5 ">
+  <div class="container-fluid my-5 text-light ">
+      <h3 class="display-5 mb-2 text-center text-uppercase font-weight-bold">REGISTER</h3>
+      <div class="mb-5">
+          <a class="text-light " [routerLink]="['/']"><i class="fas fa-arrow-left mr-2 text-light"></i> Home Page</a>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid ps-md-0">
+  <div class="row g-0">
+    <div class="col-md-4 col-lg-6 d-flex flex-column align-items-center  mt-5">
+			<h1 class="text-white text-center">Already a member?</h1>
+			<button mat-raised-button color="primary"	 [routerLink]="['/login']"  label="Register" class="text-uppercase fw-bold mt-3">Login</button>
+		</div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4 text-white">Join us!</h3>
+
+              <!-- Sign up Form -->
+              <form [formGroup]="register">
+
+								<!-- First name -->
+                <div class="d-flex justify-content-between">
+                  <div class="form-floating mb-3">
+                    <div  class="p-inputgroup">
+                      <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
+                        <mat-label class="text-white">First name</mat-label>
+                        <input matInput type="text"  class="text-white" formControlName="firstName"> 
+                        <mat-error  *ngIf="register.controls['firstName'].touched && register.controls['firstName'].invalid">
+                          <mat-error *ngIf="register.controls['firstName'].errors?.['required']" class="p-error block">First name is required</mat-error>
+                          <mat-error *ngIf="register.controls['firstName'].errors?.['pattern']" class="p-error block">Invalid name</mat-error>
+                        </mat-error> 
+                      </mat-form-field>
+                    </div>
+                  </div>
+  
+                  <!-- Last name -->
+                  <div class="form-floating mb-3">
+                    <div  class="p-inputgroup">
+                      <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
+                        <mat-label class="text-white">Last name</mat-label>
+                        <input matInput type="text"  class="text-white" formControlName="lastName"> 
+                        <mat-error  *ngIf="register.controls['lastName'].touched && register.controls['lastName'].invalid">
+                          <mat-error *ngIf="register.controls['lastName'].errors?.['required']" class="p-error block">Last name is required</mat-error>
+                          <mat-error *ngIf="register.controls['lastName'].errors?.['pattern']" class="p-error block">Invalid name</mat-error>
+                        </mat-error> 
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+								
+
+                <!-- Username -->
+								<div class="form-floating mb-3">
+									<div  class="p-inputgroup">
+                    <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
+                      <mat-label class="text-white">Username</mat-label>
+                      <input matInput type="username"  class="text-white" formControlName="username"> 
+                      <mat-error  *ngIf="register.controls['username'].touched && register.controls['username'].invalid">
+                        <mat-error *ngIf="register.controls['username'].errors?.['required']" class="p-error block">Username is required</mat-error>
+                        <mat-error *ngIf="register.controls['username'].errors?.['pattern']" class="p-error block">Username must be at least 4 characters long, no spaces or special characters</mat-error>
+                      </mat-error> 
+                    </mat-form-field>
+								  </div>
+								</div>
+
+                <!-- Email -->
+								<div class="form-floating mb-3">
+									<div  class="p-inputgroup">
+                    <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
+                      <mat-label class="text-white">Email</mat-label>
+                      <input matInput type="email"  class="text-white" formControlName="email"> 
+                      <mat-error  *ngIf="register.controls['email'].touched && register.controls['email'].invalid">
+                        <mat-error *ngIf="register.controls['email'].errors?.['required']" class="p-error block">Email is required</mat-error>
+                        <mat-error *ngIf="register.controls['email'].errors?.['pattern']" class="p-error block">Invalid email </mat-error>
+                      </mat-error> 
+                    </mat-form-field>
+								  </div>
+								</div>
+
+
+								<!-- Password -->
+								<div class="form-floating mb-3">
+									<div  class="p-inputgroup">
+                    <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
+                      <mat-label class="text-white">Password</mat-label>
+                      <input matInput type="password"  class="w-100" formControlName="password" placeholder="Password">  
+                      <mat-error  *ngIf="register.controls['password'].touched && register.controls['password'].invalid">
+                        <mat-error *ngIf="register.controls['password'].errors?.['required']" class="p-error block">Password is required</mat-error>
+												<mat-error *ngIf="register.controls['password'].errors?.['pattern']" class="p-error block">Password must be at least 8 characters long, 1 uppercase, 1 number</mat-error>
+                      </mat-error>  
+                    </mat-form-field>
+									</div>
+								</div>
+
+								<!-- Confirm Password -->
+								<div class="form-floating mb-3">
+									<div  class="p-inputgroup">
+                    <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
+                      <mat-label class="text-white">Confirm password</mat-label>
+                      <input matInput type="password"  class="w-100" formControlName="confirmPassword" placeholder="Password">  
+                      <mat-error  *ngIf="register.controls['confirmPassword'].touched && register.controls['confirmPassword'].invalid">
+                        <mat-error *ngIf="register.controls['confirmPassword'].errors?.['confirmedValidator']" class="p-error block">Password Does not match</mat-error>
+                      </mat-error>  
+                    </mat-form-field>
+									</div>
+                  <mat-error class="p-error block">{{errorMessage}}</mat-error>
+
+								</div>
+								
+
+                <div class="d-grid  ">
+                  <button mat-raised-button color="primary" [disabled]="register.invalid" label="Log in"(click)="authenticate()" class="text-uppercase h-100 fw-bold mb-2" type="submit">Register</button>
+                  
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

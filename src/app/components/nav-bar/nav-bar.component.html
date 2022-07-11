@@ -80,8 +80,11 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link d-none-xl"[routerLink]="['auth/login']" [routerLinkActive]="'active'"
-            >Log In<i class="fa-regular fa-user ms-1"></i
+          <a *ngIf="!loggedIn" class="nav-link d-none-xl"[routerLink]="['auth/login']" [routerLinkActive]="'active'"
+            >Login<i class="fa-regular fa-user ms-1"></i
+          ></a>
+          <a *ngIf="loggedIn" (click)="logout()" class="nav-link d-none-xl" [routerLink]="['/']" [routerLinkActive]="'active'"
+            >Logout<i class="fa-regular fa-user ms-1"></i
           ></a>
         </li>
       </ul>

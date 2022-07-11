@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { WishListService } from './../../services/wish-list.service';
 import { CartService } from 'src/app/services/cart.service';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,6 +14,7 @@ export class NavBarComponent implements OnInit {
   toggled: boolean = false;
   wishCounter: number = 0;
   cartCounter:number =0;
+  loggedIn: boolean = false;
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     let element = document.querySelector('.navbar') as HTMLElement;
@@ -35,15 +38,22 @@ export class NavBarComponent implements OnInit {
     toggle.classList.remove('navbar-toggler');
     // element.classList.remove('navbar-inverse');
   }
-  constructor(private _wishListService:WishListService ,private _CartService:CartService) {
+  constructor(private _wishListService:WishListService ,private _CartService:CartService,private authService: AuthService) {
     this._wishListService.getCounter().subscribe((wishCount) => {
       this.wishCounter = wishCount;
     });
     this._CartService.getCounter().subscribe((cartCount) =>{
       this.cartCounter = cartCount;
     })
-
   }
-
-  ngOnInit(): void {}
+  logout(){
+    localStorage.removeItem("token")
+    localStorage.removeItem("user_info")
+    this.authService.setLoggedIn(false)
+  }
+  ngOnInit(): void {
+    this.authService.loggedIn.subscribe(res=>{
+      this.loggedIn = res
+    })
+  }
 }
