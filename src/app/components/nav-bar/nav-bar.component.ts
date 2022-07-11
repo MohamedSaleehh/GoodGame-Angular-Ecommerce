@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { WishListService } from './../../services/wish-list.service';
 import { CartService } from 'src/app/services/cart.service';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
