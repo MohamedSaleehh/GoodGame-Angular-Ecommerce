@@ -5,12 +5,24 @@
             <a class="text-light " [routerLink]="['/']"><i class="fas fa-arrow-left mr-2 text-light"></i> Home Page</a>
         </div>
     </div>
-
 </div>
+
+<!-- _____________________________ -->
+
+<div class="my-2 w-25 text-light">
+  <label for="" class="my-1">Categories</label>
+  <select class="form-control text-light" (change)="filterProduct($event)">
+    <option value="all">All</option>
+    <option value="{{option}}" *ngFor="let option of categoriesList">{{option}}</option>
+  </select>
+</div>
+
+<!-- _____________________________ -->
+
 <div class="container my-5" >
     <ng-container *ngIf="!loading" >
         <div class=" row" >
-            <app-product *ngFor="let product of productlist" [productData]="product"
+            <app-product *ngFor="let product of filteredProducts" [productData]="product"
             (messageFromChild)="actionFromParent($event)"
             [addedTOWishList]="wishList.indexOf(product) >= 0"
             class=" col-lg-3 col-md-4 col-xl-3 col-12 d-flex justify-content-center">
@@ -18,7 +30,7 @@
 
     </div>
     </ng-container>
-    <div *ngIf="loading" class="spinner-border d-flex justify-content-center m-auto mt-5" role="status" style="text-align: center;">
+    <div *ngIf="loading" class="spinner-border d-flex justify-content-center m-auto mt-5 text-primary" role="status" style="text-align: center;">
     </div>
 </div>
 <nav aria-label="Page navigation example">

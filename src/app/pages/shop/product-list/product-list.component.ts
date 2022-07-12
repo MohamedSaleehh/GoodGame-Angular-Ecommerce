@@ -13,6 +13,10 @@ export class ProductListComponent implements OnInit {
   sub:any;
   loading: boolean = false;
 
+  categoriesList:Array<string>=[];
+  filteredProducts:Array<Product>=[];
+  category: string = 'all';
+
   constructor(private apiService:ApiService) { }
 
   ngOnInit(): void {
@@ -22,6 +26,7 @@ export class ProductListComponent implements OnInit {
       (res:any)=>{
         console.log(res );
         this.productlist=res;
+        this.filteredProducts = this.productlist;
       },
     (err:any)=>{
       console.log("erorr");
@@ -29,6 +34,8 @@ export class ProductListComponent implements OnInit {
     },() => {
       this.loading = false;
     })
+
+    this.getCategories()
 
   }
 
@@ -40,6 +47,25 @@ export class ProductListComponent implements OnInit {
     console.log(data, "from parent");
     console.log("mlcd,m,dm");
 
+  }
+  getCategories(){
+    this.categoriesList = ['Race' ,'Action','Knockout','Adventure','Sports']      
+  }
+  filterProduct(event:any){
+    this.category = event.target.value
+    console.log(this.category);
+    
+    if (this.category == "all"){
+      this.filteredProducts = this.productlist
+    }else{
+
+      this.filteredProducts=this.productlist.filter((product)=>
+      product.category.find((x)=>{
+        return x == this.category ;
+      })
+      )
+      console.log(this.filteredProducts);
+    }
   }
 
 }
