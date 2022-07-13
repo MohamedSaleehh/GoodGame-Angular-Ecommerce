@@ -14,16 +14,22 @@ export class ProductDetailsComponent implements OnInit {
   sub:any;
   product :any;
   productId : any;
+  filteredProducts:Array<Product>=[];
+  category?: string
   loading: boolean = false;
-
-  constructor(private activatedRoute:ActivatedRoute ,private apiService:ApiService) { }
+  page = 1;
+  pageSize =4;
+  constructor(private activatedRoute:ActivatedRoute ,private apiService:ApiService) { 
+  }
 
   ngOnInit(): void {
     this.loading = true;
     this.sub= this.apiService.getProducts().subscribe(
       (res:any)=>{
-        console.log(res );
         this.productlist=res;
+        this.filteredProducts = res;
+        console.log(this.productlist);
+
       },
     (err:any)=>{
       console.log("erorr");
@@ -39,12 +45,22 @@ export class ProductDetailsComponent implements OnInit {
     this.apiService.getProductById(this.productId).subscribe(res => {
 
       this.product= res ;
-      console.log(res);
+      console.log(this.product.category);
       
-
+    this.filteredProducts =this.productlist.filter((product)=>
+      product.category.find((x)=>{
+        return x == this.product.category ;
+      })
+      
+      )
+      console.log("sssssss",this.filteredProducts);
+      
     })
-  }
+    
 
+  }
   
+
+
 
 }

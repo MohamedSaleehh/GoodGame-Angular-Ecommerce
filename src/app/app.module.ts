@@ -14,6 +14,7 @@ import { StaticModule } from './pages/static/static.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent, NavBarComponent, FooterComponent],
@@ -27,7 +28,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     HomeModule,
     ShopModule,
     StaticModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

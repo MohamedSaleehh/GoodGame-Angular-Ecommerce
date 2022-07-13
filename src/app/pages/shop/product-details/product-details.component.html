@@ -1,22 +1,200 @@
-<div class="row m-5">
-    <ng-container *ngIf="!loading">
-        <div class="border  col-3">
-            <div class="w-100">
+<div class="cover   ">
+    <div class="container-fluid my-5 text-light ">
+        <h3 class="display-5 mb-2 text-center text-uppercase font-weight-bold">{{product.name}}</h3>
+        <div class="mb-5">
+            <a class="text-light " [routerLink]="['/productlist']"><i  class="fas fa-arrow-left mr-2 text-light"></i> Continue Shopping</a>
+        </div>
+    </div>
 
-                <figure>
-                    <img [src]="product?.image" alt="" class="w-100">
-                </figure>
+</div>
+<div class="container">
+    <div class="col-lg-12 p-3 text-white">
+        <div class="row hedding m-0 pl-3 pt-0 pb-3">
+        </div>
+        <div class="row m-0">
+            <div class="col-lg-5 left-side-product-box pb-3">
+                <img src="{{product.image}}" class=" p-3" style="height: 500px;">
+            </div>
+            <div class="col-lg-7">
+                <div class="right-side-pro-detail  p-3 m-0">
+                    <div class="row">
+                        <div class="col-lg-12 mt-3">
+                            <p class="m-0 p-0">{{product.name}}</p>
+                        </div>
+                        <div class="col-lg-12 mt-3">
+                            <p color="primary" class="m-0 p-0 price-pro">{{product.price}} E£</p>
+                            <hr class="p-0 m-0">
+                        </div>
+
+                        <div class="col-lg-12 mt-5">
+                            <h6>Type : {{product.category}}</h6>
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <h6>Quantity :</h6>
+                            <input type="number" class="form-control text-center w-100 text-white" value="1">
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <h6>Have A coupon?</h6>
+                            <input type="text" class="form-control text-center text-white w-100">
+                        </div>
+                        <div class="col-lg-12 mt-5">
+                            <div class="row ">
+                                <div class="col-lg-6 pb-2 mt-lg-4">
+                                    <a class="btn btn-danger w-100">Add To Cart</a>
+                                </div>
+                                <div class="col-lg-6  mt-lg-4">
+                                    <a  [routerLink]="['/productlist']" class="btn btn-success w-100">Continue Shopping</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="mx-auto border col-7">
-            <h2>{{product?.title || ''}}</h2>
-            <h4>{{product?.price || ''}}</h4>
-            <p>{{product?.description || ''}}</p>
-            <button  role="button"> add to cart</button>
+        <mat-tab-group mat-align-tabs="center" class="mb-5" >
+            <mat-tab label="Description">
+                <div class=" mt-4">
+                    <div class="col-lg-12 pt-2 mt-3">
+                        <span><small>{{product.description}}</small></span>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Watch">
+                <div class=" mt-4">
+                    <iframe class="col-12" height="484" src="https://www.youtube.com/embed/u1oqfdh4xBY"
+                        title="PUBG: BATTLEGROUNDS Cinematic trailer | PUBG" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
 
+                </div>
+            </mat-tab>
+            <mat-tab label="Reviews">
+                <div class=" mt-4">
+
+                    
+
+
+
+
+
+<!-- Carousel wrapper -->
+<div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
+    <!-- Controls -->
+    <div class="d-flex justify-content-center mb-4">
+      <button class="carousel-control-prev position-relative" type="button"
+        data-mdb-target="#carouselMultiItemExample" data-mdb-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next position-relative" type="button"
+        data-mdb-target="#carouselMultiItemExample" data-mdb-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- Inner -->
+    <div class="carousel-inner py-4">
+      <!-- Single item -->
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+              <img class="rounded-circle shadow-1-strong mb-4"
+                src="https://i.ibb.co/zncLTpV/1502826.webp" alt="avatar"
+                style="width: 150px;" />
+              <h5 class="mb-3">Squidward</h5>
+              <p class="text-muted">
+                <i class="fas fa-quote-left pe-2"></i>
+                Bad game
+              </p>
+              <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                <li><i class="fas fa-star fa-sm"></i></li>
+                <li><i class="fas fa-star fa-sm"></i></li>
+                <li><i class="fas fa-star fa-sm"></i></li>
+                <li><i class="fas fa-star fa-sm"></i></li>
+                <li><i class="fas fa-star fa-sm"></i></li>
+              </ul>
+            </div>
+  
+            <div class="col-lg-4 d-none d-lg-block">
+              <img class="rounded-circle shadow-1-strong mb-4"
+                src="https://i.ibb.co/zncLTpV/1502826.webp" alt="avatar"
+                style="width: 150px;" />
+              <h5 class="mb-3">Squidward</h5>
+              <p class="text-muted">
+                <i class="fas fa-quote-left pe-2"></i>
+Bad game
+              </p>
+              <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                <li><i class="fas fa-star fa-sm"></i></li>
+                <li><i class="fas fa-star fa-sm"></i></li>
+                <li><i class="fas fa-star fa-sm"></i></li>
+                <li><i class="fas fa-star fa-sm"></i></li>
+                <li>
+                  <i class="fas fa-star-half-alt fa-sm"></i>
+                </li>
+              </ul>
+            </div>
+  
+            <div class="col-lg-4 d-none d-lg-block">
+              <img class="rounded-circle shadow-1-strong mb-4"
+                src="https://i.ibb.co/zncLTpV/1502826.webp" alt="avatar"
+                style="width: 150px;" />
+              <h5 class="mb-3">Squidward</h5>
+              <p class="text-muted">
+                <i class="fas fa-quote-left pe-2"></i>
+                Bad game
+              </p>
+              <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                <li><i class="fas fa-star fa-sm"></i></li>
+                <li><i class="fas fa-star fa-sm"></i></li>
+                <li><i class="fas fa-star fa-sm"></i></li>
+                <li><i class="fas fa-star fa-sm"></i></li>
+                <li><i class="far fa-star fa-sm"></i></li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </ng-container>
-    <div *ngIf="loading" class="spinner-border mx-auto mt-5" role="status">
-        <span class="visually-hidden">Loading...</span>
+      </div>
+
+    </div>
+    <!-- Inner -->
+  </div>
+  <!-- Carousel wrapper -->
+
+
+
+
+
+
+
+
+                </div>
+
+
+            </mat-tab>
+        </mat-tab-group>
+
+
+        <div class="row mt-5">
+            <div class="col-lg-12 border-bottom text-center pt-3">
+                <h4>Related Products</h4>
+            </div>
+        </div>
+        <div class=" row" >
+            <!-- *ngIf="product.category== myproduct.category" -->
+           
+            <app-product *ngFor="let myproduct of filteredProducts | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"   [productData]="myproduct"
+            class=" col-lg-3 col-md-4 col-xl-3 col-12 d-flex justify-content-center">
+            <ng-container >
+
+        </ng-container>
+            </app-product>
+            <ngb-pagination class="d-flex justify-content-center"
+            [collectionSize]="productlist.length" 
+           [(page)]="page" [maxSize]="5" [rotate]="true" 
+           [ellipses]="false"
+           [directionLinks]="true">
+         </ngb-pagination>
     </div>
 </div>

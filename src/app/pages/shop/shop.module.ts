@@ -8,9 +8,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductComponent } from './product/product.component';
 import { FreePipe } from 'src/app/pipes/free.pipe';
 import { StockPipe } from 'src/app/pipes/stock.pipe';
-
-
-
+import {MatTabsModule} from '@angular/material/tabs'; 
+import {MatPaginatorModule} from '@angular/material/paginator'; 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     CartComponent,
@@ -18,13 +18,16 @@ import { StockPipe } from 'src/app/pipes/stock.pipe';
     ProductDetailsComponent,
     ProductComponent,
     FreePipe,
-    StockPipe
+    StockPipe,    
 
     
   ],
   imports: [
     CommonModule,
     ShopRoutingModule,
+    MatTabsModule,
+    MatPaginatorModule,
+    NgbModule
   ]
 })
 export class ShopModule { }

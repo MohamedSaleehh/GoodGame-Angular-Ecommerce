@@ -1,0 +1,77 @@
+.green-col-bk{
+    background-color: #00ff01;
+}
+.mat-tab-label {
+    color: #ffffff !important;
+  }
+.green-col{
+    color: #00ff01;
+}
+.table-slider {
+    max-height:600px;
+    overflow-y:scroll;
+}
+.wish-slider {
+    max-height:300px;
+    overflow-y:scroll;
+}
+.cover{
+ background-image: url('https://i.ibb.co/zV9wTWV/background-14651782-Copy.jpg');
+height: 205px;
+overflow: hidden;
+margin-top: 56.5px;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+// body {
+//     font-family: 'Roboto Condensed', sans-serif;
+//     background-color: #f5f5f5
+// }
+
+.hedding {
+    font-size: 20px;
+}
+
+
+.left-side-product-box img {
+    width: 100%;
+}
+
+.left-side-product-box .sub-img img {
+    margin-top: 5px;
+    width: 83px;
+    height: 100px;
+}
+
+.right-side-pro-detail span {
+    font-size: 15px;
+}
+
+.right-side-pro-detail p {
+    font-size: 25px;
+}
+
+.right-side-pro-detail .price-pro {
+    color: #76FF03;
+}
+
+.right-side-pro-detail .tag-section {
+    font-size: 18px;
+    color: #5D4C46;
+}
+
+.pro-box-section .pro-box img {
+    width: 100%;
+    height: 200px;
+}
+
+@media (min-width:360px) and (max-width:640px) {
+    .pro-box-section .pro-box img {
+        height: auto;
+    }
+}
+
+::ng-deep .mat-tab-label{
+    color:white !important;
+  }

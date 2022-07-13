@@ -10,7 +10,7 @@
 <div class="container my-5" >
     <ng-container *ngIf="!loading" >
         <div class=" row" >
-            <app-product *ngFor="let product of productlist" [productData]="product"
+            <app-product *ngFor="let product of productlist | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize" [productData]="product"
             (messageFromChild)="actionFromParent($event)"
             [addedTOWishList]="wishList.indexOf(product) >= 0"
             class=" col-lg-3 col-md-4 col-xl-3 col-12 d-flex justify-content-center">
@@ -21,26 +21,10 @@
     <div *ngIf="loading" class="spinner-border d-flex justify-content-center m-auto mt-5" role="status" style="text-align: center;">
     </div>
 </div>
-<nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
-            </a>
-          </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">4</a></li>
-      <li class="page-item"><a class="page-link" href="#">5</a></li>
-      <li class="page-item"><a class="page-link" href="#">6</a></li>
-      <li class="page-item"><a class="page-link" href="#">7</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-          <span class="sr-only">Next</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
 
+<ngb-pagination class="d-flex justify-content-center"
+[collectionSize]="productlist.length" 
+  [(page)]="page" [maxSize]="5" [rotate]="true" 
+  [ellipses]="false"
+  [directionLinks]="true">
+</ngb-pagination>

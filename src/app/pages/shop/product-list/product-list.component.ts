@@ -12,7 +12,8 @@ export class ProductListComponent implements OnInit {
   productlist:Array<Product>=[]
   sub:any;
   loading: boolean = false;
-
+  page = 1;
+  pageSize =8;
   constructor(private apiService:ApiService) { }
 
   ngOnInit(): void {
