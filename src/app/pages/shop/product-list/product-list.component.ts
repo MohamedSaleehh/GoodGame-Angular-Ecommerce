@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 import { Product } from 'src/app/interfaces/product';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -12,17 +13,18 @@ export class ProductListComponent implements OnInit {
   productlist:Array<Product>=[]
   sub:any;
   loading: boolean = false;
-  page = 1;
-  pageSize =8;
-  constructor(private apiService:ApiService) { }
+  page:number=1;
+  pageSize:number =12;
+  constructor(private apiService:ApiService) {
+   }
 
-  ngOnInit(): void {
-
+  async ngOnInit() {
     this.loading = true;
     this.sub= this.apiService.getProducts().subscribe(
       (res:any)=>{
         console.log(res );
         this.productlist=res;
+        
       },
     (err:any)=>{
       console.log("erorr");
@@ -30,8 +32,9 @@ export class ProductListComponent implements OnInit {
     },() => {
       this.loading = false;
     })
-
   }
+
+
 
   ngOnDestroy(){
     this.sub.unsubscribe();

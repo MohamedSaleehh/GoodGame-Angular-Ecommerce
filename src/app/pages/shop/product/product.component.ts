@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { CartService } from 'src/app/services/cart.service';
@@ -16,13 +16,13 @@ export class ProductComponent implements OnInit {
   @Input('productData')productData:any;
   @Input() addedTOWishList!: boolean;
 
-  constructor(private route:Router,private apiService:ApiService,private _CartService:CartService ,private _wishListService :WishListService) { }
+  constructor(private _CartService:CartService ,private _wishListService :WishListService) { }
 
   ngOnInit(): void {
   }
 
   navigateToDetails(){
-    this.apiService.setProductId(this.productData.id)
+    
   }
   // addtocart(product: Product) {
   //   this._CartService.addtocart(product)

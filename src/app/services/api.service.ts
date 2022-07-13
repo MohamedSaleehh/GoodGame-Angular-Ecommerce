@@ -9,7 +9,7 @@ import { Product } from '../interfaces/product';
 })
 export class ApiService {
 
-  productId = new BehaviorSubject(0)
+
 
   constructor(private httpClient :HttpClient) { }
 
@@ -19,13 +19,6 @@ export class ApiService {
   getProductById(id : string) {
     return this.httpClient.get(`https://gg-store.herokuapp.com/products/${id}`)
   }
-  setProductId(id: number){
-    console.log(id);
 
-    this.productId.next(id)
-  }
-  getProductId(){
-    return this.productId
-  }
 
 }

@@ -9,8 +9,9 @@
 </div>
 <div class="container my-5" >
     <ng-container *ngIf="!loading" >
-        <div class=" row" >
-            <app-product *ngFor="let product of productlist | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize" [productData]="product"
+        <div class=" row"  >
+            
+            <app-product *ngFor="let product of productlist | slice: (page-1) * pageSize : page * pageSize"  [productData]="product"
             (messageFromChild)="actionFromParent($event)"
             [addedTOWishList]="wishList.indexOf(product) >= 0"
             class=" col-lg-3 col-md-4 col-xl-3 col-12 d-flex justify-content-center">
@@ -22,9 +23,8 @@
     </div>
 </div>
 
-<ngb-pagination class="d-flex justify-content-center"
-[collectionSize]="productlist.length" 
-  [(page)]="page" [maxSize]="5" [rotate]="true" 
-  [ellipses]="false"
-  [directionLinks]="true">
+<ngb-pagination  class="d-flex justify-content-center"
+[collectionSize]="(productlist.length)"
+  [(page)]="page" 
+  [pageSize]="pageSize" >
 </ngb-pagination>

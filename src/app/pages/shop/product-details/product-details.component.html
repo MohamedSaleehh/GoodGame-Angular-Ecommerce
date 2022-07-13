@@ -1,4 +1,5 @@
-<div class="cover   ">
+<div *ngIf="product">
+<div class="cover" >
     <div class="container-fluid my-5 text-light ">
         <h3 class="display-5 mb-2 text-center text-uppercase font-weight-bold">{{product.name}}</h3>
         <div class="mb-5">
@@ -31,7 +32,7 @@
                         </div>
                         <div class="col-lg-6 mt-3">
                             <h6>Quantity :</h6>
-                            <input type="number" class="form-control text-center w-100 text-white" value="1">
+                            <input type="number" class="form-control text-center w-100 text-white" value="1" min="1">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <h6>Have A coupon?</h6>
@@ -184,17 +185,19 @@ Bad game
         <div class=" row" >
             <!-- *ngIf="product.category== myproduct.category" -->
            
-            <app-product *ngFor="let myproduct of filteredProducts | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"   [productData]="myproduct"
+            <app-product (click)="ngOnInit()" *ngFor="let myproduct of filteredProducts | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"   [productData]="myproduct"
             class=" col-lg-3 col-md-4 col-xl-3 col-12 d-flex justify-content-center">
             <ng-container >
 
         </ng-container>
             </app-product>
             <ngb-pagination class="d-flex justify-content-center"
-            [collectionSize]="productlist.length" 
+            [collectionSize]="filteredProducts.length" 
            [(page)]="page" [maxSize]="5" [rotate]="true" 
            [ellipses]="false"
-           [directionLinks]="true">
+           [directionLinks]="true"
+           [pageSize]="pageSize">
          </ngb-pagination>
     </div>
+</div>
 </div>

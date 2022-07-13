@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/interfaces/product';
 import { ApiService } from 'src/app/services/api.service';
@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss']
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent implements OnInit, OnDestroy {
 
   productlist:Array<Product>=[]
   sub:any;
@@ -23,6 +23,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.page = 1;
     this.loading = true;
     this.sub= this.apiService.getProducts().subscribe(
       (res:any)=>{
@@ -50,7 +51,7 @@ export class ProductDetailsComponent implements OnInit {
     this.filteredProducts =this.productlist.filter((product)=>
       product.category.find((x)=>{
         return x == this.product.category ;
-      })
+      }) && product._id != this.productId
       
       )
       console.log("sssssss",this.filteredProducts);
@@ -60,7 +61,10 @@ export class ProductDetailsComponent implements OnInit {
 
   }
   
-
+  ngOnDestroy(){
+    this.sub.unsubscribe()
+    
+  }
 
 
 }
