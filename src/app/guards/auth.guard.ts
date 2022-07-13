@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { first, firstValueFrom, Observable } from 'rxjs';
+import {  CanActivate, Router } from '@angular/router';
+import {  firstValueFrom } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 
 @Injectable({
@@ -11,12 +11,12 @@ export class AuthGuard implements CanActivate {
   constructor(private authService:AuthService, private router: Router, private http:HttpClient){}
  
 
-  canActivate(): boolean  {
-    let isLoggedin:boolean = false
+  async canActivate(): Promise<boolean>  {
     
-    this.authService.loggedIn.subscribe(state=>{
-      isLoggedin = state
-    })
+    await this.authService.authenticate()
+    const isLoggedin:boolean = await firstValueFrom(this.authService.loggedIn)
+    console.log(isLoggedin);
+    
     if(isLoggedin){
       return true
     }else{
