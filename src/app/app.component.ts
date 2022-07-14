@@ -9,6 +9,7 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'GoodGame-Angular-Ecommerce';
   constructor(private authService: AuthService){
-    authService.authenticate()
+    this.authService.authenticate()
   }
+  
 }

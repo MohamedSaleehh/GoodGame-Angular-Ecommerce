@@ -89,7 +89,7 @@
 									<div  class="p-inputgroup">
                     <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
                       <mat-label class="text-white">Password</mat-label>
-                      <input matInput type="password"  class="w-100" formControlName="password" placeholder="Password">  
+                      <input matInput type="password"  class="w-100" formControlName="password">  
                       <mat-error  *ngIf="register.controls['password'].touched && register.controls['password'].invalid">
                         <mat-error *ngIf="register.controls['password'].errors?.['required']" class="p-error block">Password is required</mat-error>
 												<mat-error *ngIf="register.controls['password'].errors?.['pattern']" class="p-error block">Password must be at least 8 characters long, 1 uppercase, 1 number</mat-error>
@@ -103,7 +103,7 @@
 									<div  class="p-inputgroup">
                     <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
                       <mat-label class="text-white">Confirm password</mat-label>
-                      <input matInput type="password"  class="w-100" formControlName="confirmPassword" placeholder="Password">  
+                      <input matInput type="password"  class="w-100" formControlName="confirmPassword">  
                       <mat-error  *ngIf="register.controls['confirmPassword'].touched && register.controls['confirmPassword'].invalid">
                         <mat-error *ngIf="register.controls['confirmPassword'].errors?.['confirmedValidator']" class="p-error block">Password Does not match</mat-error>
                       </mat-error>  

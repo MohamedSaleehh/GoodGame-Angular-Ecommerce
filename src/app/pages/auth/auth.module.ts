@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 //components
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 //material modules
 import {MatButtonModule} from '@angular/material/button';
@@ -16,10 +17,12 @@ import {MatInputModule} from '@angular/material/input';
 
 
 
+
 @NgModule({
   declarations: [
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

@@ -86,7 +86,11 @@
           <a *ngIf="loggedIn" (click)="logout()" class="nav-link d-none-xl" [routerLink]="['/']" [routerLinkActive]="'active'"
             >Logout<i class="fa-regular fa-user ms-1"></i
           ></a>
+          
         </li>
+        <li><a *ngIf="loggedIn"  class="nav-link d-none-xl" [routerLink]="['/auth/profile']" [routerLinkActive]="'active'"
+          >Edit profile<i class="fa-regular fa-user ms-1"></i
+        ></a></li>
       </ul>
       <div class="search-container mx-lg-3 ms-auto me-auto">
         <input

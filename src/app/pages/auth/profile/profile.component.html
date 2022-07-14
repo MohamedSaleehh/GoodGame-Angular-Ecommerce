@@ -1,0 +1,100 @@
+
+<div class="cover mt-5 ">
+  <div class="container-fluid my-5 text-light ">
+      <h3 class="display-5 mb-2 text-center text-uppercase font-weight-bold">My account</h3>
+      <div class="mb-5">
+          <a class="text-light " [routerLink]="['/']"><i class="fas fa-arrow-left mr-2 text-light"></i> Home Page</a>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid ps-md-0">
+  <div class="row g-0">
+  
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4 text-white">Edit profile</h3>
+
+              <!-- Sign up Form -->
+              <form [formGroup]="editForm">
+
+								<!-- First name -->
+                <div class="d-flex justify-content-between">
+                  <div class="form-floating mb-3">
+                    <div  class="p-inputgroup">
+                      <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
+                        <mat-label class="text-white">First name</mat-label>
+                        <input matInput type="text"  class="text-white" formControlName="firstName"> 
+                        <mat-error  *ngIf="editForm.controls['firstName'].touched && editForm.controls['firstName'].invalid">
+                          <mat-error *ngIf="editForm.controls['firstName'].errors?.['required']" class="p-error block">First name is required</mat-error>
+                          <mat-error *ngIf="editForm.controls['firstName'].errors?.['pattern']" class="p-error block">Invalid name</mat-error>
+                        </mat-error> 
+                      </mat-form-field>
+                    </div>
+                  </div>
+  
+                  <!-- Last name -->
+                  <div class="form-floating mb-3">
+                    <div  class="p-inputgroup">
+                      <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
+                        <mat-label class="text-white">Last name</mat-label>
+                        <input matInput type="text"  class="text-white" formControlName="lastName"> 
+                        <mat-error  *ngIf="editForm.controls['lastName'].touched && editForm.controls['lastName'].invalid">
+                          <mat-error *ngIf="editForm.controls['lastName'].errors?.['required']" class="p-error block">Last name is required</mat-error>
+                          <mat-error *ngIf="editForm.controls['lastName'].errors?.['pattern']" class="p-error block">Invalid name</mat-error>
+                        </mat-error> 
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+								
+
+                <!-- Username -->
+								<div class="form-floating mb-3">
+									<div  class="p-inputgroup">
+                    <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
+                      <mat-label class="text-white">Username</mat-label>
+                      <input matInput type="username"  class="text-white" formControlName="username"> 
+                      <mat-error  *ngIf="editForm.controls['username'].touched && editForm.controls['username'].invalid">
+                        <mat-error *ngIf="editForm.controls['username'].errors?.['required']" class="p-error block">Username is required</mat-error>
+                        <mat-error *ngIf="editForm.controls['username'].errors?.['pattern']" class="p-error block">Username must be at least 4 characters long, no spaces or special characters</mat-error>
+                      </mat-error> 
+                    </mat-form-field>
+								  </div>
+								</div>
+
+                <!-- Email -->
+								<div class="form-floating mb-3">
+									<div  class="p-inputgroup">
+                    <mat-form-field class="text-white w-100 mat-form-field" appearance="outline">
+                      <mat-label class="text-white">Email</mat-label>
+                      <input matInput type="email"  class="text-white" formControlName="email"> 
+                      <mat-error  *ngIf="editForm.controls['email'].touched && editForm.controls['email'].invalid">
+                        <mat-error *ngIf="editForm.controls['email'].errors?.['required']" class="p-error block">Email is required</mat-error>
+                        <mat-error *ngIf="editForm.controls['email'].errors?.['pattern']" class="p-error block">Invalid email </mat-error>
+                      </mat-error> 
+                    </mat-form-field>
+								  </div>
+									<mat-error class="p-error block">{{errorMessage}}</mat-error>
+								</div>
+
+
+							
+								
+
+                <div class="d-grid  ">
+                  <button mat-raised-button color="primary" [disabled]="editForm.invalid" label="Log in"(click)="update()" class="text-uppercase h-100 fw-bold mb-2" type="submit">Save</button>
+                  
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
