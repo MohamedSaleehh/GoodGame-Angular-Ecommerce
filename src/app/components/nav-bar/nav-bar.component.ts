@@ -35,14 +35,21 @@ export class NavBarComponent implements OnInit {
     let toggle = document.querySelector('.navbar-toggle') as HTMLElement;
     this.toggled = false;
     toggle.classList.remove('navbar-toggler');
-    // element.classList.remove('navbar-inverse');
   }
   constructor(private _wishListService:WishListService ,private _CartService:CartService,private authService: AuthService) {
-    this._wishListService.getCounter().subscribe((wishCount) => {
-      this.wishCounter = wishCount;
+
+    this._wishListService.getWishListArr().subscribe((data) => {
+      this.wishCounter = data.length;
     });
+    
+  }
+
+  ngOnInit(): void {
     this._CartService.getCounter().subscribe((cartCount) =>{
       this.cartCounter = cartCount;
+    })
+    this.authService.loggedIn.subscribe(res=>{
+      this.loggedIn = res
     })
   }
   logout(){
@@ -50,9 +57,6 @@ export class NavBarComponent implements OnInit {
     localStorage.removeItem("user_info")
     this.authService.setLoggedIn(false)
   }
-  ngOnInit(): void {
-    this.authService.loggedIn.subscribe(res=>{
-      this.loggedIn = res
-    })
-  }
+
+
 }

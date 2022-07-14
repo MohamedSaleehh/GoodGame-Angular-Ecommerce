@@ -3,7 +3,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
-import { ConfirmedValidator } from '../confirmedValidator.validator';
 
 @Component({
   selector: 'app-profile',

@@ -55,22 +55,7 @@
             >Home</a
           >
         </li>
-        <!-- <li class="nav-item">
-          <a
-            class="nav-link"
-            [routerLinkActive]="'active'"
-            [routerLink]="['/about']"
-            >About</a
-          >
-        </li> -->
-        <!-- <li class="nav-item">
-          <a
-            class="nav-link"
-            [routerLinkActive]="'active'"
-            [routerLink]="['/privacy']"
-            >Privacy Policy</a
-          >
-        </li> -->
+
         <li class="nav-item">
           <a
             class="nav-link"
@@ -106,19 +91,12 @@
             style="margin-left: -2px; margin-bottom: 3px"
           />
         </button>
-        <!-- <button
-      type="button"
-      id="signInBtn"
-      class="btn btn-primary btn-sm mx-2 d-lg-none"
-    >
-      <img class="mx-1 mb-1" src="../../../assets/imgs/sign.svg" alt="" />Sign
-      In
-    </button> -->
+
       </div>
     </div>
     <a
       class="mx-1 ms-auto d-none d-lg-block wish_list mt-2 mb-2 position-relative"
-      [routerLink]="['shop/cart']"
+      [routerLink]="['shop/wishlist']"
       ><i class="fa fa-heart "></i
         ><span class="position-absolute  badge wish-notif d-flex justify-content-center align-items-center"
         >{{ wishCounter }}</span
@@ -131,13 +109,6 @@
         {{cartCounter}}</span
       ></a
     >
-    <!-- <button
-      type="button"
-      [routerLink]="['auth/login']"
-      id="signInBtn"
-      class="btn btn-primary btn-sm mx-2 d-none d-lg-block signin"
-    >
-      <img class="mx-1 mb-1" src="../../../assets/imgs/sign.svg" alt="" />Log In
-    </button> -->
+
   </div>
 </nav>

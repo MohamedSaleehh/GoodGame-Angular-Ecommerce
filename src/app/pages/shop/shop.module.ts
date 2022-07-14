@@ -11,6 +11,7 @@ import { StockPipe } from 'src/app/pipes/stock.pipe';
 import {MatTabsModule} from '@angular/material/tabs'; 
 import {MatPaginatorModule} from '@angular/material/paginator'; 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { WishListComponent } from './wish-list/wish-list.component';
 @NgModule({
   declarations: [
     CartComponent,
@@ -20,6 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FreePipe,
     StockPipe,    
     ProductComponent,
+    WishListComponent
 
     
   ],

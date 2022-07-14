@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, firstValueFrom, Observable } from 'rxjs';
+import { BehaviorSubject,  Observable } from 'rxjs';
 import { User } from '../interfaces/user';
 
 @Injectable({
@@ -21,7 +21,7 @@ export class AuthService {
   }
   update( user: User){
     const user_id = JSON.parse(localStorage.getItem("user_info")!).id
-    return this.http.patch(`http://localhost:3000/users/${user_id}`,{...user})
+    return this.http.patch(`https://gg-store.herokuapp.com/users/${user_id}`,{...user})
   }
   get currentUser(){
     const user_id = JSON.parse(localStorage.getItem("user_info")!).id

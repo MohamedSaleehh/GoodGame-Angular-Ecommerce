@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { firstValueFrom } from 'rxjs';
 import { Product } from 'src/app/interfaces/product';
 import { ApiService } from 'src/app/services/api.service';
+import { WishListService } from './../../../services/wish-list.service';
+import { CartService } from './../../../services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -18,14 +19,18 @@ export class ProductListComponent implements OnInit {
   categoriesList:Array<string>=[];
     filteredProducts:Array<Product>=[];
     category: string = 'all';
-  constructor(private apiService:ApiService) {
-   }
 
 
- 
+  constructor(private apiService:ApiService ,private _wishListService:WishListService,private _CartService: CartService) {
+    this.apiService.getProducts().subscribe(res =>{
+      this.productlist =res;
+    })
+    this._wishListService.getWishListArr().subscribe(data=>{
+      this.wishList = data
+  })
 
 
-
+  }
   async ngOnInit() {
     
     this.loading = true;
@@ -43,7 +48,6 @@ export class ProductListComponent implements OnInit {
     })
 
     this.getCategories()
-
   }
 
 
