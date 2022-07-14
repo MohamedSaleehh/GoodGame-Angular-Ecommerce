@@ -1,102 +1,165 @@
-$link-light-grey: #6c757d;
-$primary: #00ff01;
-$footer-background-light-grey: #212529;
-$footer-background-grey: #1a1d20;
-$social-buttons-circle-dark-grey: #1a1d20;
-
-a {
-  color: $link-light-grey;
+.email {
+  width: 20%;
+  margin-bottom: auto;
+  height: 50px;
+  background-color: #292945;
+  padding: 10px 0px 10px 10px;
+  border-radius: 50px;
 }
-a:hover {
-  color: $primary;
+
+.email-input {
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  caret-color: transparent;
+  line-height: 20px;
+  -webkit-transition: width 0.4s linear;
+  transition: width 0.4s linear;
+}
+
+.email .email-input {
+  padding: 0 10px;
+  width: calc(100% - 40px);
+  caret-color: #536bf6;
+  font-size: 19px;
+  font-weight: 300;
+  color: white;
+  -webkit-transition: width 0.4s linear;
+  transition: width 0.4s linear;
+}
+
+.email-icon {
+  height: 30px;
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: white;
+  background-color: #536bf6;
+  font-size: 10px;
+  border-radius: 50px;
+}
+
+.email-icon:hover {
+  color: #fff !important;
+}
+.Logo {
+  margin-right: 8px;
+}
+.navbar-brand {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.bottom {
+  padding: 0 118px;
+}
+
+.bottom .hor-line {
+  background-color: #30313f;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  height: 1px;
+}
+
+.col-8 {
+  color: white;
+  width: 50%;
+}
+
+.col-8 .title {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 56px;
+}
+
+.col-8 p {
+  font-weight: 300;
+}
+
+.bottom .call-to-action {
+  margin-bottom: 90px;
+}
+
+.bottom .call-to-action .bottom--content .title {
+  font-size: 42px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 56px;
+}
+
+.bottom .call-to-action .bottom--content p {
+  font-weight: 300;
+  color: white;
+  margin-right: 10%;
+}
+
+.bottom .call-to-action h4 {
+  color: #bdc3ff;
+  margin-bottom: 24px;
+}
+
+.bottom .call-to-action a {
+  color: white;
+  font-weight: 300;
+  margin-bottom: 16px;
   text-decoration: none;
 }
 
-// ::selection {
-//   background: $primary;
-//   text-shadow: none;
-// }
-
-footer {
-  left: 0;
-  bottom: 0;
-  padding: 2rem 0;
-  background-color: #1c1c27;
+.bottom .privacy {
+  margin-bottom: 36px;
 }
 
-.footer-column:not(:first-child) {
-  padding-top: 2rem;
-  @media (min-width: 768px) {
-    padding-top: 0rem;
-  }
+.bottom .privacy .terms-privacy {
+  gap: 96px;
 }
 
-.footer-column {
-  text-align: center;
-  //border: red solid 1px;
-  .nav-item {
-    .nav-link {
-      padding: 0.1rem 0;
-    }
-    span.nav-link {
-      color: $link-light-grey;
-    }
-    span.footer-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
-    }
-    .fas {
-      margin-right: 0.5rem;
-    }
-  }
-  ul {
-    display: inline-block;
-    @media (min-width: 768px) {
-      text-align: left;
-    }
-    //border: yellow solid 1px;
-  }
+.bottom .privacy .terms-privacy a {
+  color: white;
+  font-weight: 300;
+  text-decoration: none;
 }
 
-ul.social-buttons {
-  margin-bottom: 0;
+.bottom .privacy .social {
+  gap: 40px;
 }
 
-ul.social-buttons li a:active,
-ul.social-buttons li a:hover {
-  background-color: $primary;
+.bottom .copyright {
+  color: #777b9e;
+  margin-bottom: 36px;
 }
 
-ul.social-buttons li a {
+.bottom .copyright h4 {
   font-size: 20px;
-  line-height: 40px;
-  display: block;
-  width: 40px;
-  height: 40px;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-  color: #fff;
-  border-radius: 100%;
-  outline: 0;
-  background-color: $footer-background-grey;
 }
 
-footer .quick-links {
-  font-size: 90%;
-  line-height: 40px;
-  margin-bottom: 0;
-  text-transform: none;
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.copyright {
-  color: white;
-}
-
-.fa-ellipsis-h {
-  color: white;
-  padding: 2rem 0;
+@media screen and (max-width: 768px) {
+  .bottom {
+    padding: 0 5%;
+  }
+  .bottom .email {
+    width: 50%;
+  }
+  .bottom .col-7,
+  .bottom .col-5 {
+    width: 100%;
+  }
+  .bottom .bottom--content {
+    margin-bottom: 30px;
+  }
+  .bottom .bottom--content .title {
+    font-size: 20px !important;
+    margin-bottom: 20px !important;
+  }
 }

@@ -1,0 +1,159 @@
+.cards {
+  margin-top: 80px;
+}
+
+.listcard {
+  gap: 32px;
+}
+
+img {
+  border-style: none;
+  width: 100%;
+  height: auto;
+}
+
+.listcard--card {
+  background: rgba(24, 25, 32, 0.1);
+  -webkit-backdrop-filter: blur(42.9521px);
+  backdrop-filter: blur(42.9521px);
+  gap: 26px;
+}
+
+.listcard--card--content {
+  color: #fff;
+  padding: 24px 24px;
+}
+
+.listcard--card--content .game-company,
+.listcard--card--content .desc {
+  font-size: 0.88em;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+
+.listcard--card--content .game-info {
+  padding-bottom: 24px;
+}
+
+.listcard--card--content .game-info .vote-count {
+  -ms-grid-column-align: space-between;
+  justify-self: space-between;
+}
+
+.listcard--card--content .game-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listcard--card--content .vote {
+  gap: 4px;
+}
+
+.vote-count {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.data--orders {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 80%;
+  margin-top: 12%;
+}
+
+.vote--data {
+  font-size: 90%;
+  margin-top: 35%;
+  margin-left: 5%;
+}
+
+.listcard--card--content .btn-CTA {
+  white-space: nowrap;
+  background: #f68e5f;
+  border-radius: 64px;
+  font-size: 90%;
+  color: #fff;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1440px) {
+  .action {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .action .vote-count {
+    gap: 24px;
+  }
+  .action .btn-CTA {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .col-4 {
+    width: 100%;
+  }
+  .cardsbar {
+    margin-bottom: 20px;
+  }
+  .logo-brand {
+    height: auto;
+    position: relative;
+    z-index: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 50px;
+    padding: 20px 5%;
+  }
+  .logo-brand .col {
+    -webkit-box-flex: inherit;
+    -ms-flex: inherit;
+    flex: inherit;
+    width: 150px;
+  }
+  .logo-brand .col img {
+    width: auto;
+    height: 30px;
+  }
+  .hero .title {
+    font-size: 50px !important;
+    line-height: 60px;
+  }
+  .listcard .row .col-3 {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  .news {
+    padding: 0 5%;
+    margin-bottom: 80px;
+  }
+  .container-fluid {
+    padding: 0 5%;
+  }
+  .mfs {
+    font-size: 25px !important;
+  }
+  .we-the-best {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .we-the-best .img-archive {
+    width: 100%;
+  }
+  .we-the-best .archive--content {
+    width: 100%;
+  }
+}

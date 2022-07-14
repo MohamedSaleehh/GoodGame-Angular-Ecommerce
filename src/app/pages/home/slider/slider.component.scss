@@ -1,18 +1,13 @@
 header {
+  padding-top: 20px;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(
-      160deg,
-      rgba(28, 28, 40, 0.8) 80%,
-      rgba(28, 28, 40, 0) 100%
-    ),
-    url("../../../../assets/imgs/346439\ 1.jpg") center/cover no-repeat;
-  position: relative;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  color: whitesmoke;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transition: 1s ease;
 }
 
 .header::before {

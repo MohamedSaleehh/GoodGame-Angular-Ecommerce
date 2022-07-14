@@ -1,95 +1,55 @@
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 footer-column">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <span class="footer-title">Shop</span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Our Product</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Offers</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Frequently asked questions</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4 footer-column">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <span class="footer-title">Links</span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/']">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/about']">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/privacy']">Log In</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4 footer-column">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <span class="footer-title">Contact & Support</span>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-comments"></i>Live chat</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-envelope"></i>Contact us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-star"></i>Give feedback</a>
-                    </li>
-                </ul>
+<section class="bottom">
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="logo"> <a class="Logo" [routerLink]="['/']">
+                <img src="../../../assets/imgs/Logo.svg" alt="" width="30" height="30" />
+            </a>
+            <a class="navbar-brand" href="#">Good Game</a>
+        </div>
+        <div class="email d-flex align-items-center">
+            <input class="email-input" type="text" placeholder="Email address"><a class="email-icon custom-btn"
+                href="#">
+                <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24.002" cy="23.9995" r="24" fill="#596AFE"></circle>
+                    <path
+                        d="M18.6699 30.9288L25.7141 23.8846L18.6699 16.8404L20.8439 14.6665L30.062 23.8846L20.8439 33.1027L18.6699 30.9288Z"
+                        fill="white"></path>
+                </svg></a>
+        </div>
+    </div>
+    <div class="hor-line"> </div>
+    <div class="row justify-content-between call-to-action">
+        <div class="col-7">
+            <div class="bottom--content">
+                <div class="title">Get updates on your<br> favourite games</div>
+                <div class="d-flex align-items-center">
+                    <p>Ready to explore?</p>
+                    <button class="btn btn-primary px-4 py-3 rounded-pill custom-btn">Get Started</button>
+                </div>
             </div>
         </div>
-
-        <div class="text-center"><i class="fas fa-ellipsis-h"></i></div>
-
-        <div class="row text-center">
-            <div class="col-md-4 box">
-                <span class="copyright quick-links">Copyright &copy; 2022. All rights reserved.
-
-                </span>
+        <div class="col-5 row">
+            <div class="col d-flex flex-column">
+                <h4>Services</h4><a href="#">Our Stores</a><a href="#">Campaigns</a><a href="#">Tournaments</a><a
+                    href="#">Offline</a>
             </div>
-            <div class="col-md-4 box">
-                <ul class="list-inline social-buttons">
-                    <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                </ul>
+            <div class="col d-flex flex-column">
+                <h4>About</h4><a href="#">Our Story</a><a href="#">Benefits</a><a href="#">Team</a><a
+                    href="#">Careers</a>
             </div>
-            <div class="col-md-4 box">
-                <ul class="list-inline quick-links">
-                    <li class="list-inline-item">
-                        <a href="#">Privacy Policy</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">Terms of Use</a>
-                    </li>
-                </ul>
+            <div class="col d-flex flex-column">
+                <h4>Help</h4><a href="#">FAQs</a><a href="#">Contact Us</a>
             </div>
         </div>
     </div>
-</footer>
+    <div class="d-flex justify-content-between privacy">
+        <div class="terms-privacy d-flex"> <a href="#">Terms & Conditions</a><a href="#">Privacy Policy</a></div>
+        <div class="social d-flex">
+            <div class="facebook"><a href="#"> <img src="../../../assets/imgs/facebook.png" alt=""></a></div>
+            <div class="twitter"><a href="#"> <img src="../../../assets/imgs/twitter.png" alt=""></a></div>
+            <div class="instagram"><a href="#"> <img src="../../../assets/imgs/instagram.png" alt="" href="#"></a></div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center copyright">
+        <h4>Copyright 2022 Good Game</h4>
+    </div>
+</section>

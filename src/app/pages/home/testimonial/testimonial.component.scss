@@ -1,0 +1,104 @@
+.testimonial {
+  margin-top: 245px;
+}
+.heading {
+  color: #f68e5f;
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.heading::before,
+.heading::after {
+  content: " ";
+  width: 54px;
+  height: 2px;
+  background-color: #f68e5f;
+  display: inline-block;
+}
+.testimonial h1 {
+  font-size: 54px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 120px;
+}
+
+.testimonial .list-testimonials {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.testimonial .list-testimonials .list-item {
+  width: 35%;
+  color: #fff;
+  background: #292945;
+  border-radius: 14px;
+  position: relative;
+}
+
+.testimonial .list-testimonials .list-item .testi-content {
+  padding: 32px;
+  width: 65%;
+}
+
+.testimonial .list-testimonials .list-item .testi-content .vote {
+  margin-bottom: 10px;
+}
+
+.testimonial .list-testimonials .list-item .testi-content .vote img {
+  width: 24px;
+  height: 24px;
+}
+
+.testimonial .list-testimonials .list-item .testi-content .desc {
+  font-weight: 300;
+  margin-bottom: 22px;
+  width: 100%;
+}
+
+.testimonial .list-testimonials .list-item .testi-content .name {
+  margin-bottom: 8px;
+}
+
+.testimonial .list-testimonials .list-item .testi-content .name h5 {
+  font-weight: 700;
+}
+
+.testimonial .list-testimonials .list-item .testi-content .job-name h6 {
+  font-weight: 700;
+  color: #9ba5fe;
+}
+
+.testimonial .list-testimonials .list-item .img-testimonial {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .testimonial {
+    margin-top: 150px;
+    padding: 0 5%;
+  }
+  .testimonial .list-testimonials {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .testimonial .list-testimonials .list-item {
+    width: 100% !important;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+}

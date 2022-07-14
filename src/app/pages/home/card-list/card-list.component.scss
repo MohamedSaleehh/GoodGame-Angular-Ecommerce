@@ -1,0 +1,30 @@
+.news {
+  background-image: url(../../../../assets/imgs/img2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5% 10%;
+  margin-bottom: 200px;
+}
+
+.news .header--title {
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.news .header--menu {
+  gap: 48px;
+  margin-top: 1.22rem;
+}
+
+.news .header--menu--items {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.active {
+  background: #f68e5f;
+  border-radius: 64px;
+  padding: 8px 22px;
+}

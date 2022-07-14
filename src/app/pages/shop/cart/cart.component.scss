@@ -1,23 +1,26 @@
-.green-col-bk{
+.green-col-bk {
   background-color: #00ff01;
 }
 
-.green-col{
+.green-col {
   color: #00ff01;
 }
 .table-slider {
-  max-height:600px;
-  overflow-y:scroll;
+  max-height: 600px;
+  overflow-y: scroll;
 }
 .wish-slider {
-  max-height:300px;
-  overflow-y:scroll;
+  max-height: 300px;
+  overflow-y: scroll;
 }
-.cover{
-background-image: url('https://i.ibb.co/zV9wTWV/background-14651782-Copy.jpg');
-height: 205px;
-overflow: hidden;
+.cover {
+  background-image: url("https://i.ibb.co/zV9wTWV/background-14651782-Copy.jpg");
+  height: 205px;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
 }

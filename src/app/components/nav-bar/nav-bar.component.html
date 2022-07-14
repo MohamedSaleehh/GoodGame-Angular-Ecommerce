@@ -4,103 +4,51 @@
       <img src="../../../assets/imgs/Logo.svg" alt="" width="30" height="30" />
     </a>
     <a class="navbar-brand" href="#">Good Game</a>
-    <a class="mx-1 ms-auto d-lg-none wish_list position-relative mt-2 mb-2" [routerLink]="['shop/cart']"
-      >
-      <i class="fa fa-heart "></i
-        >
-      <span class="position-absolute translate-middle badge wish-notif d-flex justify-content-center align-items-center"
-        >{{ wishCounter }}</span
-      ></a
-    >
-    <a class="d-lg-none cart position-relative mt-2 mb-2" [routerLink]="['shop/cart']"
-      ><i class="bx bx-drink fas fa-shopping-cart  "></i><span class="position-absolute translate-middle badge cart-notif d-flex justify-content-center align-items-center"
-        >{{cartCounter}}</span
-      ></a
-    >
+    <a class="mx-1 ms-auto d-lg-none wish_list position-relative mt-2 mb-2" [routerLink]="['shop/cart']">
+      <i class="fa fa-heart "></i>
+      <span
+        class="position-absolute translate-middle badge wish-notif-m d-flex justify-content-center align-items-center">{{
+        wishCounter }}</span></a>
+    <a class="d-lg-none cart position-relative mt-2 mb-2" [routerLink]="['shop/cart']"><i
+        class="bx bx-drink fas fa-shopping-cart  "></i><span
+        class="position-absolute translate-middle badge cart-notif-m d-flex justify-content-center align-items-center">{{cartCounter}}</span></a>
 
-    <div
-      *ngIf="!toggled"
-      class="navbar-toggler ms-3"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      (click)="toggleAdd()"
-    >
+    <div *ngIf="!toggled" class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation" (click)="toggleAdd()">
       <span class="navbar-toggler-icon"></span>
     </div>
-    <div
-      *ngIf="toggled"
-      class="navbar-toggler ms-3"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      (click)="toggleRemove()"
-    >
+    <div *ngIf="toggled" class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation" (click)="toggleRemove()">
       <span class="navbar-toggler-icon"></span>
     </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto mb-lg-0 align-items-center navbar_ul">
         <li class="nav-item">
-          <a
-            class="nav-link"
-            [routerLinkActive]="'active'"
-            [routerLinkActiveOptions]="{ exact: true }"
-            [routerLink]="['/']"
-            >Home</a
-          >
-        </li>
-        <!-- <li class="nav-item">
-          <a
-            class="nav-link"
-            [routerLinkActive]="'active'"
-            [routerLink]="['/about']"
-            >About</a
-          >
-        </li> -->
-        <!-- <li class="nav-item">
-          <a
-            class="nav-link"
-            [routerLinkActive]="'active'"
-            [routerLink]="['/privacy']"
-            >Privacy Policy</a
-          >
-        </li> -->
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            [routerLinkActive]="'active'"
-            [routerLink]="['/shop/productlist']"
-            >Our Shop</a
-          >
+          <a class="nav-link" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="['/']">Home</a>
         </li>
         <li class="nav-item">
-          <a *ngIf="!loggedIn" class="nav-link d-none-xl"[routerLink]="['auth/login']" [routerLinkActive]="'active'"
-            >Login<i class="fa-regular fa-user ms-1"></i
-          ></a>
-          <a *ngIf="loggedIn" (click)="logout()" class="nav-link d-none-xl" [routerLink]="['/']" [routerLinkActive]="'active'"
-            >Logout<i class="fa-regular fa-user ms-1"></i
-          ></a>
+          <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['/about']">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['/privacy']">Privacy Policy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['/shop/productlist']">Our Shop</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="!loggedIn" class="nav-link d-none-xl" [routerLink]="['auth/login']"
+            [routerLinkActive]="'active'">Login<i class="fa-regular fa-user ms-1"></i></a>
+          <a *ngIf="loggedIn" (click)="logout()" class="nav-link d-none-xl" [routerLink]="['/']"
+            [routerLinkActive]="'active'">Logout<i class="fa-regular fa-user ms-1"></i></a>
         </li>
       </ul>
       <div class="search-container mx-lg-3 ms-auto me-auto">
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Search..."
-          aria-label="Search"
-        />
+        <input class="form-control" type="text" placeholder="Search..." aria-label="Search" />
         <button id="search-btn" class="btn" type="submit">
-          <img
-            src="../../../assets/imgs/Search.svg"
-            alt=""
-            style="margin-left: -2px; margin-bottom: 3px"
-          />
+          <img src="../../../assets/imgs/Search.svg" alt="" style="margin-left: -2px; margin-bottom: 3px" />
         </button>
         <!-- <button
       type="button"
@@ -112,21 +60,14 @@
     </button> -->
       </div>
     </div>
-    <a
-      class="mx-1 ms-auto d-none d-lg-block wish_list mt-2 mb-2 position-relative"
-      [routerLink]="['shop/cart']"
-      ><i class="fa fa-heart "></i
-        ><span class="position-absolute  badge wish-notif d-flex justify-content-center align-items-center"
-        >{{ wishCounter }}</span
-      ></a
-    >
-    <a class="d-none d-lg-block cart mt-2 mb-2 position-relative" [routerLink]="['shop/cart']"
-      >
+    <a class="mx-1 ms-auto d-none d-lg-block wish_list mt-2 mb-2 position-relative" [routerLink]="['shop/cart']"><i
+        class="fa fa-heart "></i><span
+        class="position-absolute  badge wish-notif d-flex justify-content-center align-items-center">{{ wishCounter
+        }}</span></a>
+    <a class="d-none d-lg-block cart mt-2 mb-2 position-relative" [routerLink]="['shop/cart']">
       <i class="bx bx-drink fas fa-shopping-cart  "></i>
       <span class="position-absolute d-flex justify-content-center align-items-center  badge cart-notif">
-        {{cartCounter}}</span
-      ></a
-    >
+        {{cartCounter}}</span></a>
     <!-- <button
       type="button"
       [routerLink]="['auth/login']"
