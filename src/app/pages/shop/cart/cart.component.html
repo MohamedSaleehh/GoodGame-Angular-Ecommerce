@@ -1,5 +1,5 @@
-<body class="text-light bg-dark ">
-    <section class="pb-5">
+<body class="text-light my-5 fix ">
+    <section class="mb-5">
         <div class="cover">
             <div class="container-fluid my-5">
                 <h3 class="display-5 mb-2 text-center text-uppercase font-weight-bold">Shopping Cart</h3>
@@ -11,24 +11,18 @@
             </div>
 
         </div>
-        <div class="container-fluid my-5 ">
+        <div class="container my-5 ">
 
-            <div  class="row w-100 ">
-                <div  class="col-lg-8 col-md-8 col-12 ">
+            <div  class="row ">
+                <div  class="col-lg-12 col-md-12 col-12 ">
                     <div class="col-lg-12 col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left d-flex justify-content-center">
-
                         <div class="mb-4">
                             <h2 class="text-light">Cart</h2>
                         </div>
                     </div>
-
-
-
-
-
-                    
-                        <div *ngIf="myproducts.length > 0" class="table-slider h-25">
-                            <table id="shoppingCart" class="table table-dark  table-condensed table-responsive text-light">
+       
+                        <div *ngIf="myproducts.length > 0" class="table-slider">
+                            <table id="shoppingCart" class="table  table-condensed table-responsive text-light">
                                 <thead>
                                     <tr>
                                         <th style="width:70%">Product</th>
@@ -94,9 +88,6 @@
                         <h1>Your Cart is Empty</h1>
                     </div>
                 </div>
-
-
-                
 
             </div>
 

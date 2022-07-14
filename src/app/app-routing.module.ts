@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'privacy', component: PrivacyComponent },
+
 ];
 
 @NgModule({

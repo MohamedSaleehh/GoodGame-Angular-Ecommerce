@@ -9,12 +9,13 @@
 
 <!-- _____________________________ -->
 
+<div class="container">
 <div class="my-2 w-25 text-light">
-  <label for="" class="my-1">Categories</label>
   <select class="form-control text-light" (change)="filterProduct($event)">
-    <option value="all">All</option>
+    <option value="all">Categories</option>
     <option value="{{option}}" *ngFor="let option of categoriesList">{{option}}</option>
   </select>
+</div>
 </div>
 
 <!-- _____________________________ -->

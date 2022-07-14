@@ -1,0 +1,701 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>good-game-angular-ecommerce documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">good-game-angular-ecommerce documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  WishListComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/shop/wish-list/wish-list.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-wish-list</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./wish-list.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./wish-list.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#wishListArr" >wishListArr</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addFromWishToCart" >addFromWishToCart</a>
+                            </li>
+                            <li>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_CartService: <a href="../injectables/CartService.html" target="_self">CartService</a>, _wishListService: <a href="../injectables/WishListService.html" target="_self">WishListService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/pages/shop/wish-list/wish-list.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_CartService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CartService.html" target="_self" >CartService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_wishListService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/WishListService.html" target="_self" >WishListService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addFromWishToCart"></a>
+                    <span class="name">
+                        <span ><b>addFromWishToCart</b></span>
+                        <a href="#addFromWishToCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addFromWishToCart(product: <a href="../interfaces/Product.html" target="_self">Product</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/pages/shop/wish-list/wish-list.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>product</td>
+                                    <td>
+                                                <code><a href="../interfaces/Product.html" target="_self" >Product</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>delete(_id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/pages/shop/wish-list/wish-list.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/pages/shop/wish-list/wish-list.component.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="wishListArr"></a>
+                    <span class="name">
+                        <span ><b>wishListArr</b></span>
+                        <a href="#wishListArr"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Array&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/pages/shop/wish-list/wish-list.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Product } from &#x27;src/app/interfaces/product&#x27;;
+import { CartService } from &#x27;src/app/services/cart.service&#x27;;
+import { WishListService } from &#x27;./../../../services/wish-list.service&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { ApiService } from &#x27;src/app/services/api.service&#x27;;
+
+@Component({
+  selector: &#x27;app-wish-list&#x27;,
+  templateUrl: &#x27;./wish-list.component.html&#x27;,
+  styleUrls: [&#x27;./wish-list.component.scss&#x27;]
+})
+export class WishListComponent implements OnInit {
+  wishListArr: Array&lt;any&gt; &#x3D; [];
+
+  constructor(private _CartService: CartService ,private _wishListService :WishListService,) {
+
+
+
+
+
+    this._wishListService.getWishListArr().subscribe(data&#x3D;&gt;{
+      this.wishListArr &#x3D; data
+      this._CartService.loadCart();
+  })
+
+  }
+
+  ngOnInit(): void {
+  }
+  delete(_id: string) {
+    this._wishListService.removeFromWishList(_id).subscribe(data&#x3D;&gt;{
+      this.wishListArr &#x3D; data as Array&lt;Product&gt;
+    });
+  }
+  addFromWishToCart(product: Product) {
+    this._CartService.addProduct(product)
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;text-light my-5&quot;&gt;
+  &lt;section class&#x3D;&quot;pb-5&quot;&gt;
+      &lt;div class&#x3D;&quot;cover&quot;&gt;
+          &lt;div class&#x3D;&quot;container-fluid my-5&quot;&gt;
+              &lt;h3 class&#x3D;&quot;display-5 mb-2 text-center text-uppercase font-weight-bold&quot;&gt;Wishlist&lt;/h3&gt;
+
+              &lt;div class&#x3D;&quot;mb-5&quot;&gt;
+                  &lt;a class&#x3D;&quot;text-light &quot;&gt;&lt;i class&#x3D;&quot;fas fa-arrow-left mr-2 text-light&quot;&gt;&lt;/i&gt; Continue Shopping&lt;/a&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+
+      &lt;/div&gt;
+                &lt;div class&#x3D;&quot; justify-content-center d-flex container my-5&quot;&gt;
+                    &lt;div class&#x3D;&quot;w-100&quot;&gt;
+
+
+                    &lt;div class&#x3D;&quot;wish-slider  rounded &quot; *ngIf&#x3D;&quot;wishListArr.length&quot;&gt;
+                        &lt;table id&#x3D;&quot;shoppingCart&quot; class&#x3D;&quot;table   table-condensed table-responsive text-light&quot;&gt;
+                            &lt;thead&gt;
+                                &lt;tr&gt;
+                                    &lt;th style&#x3D;&quot;width:70%&quot;&gt;Product&lt;/th&gt;
+                                    &lt;th style&#x3D;&quot;width:12%&quot;&gt;Price&lt;/th&gt;
+                                    &lt;th style&#x3D;&quot;width:10%&quot;&gt;&lt;/th&gt;
+                                    &lt;th style&#x3D;&quot;width:16%&quot;&gt;&lt;/th&gt;
+                                &lt;/tr&gt;
+                            &lt;/thead&gt;
+                            &lt;tbody class&#x3D;&quot;text-light&quot;&gt;
+
+                                &lt;tr *ngFor&#x3D;&quot;let wishProd of wishListArr&quot;&gt;
+                                    &lt;td data-th&#x3D;&quot;Product&quot;&gt;
+                                        &lt;div class&#x3D;&quot;row&quot;&gt;
+                                            &lt;div class&#x3D;&quot;col-md-3 text-left cursor-pointer&quot;&gt;
+                                                &lt;img src&#x3D;&quot;{{wishProd.image}}&quot; alt&#x3D;&quot;&quot;
+                                                    class&#x3D;&quot;img-fluid d-none d-md-block rounded mb-2 shadow &quot;&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class&#x3D;&quot;col-md-9 text-left my-1&quot;&gt;
+                                                &lt;p class&#x3D;&quot;font-weight-light&quot;&gt;{{wishProd.name}}&lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/td&gt;
+                                    &lt;td data-th&#x3D;&quot;Price&quot; class&#x3D;&quot;green-col&quot;&gt;
+                                        &lt;div class&#x3D;&quot;row my-1&quot;&gt;
+                                            &lt;div&gt;{{wishProd.price}}LE&lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/td&gt;
+                                    &lt;td data-th&#x3D;&quot;Quantity&quot;&gt;
+                                        &lt;div class&#x3D;&quot;&quot;&gt;
+                                            &lt;i class&#x3D;&quot;cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x&quot;
+                                                style&#x3D;&quot;color: #97de95;&quot; onmouseover&#x3D;&quot;this.style.color&#x3D;&#x27;#00ff01&#x27;;&quot;
+                                                onmouseout&#x3D;&quot;this.style.color&#x3D;&#x27;#97de95&#x27;;
+                                            &quot;
+                                            (click)&#x3D;&quot;addFromWishToCart(wishProd)&quot;&gt;&lt;/i&gt;
+                                        &lt;/div&gt;
+                                    &lt;/td&gt;
+                                    &lt;td class&#x3D;&quot;actions&quot; data-th&#x3D;&quot;&quot;&gt;
+                                        &lt;div class&#x3D;&quot;text-right&quot;&gt;
+                                            &lt;i class&#x3D;&quot;fas fa-trash m-1 fa-2x cursor-pointer&quot;
+                                                style&#x3D;&quot;color: rgb(168, 62, 62);&quot; onmouseover&#x3D;&quot;this.style.color&#x3D;&#x27;red&#x27;;&quot;
+                                                onmouseout&#x3D;&quot;this.style.color&#x3D;&#x27;rgb(168, 62, 62)&#x27;;
+                                                &quot;
+                                                (click)&#x3D;&quot;delete(wishProd._id)&quot;&gt;&lt;/i&gt;
+                                        &lt;/div&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+
+
+
+                            &lt;/tbody&gt;
+                        &lt;/table&gt;
+
+                    &lt;/div&gt;
+                    &lt;h1 class&#x3D;&quot;text-center&quot; *ngIf&#x3D;&quot;!wishListArr.length&quot;&gt;Wishlist is empty&lt;/h1&gt;
+                &lt;/div&gt;
+                
+                &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./wish-list.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+  .cover{
+  background-image: url(&#x27;https://i.ibb.co/zV9wTWV/background-14651782-Copy.jpg&#x27;);
+  height: 205px;
+  overflow: hidden;
+  }</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="text-light my-5">  <section class="pb-5">      <div class="cover">          <div class="container-fluid my-5">              <h3 class="display-5 mb-2 text-center text-uppercase font-weight-bold">Wishlist</h3>              <div class="mb-5">                  <a class="text-light "><i class="fas fa-arrow-left mr-2 text-light"></i> Continue Shopping</a>              </div>          </div>      </div>                <div class=" justify-content-center d-flex container my-5">                    <div class="w-100">                    <div class="wish-slider  rounded " *ngIf="wishListArr.length">                        <table id="shoppingCart" class="table   table-condensed table-responsive text-light">                            <thead>                                <tr>                                    <th style="width:70%">Product</th>                                    <th style="width:12%">Price</th>                                    <th style="width:10%"></th>                                    <th style="width:16%"></th>                                </tr>                            </thead>                            <tbody class="text-light">                                <tr *ngFor="let wishProd of wishListArr">                                    <td data-th="Product">                                        <div class="row">                                            <div class="col-md-3 text-left cursor-pointer">                                                <img src="{{wishProd.image}}" alt=""                                                    class="img-fluid d-none d-md-block rounded mb-2 shadow ">                                            </div>                                            <div class="col-md-9 text-left my-1">                                                <p class="font-weight-light">{{wishProd.name}}</p>                                            </div>                                        </div>                                    </td>                                    <td data-th="Price" class="green-col">                                        <div class="row my-1">                                            <div>{{wishProd.price}}LE</div>                                        </div>                                    </td>                                    <td data-th="Quantity">                                        <div class="">                                            <i class="cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x"                                                style="color: #97de95;" onmouseover="this.style.color=\'#00ff01\';"                                                onmouseout="this.style.color=\'#97de95\';                                            "                                            (click)="addFromWishToCart(wishProd)"></i>                                        </div>                                    </td>                                    <td class="actions" data-th="">                                        <div class="text-right">                                            <i class="fas fa-trash m-1 fa-2x cursor-pointer"                                                style="color: rgb(168, 62, 62);" onmouseover="this.style.color=\'red\';"                                                onmouseout="this.style.color=\'rgb(168, 62, 62)\';                                                "                                                (click)="delete(wishProd._id)"></i>                                        </div>                                    </td>                                </tr>                            </tbody>                        </table>                    </div>                    <h1 class="text-center" *ngIf="!wishListArr.length">Wishlist is empty</h1>                </div>                                </div>  </section></div></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavBarComponent', 'selector': 'app-nav-bar'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'ProductComponent', 'selector': 'app-product'},{'name': 'ProductDetailsComponent', 'selector': 'app-product-details'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SliderComponent', 'selector': 'app-slider'},{'name': 'WishListComponent', 'selector': 'app-wish-list'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'WishListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'WishListComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

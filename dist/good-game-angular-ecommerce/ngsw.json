@@ -1,0 +1,121 @@
+{
+  "configVersion": 1,
+  "timestamp": 1657835004617,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.e949bce6ce223f1b.js",
+        "/manifest.webmanifest",
+        "/polyfills.7851302281856d62.js",
+        "/runtime.9b2de8a1c329ad24.js",
+        "/scripts.abbb37f329463b12.js",
+        "/styles.260dd8b6d62298dd.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/346439 1.09f282e12b7ed0c1.jpg",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/imgs/346439 1.jpg",
+        "/assets/imgs/Add to card.svg",
+        "/assets/imgs/Logo.svg",
+        "/assets/imgs/Overlay.svg",
+        "/assets/imgs/Search.svg",
+        "/assets/imgs/Wish_list.svg",
+        "/assets/imgs/Wishlist.svg",
+        "/assets/imgs/arrow_downward_24px.svg",
+        "/assets/imgs/cart.svg",
+        "/assets/imgs/sign.svg",
+        "/fa-brands-400.7fa789ab57acb632.ttf",
+        "/fa-brands-400.859fc3887485de84.woff2",
+        "/fa-regular-400.2ffd018f0eda6f7b.woff2",
+        "/fa-regular-400.da02cb7e372f16a2.ttf",
+        "/fa-solid-900.3a463ec33b4fe9f7.ttf",
+        "/fa-solid-900.40ddefd79fe7af45.woff2",
+        "/fa-v4compatibility.924588dc97e66b08.ttf",
+        "/fa-v4compatibility.ee06c6f803f379bb.woff2"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/346439 1.09f282e12b7ed0c1.jpg": "6c61028601c9cedc2f45832e0856997f8ca9eea6",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/imgs/346439 1.jpg": "6c61028601c9cedc2f45832e0856997f8ca9eea6",
+    "/assets/imgs/Add to card.svg": "d28b88a46b54cb626fe15a96bc4034c0213e6464",
+    "/assets/imgs/Logo.svg": "9b5b6874ec8c5663b07e5515200e4d41504c5975",
+    "/assets/imgs/Overlay.svg": "e1796aa244c62d2037b083f4a100692bd1b52a79",
+    "/assets/imgs/Search.svg": "9f271a6e0fb2f87d8ad68c71473d0c84b951a198",
+    "/assets/imgs/Wish_list.svg": "c7f3b233e8fd9d5a543baaafe9b64e2d6fa3e371",
+    "/assets/imgs/Wishlist.svg": "6d915e144b7f37f4a3e0f669e9f3667c805b10ce",
+    "/assets/imgs/arrow_downward_24px.svg": "d5eb4c7051b284f77608139d1f591d8fe597c373",
+    "/assets/imgs/cart.svg": "926111f7c1ea04597b44c6829f13d6f67c12f864",
+    "/assets/imgs/sign.svg": "8c78bf27123939a64ee7ce1f76994365c34968de",
+    "/fa-brands-400.7fa789ab57acb632.ttf": "acc07d5e1ab5b96b23fabb53b1f4e416c7c0a46d",
+    "/fa-brands-400.859fc3887485de84.woff2": "a280ecdddd14695fad22599301ab03adfe5224c0",
+    "/fa-regular-400.2ffd018f0eda6f7b.woff2": "379ca48f70f3d4f79f8bf1079881c7c5af4f44a4",
+    "/fa-regular-400.da02cb7e372f16a2.ttf": "a14023c43173628d93858c0f3fc90cf54b18a28e",
+    "/fa-solid-900.3a463ec33b4fe9f7.ttf": "9225d6cb428fce41704cab29b8bb43b76c67f8b4",
+    "/fa-solid-900.40ddefd79fe7af45.woff2": "2717f3f58271f2f2e6120d9937c7227002656d34",
+    "/fa-v4compatibility.924588dc97e66b08.ttf": "e688e02012b9e5269a09809b0d666edc87527cb2",
+    "/fa-v4compatibility.ee06c6f803f379bb.woff2": "951ded71094a52e249ac52799fac7cbb68368270",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "142146d4f266592b13ee0523bb1e29f883e0ec9d",
+    "/main.e949bce6ce223f1b.js": "44c17aad776ff1bbe397922d3da7203c5dc37842",
+    "/manifest.webmanifest": "0ea1fb1740f665919e53229037db5bf18537f1d8",
+    "/polyfills.7851302281856d62.js": "4c8444d209c2abce2aae2a5745b9a79a39613cbd",
+    "/runtime.9b2de8a1c329ad24.js": "3d90047f17b5157e9a4d5822fd8b0919a3bca916",
+    "/scripts.abbb37f329463b12.js": "f071c80334dd74cc1a8b8d6044d58933cf76d0af",
+    "/styles.260dd8b6d62298dd.css": "bb50fe70c6ce1dd83cf2a5d6750ed31b2344aedd"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

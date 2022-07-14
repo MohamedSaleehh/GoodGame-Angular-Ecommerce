@@ -1,7 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/interfaces/product';
 import { ApiService } from 'src/app/services/api.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -19,7 +20,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   loading: boolean = false;
   page = 1;
   pageSize =4;
-  constructor(private activatedRoute:ActivatedRoute ,private apiService:ApiService) { 
+  constructor(private activatedRoute:ActivatedRoute ,private apiService:ApiService,private _CartService:CartService) { 
   }
 
   ngOnInit(): void {
@@ -58,7 +59,9 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
       
     })
     
-
+  }
+  addtocart(product: Product) {
+    this._CartService.addProduct(product)
   }
   
   ngOnDestroy(){

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-slider',
@@ -6,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slider.component.scss'],
 })
 export class SliderComponent implements OnInit {
-  constructor() {}
+  loggedIn: boolean = false;
 
-  ngOnInit(): void {}
+  constructor(private authService:AuthService) {
+    
+}
+
+
+  ngOnInit(): void {
+    this.authService.loggedIn.subscribe(res=>{
+      this.loggedIn = res
+    })
+  }
+
 }

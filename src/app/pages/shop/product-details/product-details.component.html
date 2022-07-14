@@ -30,18 +30,21 @@
                         <div class="col-lg-12 mt-5">
                             <h6>Type : {{product.category}}</h6>
                         </div>
-                        <div class="col-lg-6 mt-3">
+                        <div class="col-lg-6 mt-3" *ngIf="product.quantity>0">
                             <h6>Quantity :</h6>
                             <input type="number" class="form-control text-center w-100 text-white" value="1" min="1">
                         </div>
-                        <div class="col-lg-6 mt-3">
+                        <div *ngIf="product.quantity<=0" class="col-lg-6 mt-3">
+                          <h6>Sold out</h6>
+                      </div>
+                        <div class="col-lg-6 mt-3" *ngIf="product.quantity>0">
                             <h6>Have A coupon?</h6>
                             <input type="text" class="form-control text-center text-white w-100">
                         </div>
                         <div class="col-lg-12 mt-5">
                             <div class="row ">
-                                <div class="col-lg-6 pb-2 mt-lg-4">
-                                    <a class="btn btn-danger w-100">Add To Cart</a>
+                                <div *ngIf="product.quantity>0" class="col-lg-6 pb-2 mt-lg-4">
+                                    <a class="btn btn-danger w-100"  (click)="addtocart(product)">Add To Cart</a>
                                 </div>
                                 <div class="col-lg-6  mt-lg-4">
                                     <a  [routerLink]="['/productlist']" class="btn btn-success w-100">Continue Shopping</a>

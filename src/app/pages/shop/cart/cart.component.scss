@@ -6,13 +6,10 @@
   color: #00ff01;
 }
 .table-slider {
-  max-height:600px;
+  max-height:500px;
   overflow-y:scroll;
 }
-.wish-slider {
-  max-height:300px;
-  overflow-y:scroll;
-}
+
 .cover{
 background-image: url('https://i.ibb.co/zV9wTWV/background-14651782-Copy.jpg');
 height: 205px;
@@ -20,4 +17,7 @@ overflow: hidden;
 }
 .cursor-pointer{
   cursor: pointer;
+}
+.fix{
+  height: 1000px;
 }
