@@ -14,6 +14,7 @@ import { ShopModule } from './pages/shop/shop.module';
 import { StaticModule } from './pages/static/static.module';
 
 import {DataViewModule} from 'primeng/dataview';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, NavBarComponent, FooterComponent, AuthComponent],
@@ -27,7 +28,8 @@ import {DataViewModule} from 'primeng/dataview';
     HomeModule,
     ShopModule,
     StaticModule,
-    DataViewModule
+    DataViewModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

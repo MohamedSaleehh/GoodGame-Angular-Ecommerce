@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
 import { ApiService } from 'src/app/services/api.service';
+import { WishListService } from './../../../services/wish-list.service';
+import { CartService } from './../../../services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -13,7 +15,25 @@ export class ProductListComponent implements OnInit {
   sub:any;
   loading: boolean = false;
 
-  constructor(private apiService:ApiService) { }
+  constructor(private apiService:ApiService ,private _wishListService:WishListService,private _CartService: CartService) {
+    this.apiService.getProducts().subscribe(res =>{
+      this.productlist =res;
+      // this._CartService.loadCart()
+    })
+    this._wishListService.getWishListArr().subscribe(data=>{
+      this.wishList = data
+  })
+  // this._CartService.getProduct().subscribe((data: any) => {
+  //   // if(data.length === 0){
+  //     console.log(typeof data)
+  //   this.productlist = data;
+  //   // }
+  //   // else {
+  //   //   this.myproducts = this._CartService.loadCart();;
+  //   // }
+  // });
+
+  }
 
   ngOnInit(): void {
 
@@ -29,7 +49,11 @@ export class ProductListComponent implements OnInit {
     },() => {
       this.loading = false;
     })
-
+    // this._CartService.loadCart();
+    // console.log(typeof
+    //   this._CartService.getProducts());
+    // // this.myproducts = JSON.parse(JSON.stringify(this._CartService.getProducts()));
+    // this.productlist = this._CartService.getProducts();
   }
 
   ngOnDestroy(){

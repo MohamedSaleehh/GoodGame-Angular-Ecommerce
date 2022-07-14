@@ -7,5 +7,6 @@ export interface Product {
     image?: string,
     quantity: number,
     release_date: Date,
-    amount?:number
+    amount?:number,
+    total?:number
 }

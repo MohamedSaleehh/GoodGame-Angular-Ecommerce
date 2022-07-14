@@ -12,7 +12,7 @@
         <div class=" row" >
             <app-product *ngFor="let product of productlist" [productData]="product"
             (messageFromChild)="actionFromParent($event)"
-            [addedTOWishList]="wishList.indexOf(product) >= 0"
+            [addedTOWishList]="wishList.indexOf(product) >=0 "
             class=" col-lg-3 col-md-4 col-xl-3 col-12 d-flex justify-content-center">
         </app-product>
 

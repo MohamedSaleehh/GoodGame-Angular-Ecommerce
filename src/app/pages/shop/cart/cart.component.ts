@@ -11,67 +11,49 @@ import { map, Subscriber, Subscription } from 'rxjs';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  // myproducts!:Array<Product>
   wishListId: Array<any> = [];
+  wishListLength! :number;
   wishListArr: Array<any> = [];
   total: number = 0;
   myproducts: Array<Product> = [];
-  sub!: Subscription
+  sub!: Subscription;
+  prod!:Product ;
 
-  // totalPrice: number = 0
-  constructor(private _CartService: CartService ,private _wishListService :WishListService,private apiService :ApiService) {
-
+  constructor(private _CartService: CartService
+    ,private _wishListService :WishListService
+    ,private apiService :ApiService) {
     this._CartService.getProduct().subscribe((data: any) => {
       this.myproducts = data;
-      
     });
-
-    // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    this.total = this._CartService.getTotalPrice(); // do not put it inside a subscribe, it causes memory overflow
-    // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   
+    this._CartService.getTotalPrice().subscribe((total)=>{
+      this.total = total
+    });
     this._wishListService.getWishListArr().subscribe(data=>{
       this.wishListArr = data
+      this._CartService.loadCart();
   })
   }
-
-
   ngOnInit(): void {
+    this._CartService.loadCart();
+    this.myproducts = this._CartService.getProducts();
   }
   delete(_id: string) {
     this._wishListService.removeFromWishList(_id).subscribe(data=>{
       this.wishListArr = data as Array<Product>
-      console.log(data);
-      
     });
+  }
+  addFromWishToCart(product: Product) {
+    this._CartService.addProduct(product)
   }
   remove(id: string) {
     this._CartService.removeProduct(id);
-    
-    
-
-    this.total = this._CartService.getTotalPrice();
+    this._CartService.loadCart()
   }
   increaseQuantity(id: string) {
-    this._CartService.products.forEach((e: any) => {
-      if (e._id == id) {
-        e.quantity++;
-      }
-    });
-    // this._counterService.setCount(this.counter + 1);
-    this.total = this._CartService.getTotalPrice();
+    this._CartService.increaseQuantity(id)
   }
   decreaseQuantity(id: string) {
-    this._CartService.products.forEach((e: any) => {
-      if (e._id == id) {
-        e.quantity--;
-        if (e.quantity == 0) {
-          this.remove(id);
-        }
-      }
-    });
-    // this._counterService.setCount(this.counter - 1);
-    this.total = this._CartService.getTotalPrice();
+    this._CartService.decreaseQuantity(id)
   }
 
 }

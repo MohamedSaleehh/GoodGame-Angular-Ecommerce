@@ -1,5 +1,4 @@
 <body class="text-light bg-dark my-5">
-
     <section class="pb-5">
         <div class="cover">
             <div class="container-fluid my-5">
@@ -48,7 +47,7 @@
                                         </div>
                                     </td>
                                     <td data-th="Price" class="green-col">
-                                        <div class="my-4">{{product.price}}LE</div>
+                                        <div  #subTotalWrap class="my-4">{{product.price}}LE</div>
                                     </td>
                                     <!-- <td data-th="Quantity">
                                         <div class="my-4">
@@ -72,7 +71,7 @@
                                         <div class="my-4">
 
                                             <button (click)="increaseQuantity(product._id)" >+</button>
-                                            <p class="green-col">{{product.quantity}}</p>
+                                            <p class="green-col">{{product.amount}}</p>
                                             <button (click)="decreaseQuantity(product._id)" >-</button>
                                         </div>
                                     </td>
@@ -124,8 +123,7 @@
                     </div>
                     <div *ngIf="myproducts.length > 0" class="d-block mx-auto float-right text-center">
                         <h5>Total:</h5>
-                        <h2>{{total}}</h2>
-
+                        <h2 >{{total}}</h2>
                     </div>
                     <div *ngIf="myproducts.length > 0" class="row mt-4 d-flex align-items-center">
                         <div class="d-block mx-auto col-sm-6 order-md-2 text-center">
@@ -138,11 +136,6 @@
                         <h1>Your Cart is Empty</h1>
                     </div>
                 </div>
-
-
-
-
-
                 <div class="col-lg-4 col-md-4 col-12 ">
                     <div class="col-lg-12 col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left d-flex justify-content-center">
                         <div class="mb-4">
@@ -183,7 +176,8 @@
                                             <i class="cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x"
                                                 style="color: #97de95;" onmouseover="this.style.color='#00ff01';"
                                                 onmouseout="this.style.color='#97de95';
-                                            "></i>
+                                            "
+                                            (click)="addFromWishToCart(wishProd)"></i>
                                         </div>
                                     </td>
                                     <td class="actions" data-th="">
@@ -196,244 +190,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <!-- <tr>
-                                    <td data-th="Product">
-                                        <div class="row">
-                                            <div class="col-md-3 text-left cursor-pointer">
-                                                <img src="https://i.ibb.co/zhy55fD/Free-Fire-pn.webp" alt=""
-                                                    class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                                            </div>
-                                            <div class="col-md-9 text-left my-1">
-                                                <p class="font-weight-light">Brand Name</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Price" class="green-col">
-                                        <div class="row my-1">
-                                            <div>$49.00</div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Quantity">
-                                        <div class="">
-                                            <i class="cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x"
-                                                style="color: #97de95;" onmouseover="this.style.color='#00ff01';"
-                                                onmouseout="this.style.color='#97de95';
-                                            "></i>
-                                        </div>
-                                    </td>
-                                    <td class="actions" data-th="">
-                                        <div class="text-right">
-                                            <i class="fas fa-trash m-1 fa-2x cursor-pointer"
-                                                style="color: rgb(168, 62, 62);" onmouseover="this.style.color='red';"
-                                                onmouseout="this.style.color='rgb(168, 62, 62)';
-                                                "></i>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td data-th="Product">
-                                        <div class="row">
-                                            <div class="col-md-3 text-left cursor-pointer">
-                                                <img src="https://i.ibb.co/zhy55fD/Free-Fire-pn.webp" alt=""
-                                                    class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                                            </div>
-                                            <div class="col-md-9 text-left my-1">
-                                                <p class="font-weight-light">Brand Name</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Price" class="green-col">
-                                        <div class="row my-1">
-                                            <div>$49.00</div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Quantity">
-                                        <div class="">
-                                            <i class="cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x"
-                                                style="color: #97de95;" onmouseover="this.style.color='#00ff01';"
-                                                onmouseout="this.style.color='#97de95';
-                                            "></i>
-                                        </div>
-                                    </td>
-                                    <td class="actions" data-th="">
-                                        <div class="text-right">
-                                            <i class="fas fa-trash m-1 fa-2x cursor-pointer"
-                                                style="color: rgb(168, 62, 62);" onmouseover="this.style.color='red';"
-                                                onmouseout="this.style.color='rgb(168, 62, 62)';
-                                                "></i>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td data-th="Product">
-                                        <div class="row">
-                                            <div class="col-md-3 text-left cursor-pointer">
-                                                <img src="https://i.ibb.co/zhy55fD/Free-Fire-pn.webp" alt=""
-                                                    class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                                            </div>
-                                            <div class="col-md-9 text-left my-1">
-                                                <p class="font-weight-light">Brand Name</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Price" class="green-col">
-                                        <div class="row my-1">
-                                            <div>$49.00</div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Quantity">
-                                        <div class="">
-                                            <i class="cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x"
-                                                style="color: #97de95;" onmouseover="this.style.color='#00ff01';"
-                                                onmouseout="this.style.color='#97de95';
-                                            "></i>
-                                        </div>
-                                    </td>
-                                    <td class="actions" data-th="">
-                                        <div class="text-right">
-                                            <i class="fas fa-trash m-1 fa-2x cursor-pointer"
-                                                style="color: rgb(168, 62, 62);" onmouseover="this.style.color='red';"
-                                                onmouseout="this.style.color='rgb(168, 62, 62)';
-                                                "></i>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td data-th="Product">
-                                        <div class="row">
-                                            <div class="col-md-3 text-left cursor-pointer">
-                                                <img src="https://i.ibb.co/zhy55fD/Free-Fire-pn.webp" alt=""
-                                                    class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                                            </div>
-                                            <div class="col-md-9 text-left my-1">
-                                                <p class="font-weight-light">Brand Name</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Price" class="green-col">
-                                        <div class="row my-1">
-                                            <div>$49.00</div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Quantity">
-                                        <div class="">
-                                            <i class="cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x"
-                                                style="color: #97de95;" onmouseover="this.style.color='#00ff01';"
-                                                onmouseout="this.style.color='#97de95';
-                                            "></i>
-                                        </div>
-                                    </td>
-                                    <td class="actions" data-th="">
-                                        <div class="text-right">
-                                            <i class="fas fa-trash m-1 fa-2x cursor-pointer"
-                                                style="color: rgb(168, 62, 62);" onmouseover="this.style.color='red';"
-                                                onmouseout="this.style.color='rgb(168, 62, 62)';
-                                                "></i>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td data-th="Product">
-                                        <div class="row">
-                                            <div class="col-md-3 text-left cursor-pointer">
-                                                <img src="https://i.ibb.co/zhy55fD/Free-Fire-pn.webp" alt=""
-                                                    class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                                            </div>
-                                            <div class="col-md-9 text-left my-1">
-                                                <p class="font-weight-light">Brand Name</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Price" class="green-col">
-                                        <div class="row my-1">
-                                            <div>$49.00</div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Quantity">
-                                        <div class="">
-                                            <i class="cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x"
-                                                style="color: #97de95;" onmouseover="this.style.color='#00ff01';"
-                                                onmouseout="this.style.color='#97de95';
-                                            "></i>
-                                        </div>
-                                    </td>
-                                    <td class="actions" data-th="">
-                                        <div class="text-right">
-                                            <i class="fas fa-trash m-1 fa-2x cursor-pointer"
-                                                style="color: rgb(168, 62, 62);" onmouseover="this.style.color='red';"
-                                                onmouseout="this.style.color='rgb(168, 62, 62)';
-                                                "></i>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td data-th="Product">
-                                        <div class="row">
-                                            <div class="col-md-3 text-left cursor-pointer">
-                                                <img src="https://i.ibb.co/zhy55fD/Free-Fire-pn.webp" alt=""
-                                                    class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                                            </div>
-                                            <div class="col-md-9 text-left my-1">
-                                                <p class="font-weight-light">Brand Name</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Price" class="green-col">
-                                        <div class="row my-1">
-                                            <div>$49.00</div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Quantity">
-                                        <div class="">
-                                            <i class="cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x"
-                                                style="color: #97de95;" onmouseover="this.style.color='#00ff01';"
-                                                onmouseout="this.style.color='#97de95';
-                                            "></i>
-                                        </div>
-                                    </td>
-                                    <td class="actions" data-th="">
-                                        <div class="text-right">
-                                            <i class="fas fa-trash m-1 fa-2x cursor-pointer"
-                                                style="color: rgb(168, 62, 62);" onmouseover="this.style.color='red';"
-                                                onmouseout="this.style.color='rgb(168, 62, 62)';
-                                                "></i>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td data-th="Product">
-                                        <div class="row">
-                                            <div class="col-md-3 text-left cursor-pointer">
-                                                <img src="https://i.ibb.co/zhy55fD/Free-Fire-pn.webp" alt=""
-                                                    class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                                            </div>
-                                            <div class="col-md-9 text-left my-1">
-                                                <p class="font-weight-light">Brand Name</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Price" class="green-col">
-                                        <div class="row my-1">
-                                            <div>$49.00</div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Quantity">
-                                        <div class="">
-                                            <i class="cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x"
-                                                style="color: #97de95;" onmouseover="this.style.color='#00ff01';"
-                                                onmouseout="this.style.color='#97de95';
-                                            "></i>
-                                        </div>
-                                    </td>
-                                    <td class="actions" data-th="">
-                                        <div class="text-right">
-                                            <i class="fas fa-trash m-1 fa-2x cursor-pointer"
-                                                style="color: rgb(168, 62, 62);" onmouseover="this.style.color='red';"
-                                                onmouseout="this.style.color='rgb(168, 62, 62)';
-                                                "></i>
-                                        </div>
-                                    </td>
-                                </tr> -->
+
 
 
                             </tbody>

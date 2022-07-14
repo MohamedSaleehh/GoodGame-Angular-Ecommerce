@@ -36,14 +36,16 @@ export class NavBarComponent implements OnInit {
     // element.classList.remove('navbar-inverse');
   }
   constructor(private _wishListService:WishListService ,private _CartService:CartService) {
-    this._wishListService.getCounter().subscribe((wishCount) => {
-      this.wishCounter = wishCount;
+    this._wishListService.getWishListArr().subscribe((data) => {
+      this.wishCounter = data.length;
     });
+  }
+
+  ngOnInit(): void {
+    // this._CartService.loadCart();
+    // this.cartCounter = this._CartService.getProducts().length;
     this._CartService.getCounter().subscribe((cartCount) =>{
       this.cartCounter = cartCount;
     })
-
-  }
-
-  ngOnInit(): void {}
+}
 }

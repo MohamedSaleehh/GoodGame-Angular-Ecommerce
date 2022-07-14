@@ -11,41 +11,35 @@ import { WishListService } from './../../../services/wish-list.service';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-
+  wishListCounter : number =0;
   @Output() messageFromChild = new EventEmitter<string>()
-  @Input('productData')productData:any;
+  @Input('productData')productData!:any;
   @Input() addedTOWishList!: boolean;
 
-  constructor(private route:Router,private apiService:ApiService,private _CartService:CartService ,private _wishListService :WishListService) { }
-
+  constructor(private route:Router,
+      private apiService:ApiService,
+      private _CartService:CartService ,
+      private _wishListService :WishListService) {
+      }
   ngOnInit(): void {
   }
-
-  navigateToDetails(){
-    this.apiService.setProductId(this.productData.id)
+  navigateToDetails():any{
+    this.apiService.setProductId(this.productData._id)
   }
-  // addtocart(product: Product) {
-  //   this._CartService.addtocart(product)
-  //   console.log(product);
-
-  // }
   addtocart(product: Product) {
     this._CartService.addProduct(product)
-
+    this._CartService.loadCart();
   }
-
-
-
-
   handleAddToWishList(): any {
-    this._wishListService.addToWishList(this.productData._id).subscribe();
-    
-    this.addedTOWishList = true;
+    this._wishListService.addToWishList(this.productData._id).subscribe(()=>{
+      this.addedTOWishList = true;
+    }
+    );
   }
-  handleRemoveToWishList() {
-    // console.log(this._wishListService.removeFromWishList(this.productData.id));
-    this._wishListService.removeFromWishList(this.productData._id).subscribe();
-    this.addedTOWishList = !this.addedTOWishList;
+  handleRemoveToWishList():any {
+    this._wishListService.removeFromWishList(this.productData._id).subscribe(()=>{
+      this.addedTOWishList = false;
+    });
   }
 
 }
