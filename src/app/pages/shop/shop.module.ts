@@ -16,9 +16,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CartComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    ProductComponent,
+    
     FreePipe,
     StockPipe,    
+    ProductComponent,
 
     
   ],
