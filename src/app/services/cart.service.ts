@@ -41,7 +41,6 @@ export class CartService {
     this.products=this.getProducts();
     this.products?.forEach((e: any) => {
       totalPrice += e.amount * e.price;
-      console.log(totalPrice);
     });
     this.total.next(totalPrice);
     this.prodBehavior.next(this.products);
@@ -110,14 +109,11 @@ export class CartService {
     this.loadCart()
     this.products=this.getProducts();
     let amount =0;
-    let counter =0;
-    console.log(this.products);
     this.prodBehavior.next(this.products);
     this.products?.forEach((e: any) => {
       amount += e.amount
     });
     this.cartCounter.next(amount);
-    console.log(amount);
     return this.cartCounter;
   }
 

@@ -21,13 +21,11 @@ export class ProductListComponent implements OnInit {
     category: string = 'all';
 
 
-  constructor(private apiService:ApiService ,private _wishListService:WishListService,private _CartService: CartService) {
+  constructor(private apiService:ApiService ,private _CartService: CartService) {
     this.apiService.getProducts().subscribe(res =>{
       this.productlist =res;
     })
-    this._wishListService.getWishListArr().subscribe(data=>{
-      this.wishList = data
-  })
+
 
 
   }

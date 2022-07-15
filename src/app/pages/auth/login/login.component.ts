@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/'])
       },
       err=>{
+        
         this.errorMessage = 'Wrong username or password'
       }
 

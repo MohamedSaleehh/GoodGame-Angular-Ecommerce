@@ -12,9 +12,10 @@
     </div>
     <ul class="ul">
       <li  (click)="addtocart(productData)" *ngIf="productData.quantity>0"><i class="bx bx-drink fas fa-shopping-cart "></i></li>
-      <li><a *ngIf="addedTOWishList" (click)="handleRemoveToWishList()"
+      <li *ngIf="loggedIn"><a *ngIf="addedTOWishList" (click)="handleRemoveToWishList()"
         ><i class="fa fa-heart"></i
       ></a>
+
       <a *ngIf="!addedTOWishList" (click)="handleAddToWishList()"
         ><i class="far fa-heart"></i
       ></a></li>
