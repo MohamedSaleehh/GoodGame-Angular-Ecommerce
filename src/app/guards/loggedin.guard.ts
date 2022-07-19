@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { firstValueFrom, Observable } from 'rxjs';
+import { CanActivate, Router} from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Injectable({
@@ -11,10 +10,7 @@ export class LoggedinGuard implements CanActivate {
 
   async canActivate(): Promise<boolean>  {
     
-    await this.authService.authenticate()
-    const isLoggedin:boolean = await firstValueFrom(this.authService.loggedIn)
-    console.log(isLoggedin);
-    
+    const isLoggedin:boolean = await this.authService.authenticate()
     if(!isLoggedin){
       return true
     }else{

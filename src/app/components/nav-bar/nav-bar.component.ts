@@ -34,17 +34,21 @@ export class NavBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._wishListService.getWishListArr().subscribe((data) => {
-      this.wishCounter = data.length;
-      console.log(data);
-      
-    });
+    
+    
     this._CartService.getCounter().subscribe((cartCount) =>{
       this.cartCounter = cartCount;
     })
     this.authService.loggedIn.subscribe(res=>{
       this.loggedIn = res
+      if(this.loggedIn){
+        // this._wishListService.getWishListArr().subscribe((data) => {
+        //   this.wishCounter = data.length;
+          
+        // });
+      }
     })
+    
   }
   logout(){
     localStorage.removeItem("token")

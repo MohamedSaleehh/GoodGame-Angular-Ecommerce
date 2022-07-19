@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
 import { ApiService } from 'src/app/services/api.service';
-import { WishListService } from './../../../services/wish-list.service';
 import { CartService } from './../../../services/cart.service';
 
 @Component({
@@ -34,7 +33,6 @@ export class ProductListComponent implements OnInit {
     this.loading = true;
     this.sub= this.apiService.getProducts().subscribe(
       (res:any)=>{
-        console.log(res );
         this.productlist=res;
         this.filteredProducts = this.productlist;
       },
