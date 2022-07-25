@@ -3,7 +3,12 @@
     <img class="w-100" src="{{ productData.image}}" alt="">
     <span class="Sold-out" *ngIf="productData.quantity<=0" >Sold-out</span>
     <span class="Free" *ngIf="productData.price<=0">Free</span>
-    <span class="Free" *ngIf="productData.price>0">{{productData.price}} E£</span>
+
+
+    <!-- <span class="Free" *ngIf="productData.price>0">{{productData.price | eURToEGP  }} </span> -->
+    <span class="Free" *ngIf="productData.price>0">{{productData.price | eURToEGP}} </span>
+
+
     <div class="con-text" [routerLink]="['/productdetails', productData._id]" >
         <h2>{{productData.name}}</h2>
         <h3>

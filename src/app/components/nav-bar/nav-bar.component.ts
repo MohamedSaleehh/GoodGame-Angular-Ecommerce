@@ -1,3 +1,4 @@
+import { CurrencyServiceService } from './../../services/currency-service.service';
 import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { WishListService } from './../../services/wish-list.service';
@@ -24,13 +25,9 @@ export class NavBarComponent implements OnInit {
   toggleRemove() {
     this.toggled = false;
   }
-  constructor(private _wishListService:WishListService ,private _CartService:CartService,private authService: AuthService) {
+  constructor(private _wishListService:WishListService ,private _CartService:CartService,private authService: AuthService,private currency:CurrencyServiceService) {
 
 
-    
-      
-   
-    
   }
 
   ngOnInit(): void {
@@ -54,6 +51,15 @@ export class NavBarComponent implements OnInit {
     localStorage.removeItem("token")
     localStorage.removeItem("user_info")
     this.authService.setLoggedIn(false)
+  }
+
+  changeCurrency(selectedCurrency :string){
+
+    this.currency.currentCurrency.next(selectedCurrency);
+
+    console.log(this.currency.currentCurrency.value);
+    
+
   }
 
 
