@@ -1,0 +1,341 @@
+<div class="cover">
+    <div class="container-fluid my-5 text-light ">
+        <h3 class="display-5 mb-2 text-center text-uppercase font-weight-bold">Payment</h3>
+        <div class="mb-5">
+            <a class="text-light " [routerLink]="['/cart']"><i class="fas fa-arrow-left mr-2 text-light"></i>
+                Back to Cart</a>
+        </div>
+    </div>
+</div>
+<div class="my-5 d-flex justify-content-center align-items-center">
+    <div class="container-fluid my-5 text-white">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="left border">
+                        <div class="d-flex justify-content-around">
+                            <span class="header">Payment</span>
+                            <div class="icons">
+                                <img src="https://img.icons8.com/color/48/000000/visa.png" />
+                                <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />
+                                <img src="https://img.icons8.com/color/48/000000/maestro.png" />
+                            </div>
+                        </div>
+                        <div class="accordion my-3" id="accordionExample">
+                            <div class="accordion-item my-3">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button bgsecondary text-left p-3 text-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                        aria-controls="collapseOne">
+
+                                        <span>Paypal</span>
+                                        <img class="icons" src="https://i.imgur.com/7kQEsHU.png" width="30">
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+
+
+                                        <div class="form-floating mb-1">
+                                            <div class="p-inputgroup">
+                                                <form [formGroup]="pay">
+                                                    <mat-form-field class="text-white w-100 mat-form-field"
+                                                        appearance="outline">
+                                                        <mat-label class="text-white  bgblack">Email</mat-label>
+                                                        <input matInput type="email" class="text-white"
+                                                            formControlName="email">
+                                                        <mat-error
+                                                            *ngIf="pay.controls['email'].touched && pay.controls['email'].invalid">
+                                                            <mat-error
+                                                                *ngIf="pay.controls['email'].errors?.['required']"
+                                                                class="p-error block">Email is
+                                                                required</mat-error>
+                                                            <mat-error *ngIf="pay.controls['email'].errors?.['pattern']"
+                                                                class="p-error block">Invalid email
+                                                            </mat-error>
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </form>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed bgsecondary text-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                        aria-controls="collapseTwo">
+                                        <span>Credit card</span>
+                                        <div class="icons">
+                                            <img src="https://i.imgur.com/2ISgYja.png" width="30">
+                                            <img src="https://i.imgur.com/W1vtnOV.png" width="30">
+                                            <img src="https://i.imgur.com/35tC99g.png" width="30">
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <!-- <form>
+                                            <span>Cardholder's name:</span>
+                                            <input class="form-control text-white bgblack border"
+                                                placeholder="Mohamed Saleh">
+                                            <span>Card Number:</span>
+                                            <input class="form-control text-white bgblack border"
+                                                placeholder="0125 6780 4567 9909">
+                                            <div class="row">
+                                                <div class="col-4"><span>Expiry date:</span>
+                                                    <input class="form-control text-white bgblack border"
+                                                        placeholder="YY/MM">
+                                                </div>
+                                                <div class="col-4"><span>CVV:</span>
+                                                    <input class="form-control text-white bgblack border" id="cvv">
+                                                </div>
+                                            </div>
+                                        </form> -->
+                                        <form [formGroup]="card">
+
+                                            <div class="form-floating mb-1">
+                                                <div class="p-inputgroup">
+                                                    <mat-form-field class="text-white w-100 mat-form-field"
+                                                        appearance="outline">
+                                                        <mat-label class="text-white">Cardholder's name</mat-label>
+                                                        <input matInput placeholder="Your Name in your Credit Card"
+                                                            type="username" class="text-white"
+                                                            formControlName="username">
+                                                        <mat-error
+                                                            *ngIf="card.controls['username'].touched && card.controls['username'].invalid">
+                                                            <mat-error
+                                                                *ngIf="card.controls['username'].errors?.['required']"
+                                                                class="p-error block">Cardholder is required</mat-error>
+                                                            <mat-error
+                                                                *ngIf="card.controls['username'].errors?.['pattern']"
+                                                                class="p-error block">Cardholder must be at least 4
+                                                                characters long, no spaces or special characters
+                                                            </mat-error>
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-floating mb-1">
+                                                <div class="p-inputgroup">
+                                                    <mat-form-field class="text-white w-100 mat-form-field"
+                                                        appearance="outline">
+                                                        <mat-label class="text-white">Card Number</mat-label>
+                                                        <input matInput placeholder="4242 4242 4242 4242"
+                                                            type="cardname" class="text-white"
+                                                            formControlName="cardname">
+                                                        <mat-error
+                                                            *ngIf="card.controls['cardname'].touched && card.controls['cardname'].invalid">
+                                                            <mat-error
+                                                                *ngIf="card.controls['cardname'].errors?.['required']"
+                                                                class="p-error block">Card Number is required
+                                                            </mat-error>
+                                                            <mat-error
+                                                                *ngIf="card.controls['cardname'].errors?.['pattern']"
+                                                                class="p-error block">Not a Valid Card</mat-error>
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="d-flex justify-content-between flex-wrap ">
+
+                                                <div class="form-floating mb-1 col-5">
+                                                    <div class="p-inputgroup">
+                                                        <mat-form-field class="text-white w-100 mat-form-field"
+                                                            appearance="outline">
+                                                            <mat-label class="text-white">First name</mat-label>
+                                                            <input matInput placeholder="Mohamed" type="text"
+                                                                class="text-white" formControlName="firstName">
+                                                            <mat-error
+                                                                *ngIf="card.controls['firstName'].touched && card.controls['firstName'].invalid">
+                                                                <mat-error
+                                                                    *ngIf="card.controls['firstName'].errors?.['required']"
+                                                                    class="p-error block">First name is required
+                                                                </mat-error>
+                                                                <mat-error
+                                                                    *ngIf="card.controls['firstName'].errors?.['pattern']"
+                                                                    class="p-error block">Invalid name</mat-error>
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Last name -->
+                                                <div class="form-floating mb-1 col-5">
+                                                    <div class="p-inputgroup">
+                                                        <mat-form-field class="text-white w-100 mat-form-field"
+                                                            appearance="outline">
+                                                            <mat-label class="text-white">Last name</mat-label>
+                                                            <input matInput placeholder="Saleh" type="text"
+                                                                class="text-white" formControlName="lastName">
+                                                            <mat-error
+                                                                *ngIf="card.controls['lastName'].touched && card.controls['lastName'].invalid">
+                                                                <mat-error
+                                                                    *ngIf="card.controls['lastName'].errors?.['required']"
+                                                                    class="p-error block">Last name is required
+                                                                </mat-error>
+                                                                <mat-error
+                                                                    *ngIf="card.controls['lastName'].errors?.['pattern']"
+                                                                    class="p-error block">Invalid name</mat-error>
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-floating mb-1">
+                                                <div class="p-inputgroup">
+                                                    <mat-form-field class="text-white w-100 mat-form-field"
+                                                        appearance="outline">
+                                                        <mat-label class="text-white">Mobile Number</mat-label>
+                                                        <input matInput placeholder="012 345 67891" type="mobile"
+                                                            class="text-white" formControlName="mobile">
+                                                        <mat-error
+                                                            *ngIf="card.controls['mobile'].touched && card.controls['mobile'].invalid">
+                                                            <mat-error
+                                                                *ngIf="card.controls['mobile'].errors?.['required']"
+                                                                class="p-error block">Mobile Number is required
+                                                            </mat-error>
+                                                            <mat-error
+                                                                *ngIf="card.controls['mobile'].errors?.['pattern']"
+                                                                class="p-error block">Not a Valid Mobile Number
+                                                            </mat-error>
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+
+
+                                            <mat-form-field class="text-white w-100 mat-form-field"
+                                                appearance="outline">
+                                                <mat-label class="text-white">Address</mat-label>
+                                                <textarea matInput placeholder="Enter your address here" type="text"
+                                                    class="text-white" formControlName="Address"> </textarea>
+                                                <mat-error
+                                                    *ngIf="card.controls['Address'].touched && card.controls['Address'].invalid">
+                                                    <mat-error *ngIf="card.controls['Address'].errors?.['required']"
+                                                        class="p-error block">Address is required</mat-error>
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <div class="d-flex justify-content-between flex-wrap ">
+
+                                                <div class="form-floating mb-1 col-5">
+                                                    <div class="p-inputgroup">
+                                                        <mat-form-field class="text-white w-100 mat-form-field"
+                                                            appearance="outline">
+                                                            <mat-label class="text-white">Country</mat-label>
+                                                            <input matInput placeholder="Egypt" type="text"
+                                                                class="text-white" formControlName="country">
+                                                            <mat-error
+                                                                *ngIf="card.controls['country'].touched && card.controls['country'].invalid">
+                                                                <mat-error
+                                                                    *ngIf="card.controls['country'].errors?.['required']"
+                                                                    class="p-error block">Country is required
+                                                                </mat-error>
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Last name -->
+                                                <div class="form-floating mb-1 col-5">
+                                                    <div class="p-inputgroup">
+                                                        <mat-form-field class="text-white w-100 mat-form-field"
+                                                            appearance="outline">
+                                                            <mat-label class="text-white">City</mat-label>
+                                                            <input matInput placeholder="Alexandria" type="text"
+                                                                class="text-white" formControlName="city">
+                                                            <mat-error
+                                                                *ngIf="card.controls['city'].touched && card.controls['city'].invalid">
+                                                                <mat-error
+                                                                    *ngIf="card.controls['city'].errors?.['required']"
+                                                                    class="p-error block">City is required
+                                                                </mat-error>
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="right border">
+                        <div class="header">Order Summary</div>
+                        <br>
+                        <div class="scroll">
+                            <div *ngFor="let product of myproducts" class="row item">
+                                <div class="col-4 align-self-center"><img class="img-fluid imgsize"
+                                        src="{{product.image}}"></div>
+                                <div class="col-4">
+                                    <div class="row text-muted">{{product.name}}</div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="row">Price: {{product.price}} LE</div>
+                                    <div class="row">Qty: {{product.amount}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row lower">
+                            <div class="col text-left">Subtotal</div>
+                            <div class="col text-right">LE {{total}}</div>
+                        </div>
+                        <div class="row lower">
+                            <div class="col text-left">Delivery</div>
+                            <div class="col text-right">Free</div>
+                        </div>
+                        <div class="row lower">
+                            <div class="col text-left"><b>Total to pay</b></div>
+                            <div class="col text-right"><b>LE {{total}}</b></div>
+                        </div>
+                        <div class="row lower mt-2">
+                            <div class="d-flex justify-content-between h-75">
+
+                                <form [formGroup]="promo">
+                                    <div class="form-floating mb-1 col-12">
+                                        <div class="p-inputgroup row">
+                                            <mat-form-field class="text-white w-75 mat-form-field col-10"
+                                                appearance="outline">
+                                                <mat-label class="text-white">Have A coupon?</mat-label>
+                                                <input matInput placeholder="sad516s" type="text" class="text-white"
+                                                    formControlName="promo">
+                                                <mat-error
+                                                    *ngIf="promo.controls['promo'].touched && promo.controls['promo'].invalid">
+                                                    <mat-error *ngIf="promo.controls['promo'].errors?.['pattern']"
+                                                        class="p-error block">Invalid coupon</mat-error>
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <button class="btn btn-primary text-white w-25 h-100 mt-3">Apply</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                        <button (click)="order()" routerLink="/" class="btn btn-primary ggbtn">Order Now</button>
+                        <p class="text-muted text-center">Complimentary Shipping & Returns</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+        </div>
+    </div>
+</div>

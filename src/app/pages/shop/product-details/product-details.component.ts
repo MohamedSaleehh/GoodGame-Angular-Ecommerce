@@ -29,9 +29,22 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     this.sub= this.apiService.getProducts().subscribe(
       (res:any)=>{
         this.productlist=res;
-        this.filteredProducts = res;
         console.log(this.productlist);
-
+        this.productId = this.activatedRoute.snapshot.paramMap.get('id');
+        // this.product = this.productlist.filter((i:any)=> i.id == this.productId)
+        this.apiService.getProductById(this.productId).subscribe(res => {
+    
+          this.product= res ;
+          console.log(this.product.category);
+          
+        this.filteredProducts =this.productlist.filter((product)=>
+          product.category.find((x)=>{
+            return x == this.product.category ;
+          }) && product._id != this.productId
+          
+          )
+          
+        })
       },
     (err:any)=>{
       console.log("erorr");
@@ -42,22 +55,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     
 
     )
-    this.productId = this.activatedRoute.snapshot.paramMap.get('id');
-    // this.product = this.productlist.filter((i:any)=> i.id == this.productId)
-    this.apiService.getProductById(this.productId).subscribe(res => {
-
-      this.product= res ;
-      console.log(this.product.category);
-      
-    this.filteredProducts =this.productlist.filter((product)=>
-      product.category.find((x)=>{
-        return x == this.product.category ;
-      }) && product._id != this.productId
-      
-      )
-      console.log("sssssss",this.filteredProducts);
-      
-    })
+    
     
   }
   addtocart(product: Product) {

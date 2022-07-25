@@ -21,7 +21,6 @@ export class ProfileComponent implements OnInit {
   );
   constructor(private fb: FormBuilder,private authService: AuthService, private router: Router) {
     this.authService.currentUser.subscribe((res:any)=>{
-      console.log(res);
       this.editForm.patchValue({firstName:res.firstName,
         lastName:res.lastName,
         email:res.email,

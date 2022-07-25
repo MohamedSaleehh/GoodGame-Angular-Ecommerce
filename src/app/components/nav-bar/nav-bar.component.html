@@ -1,22 +1,10 @@
-<nav class="navbar navbar-expand-lg fixed" (scroll)="onWindowScroll()">
+<nav class="navbar navbar-expand-lg fixed navbar-inverse" >
   <div class="container">
     <a class="Logo" [routerLink]="['/']">
-      <img src="../../../assets/imgs/Logo.svg" alt="" width="30" height="30" />
+      <img  alt="" width="30" height="30" />
     </a>
     <a class="navbar-brand" href="#">Good Game</a>
-    <a class="mx-1 ms-auto d-lg-none wish_list position-relative mt-2 mb-2" [routerLink]="['shop/cart']"
-      >
-      <i class="fa fa-heart "></i
-        >
-      <span class="position-absolute translate-middle badge wish-notif d-flex justify-content-center align-items-center"
-        >{{ wishCounter }}</span
-      ></a
-    >
-    <a class="d-lg-none cart position-relative mt-2 mb-2" [routerLink]="['shop/cart']"
-      ><i class="bx bx-drink fas fa-shopping-cart  "></i><span class="position-absolute translate-middle badge cart-notif d-flex justify-content-center align-items-center"
-        >{{cartCounter}}</span
-      ></a
-    >
+    
 
     <div
       *ngIf="!toggled"
@@ -85,17 +73,14 @@
           aria-label="Search"
         />
         <button id="search-btn" class="btn" type="submit">
-          <img
-            src="../../../assets/imgs/Search.svg"
-            alt=""
-            style="margin-left: -2px; margin-bottom: 3px"
-          />
+          <i class="fa-solid fa-magnifying-glass"></i>
         </button>
 
       </div>
     </div>
     <a
-      class="mx-1 ms-auto d-none d-lg-block wish_list mt-2 mb-2 position-relative"
+      *ngIf="loggedIn"
+      class="mx-1 ms-auto d-none d-lg-block wish_list mt-2 mb-2 position-relative" 
       [routerLink]="['shop/wishlist']"
       ><i class="fa fa-heart "></i
         ><span class="position-absolute  badge wish-notif d-flex justify-content-center align-items-center"

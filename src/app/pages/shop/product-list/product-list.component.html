@@ -27,7 +27,6 @@
             <app-product *ngFor="let product of filteredProducts | slice: (page-1) * pageSize : page * pageSize"  [productData]="product"
 
             (messageFromChild)="actionFromParent($event)"
-            [addedTOWishList]="wishList.indexOf(product) >=0 "
             class=" col-lg-3 col-md-4 col-xl-3 col-12 d-flex justify-content-center">
         </app-product>
 

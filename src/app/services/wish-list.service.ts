@@ -1,18 +1,28 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { Injectable, OnInit } from '@angular/core';
+import { BehaviorSubject, firstValueFrom, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Product } from '../interfaces/product';
 
 @Injectable({
   providedIn: 'root'
 })
-export class WishListService {
+export class WishListService{
 
-  wishList: Product[] = [];
-  wishListBehaviorSubject = new BehaviorSubject(this.wishList);
-  counter = new BehaviorSubject(this.wishList.length);
-  constructor(private http: HttpClient) {}
+  counter: number = 0
+  counterBehaviour = new BehaviorSubject(this.counter);
+  constructor(private http: HttpClient) {
+    
+  }
 
+
+  getCounter(){
+    
+    this.getWishListArr().subscribe(data=>{
+      
+      this.counterBehaviour.next(data.length)
+    })
+    
+    return this.counterBehaviour
+  }
   getWishListArr(): Observable<any> {
     return this.http.get('https://gg-store.herokuapp.com/wishlist/index');
     }
@@ -23,9 +33,7 @@ export class WishListService {
   removeFromWishList(productId: string) {
     return this.http.delete(`https://gg-store.herokuapp.com/wishlist/remove/${productId}`)
   }
-  getWishList(): Observable<Array<Product>>  {
-    return this.wishListBehaviorSubject;
-  }
+
 
 
 }

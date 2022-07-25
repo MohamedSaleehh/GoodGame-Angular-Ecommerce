@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { GuardsCheckStart, Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { AuthService } from './services/auth.service';
 
 @Component({
@@ -8,8 +10,10 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   title = 'GoodGame-Angular-Ecommerce';
-  constructor(private authService: AuthService){
-    this.authService.authenticate()
+  constructor(private authService: AuthService,private router: Router){
+    this.router.events.pipe(filter(event => event instanceof GuardsCheckStart)).subscribe(()=>{
+        this.authService.authenticate()
+    })
   }
   
 }

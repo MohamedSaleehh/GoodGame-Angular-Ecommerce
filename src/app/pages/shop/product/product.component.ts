@@ -1,8 +1,8 @@
-import {  Router } from '@angular/router';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { Product } from 'src/app/interfaces/product';
 import { WishListService } from './../../../services/wish-list.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-product',
@@ -13,7 +13,8 @@ export class ProductComponent implements OnInit {
   wishListCounter : number =0;
   @Output() messageFromChild = new EventEmitter<string>()
   @Input('productData')productData!:any;
-  @Input() addedTOWishList!: boolean;
+  addedTOWishList!: boolean;
+  loggedIn:boolean=false;
 
 
   ngOnInit(): void {
@@ -21,9 +22,13 @@ export class ProductComponent implements OnInit {
 
 
     
-  constructor(private route:Router,
+  constructor(
       private _CartService:CartService ,
-      private _wishListService :WishListService) {
+      private _wishListService :WishListService,
+      private authService:AuthService) {
+        this.authService.loggedIn.subscribe(data=>{
+          this.loggedIn = data
+        })
       }
 
 
