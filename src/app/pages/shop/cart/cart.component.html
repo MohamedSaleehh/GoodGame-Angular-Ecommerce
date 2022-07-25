@@ -46,7 +46,7 @@
                                             </div>
                                         </td>
                                         <td data-th="Price" class="green-col">
-                                            <div  #subTotalWrap class="my-4">{{product.price}}LE</div>
+                                            <div  #subTotalWrap class="my-4">{{product.price| eURToEGP}}</div>
                                         </td>
 
                                         <td data-th="Quantity">
@@ -74,7 +74,7 @@
                         </div>
                         <div *ngIf="myproducts.length > 0" class="d-block mx-auto float-right text-center">
                             <h5>Total:</h5>
-                            <h2 >{{total}}</h2>
+                            <h2 >{{total | eURToEGP}}</h2>
                         </div>
                         <div *ngIf="myproducts.length > 0" class="row mt-4 d-flex align-items-center">
                             <div class="d-block mx-auto col-sm-6 order-md-2 text-center">
