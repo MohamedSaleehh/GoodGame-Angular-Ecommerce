@@ -1,0 +1,71 @@
+.explore {
+  padding: 0 118px;
+  margin-top: 10%;
+}
+
+.explore--content {
+  position: relative;
+}
+.heading {
+  color: #f68e5f;
+  gap: 10px;
+}
+
+.heading::before,
+.heading::after {
+  content: " ";
+  width: 54px;
+  height: 2px;
+  background-color: #f68e5f;
+  display: inline-block;
+}
+
+.explore--content .text {
+  padding-top: 250px;
+  padding-bottom: 250px;
+  z-index: 2;
+  position: relative;
+}
+
+.explore--content .text .heading {
+  margin-bottom: 22px;
+}
+
+.explore--content .text .desc {
+  color: #fff;
+  font-size: 54px;
+  font-weight: 600;
+  margin-bottom: 64px;
+}
+
+.explore--content .custom-btn {
+  background: linear-gradient(267.28deg, #00ff01 24%, #6fda6f 73.95%);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.explore .explore-bg {
+  right: 0;
+  top: 0;
+  z-index: 1;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+  .explore {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 0 5%;
+  }
+  .explore .explore-bg {
+    height: auto;
+  }
+  .explore .explore--content .text {
+    padding-bottom: 50px;
+  }
+  .explore .explore--content .text .desc {
+    font-size: 40px;
+  }
+}

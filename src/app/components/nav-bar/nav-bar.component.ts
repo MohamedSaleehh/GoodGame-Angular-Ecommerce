@@ -12,10 +12,17 @@ import { AuthService } from 'src/app/services/auth.service';
 export class NavBarComponent implements OnInit {
   toggled: boolean = false;
   wishCounter: number = 0;
-  cartCounter:number =0;
+  cartCounter: number = 0;
   loggedIn: boolean = false;
   @HostListener('window:scroll', ['$event'])
-
+  onWindowScroll() {
+    let element = document.querySelector('.navbar') as HTMLElement;
+    if (window.pageYOffset > 50) {
+      element.classList.add('navbar-inverse');
+    } else {
+      element.classList.remove('navbar-inverse');
+    }
+  }
   toggleAdd() {
     let element = document.querySelector('.navbar') as HTMLElement;
     this.toggled = true;
@@ -24,37 +31,28 @@ export class NavBarComponent implements OnInit {
   toggleRemove() {
     this.toggled = false;
   }
-  constructor(private _wishListService:WishListService ,private _CartService:CartService,private authService: AuthService) {
-
-
-    
-      
-   
-    
-  }
+  constructor(
+    private _wishListService: WishListService,
+    private _CartService: CartService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
-    
-    
-    this._CartService.getCounter().subscribe((cartCount) =>{
+    this._CartService.getCounter().subscribe((cartCount) => {
       this.cartCounter = cartCount;
-    })
-    this.authService.loggedIn.subscribe(res=>{
-      this.loggedIn = res
-      if(this.loggedIn){
+    });
+    this.authService.loggedIn.subscribe((res) => {
+      this.loggedIn = res;
+      if (this.loggedIn) {
         // this._wishListService.getWishListArr().subscribe((data) => {
         //   this.wishCounter = data.length;
-          
         // });
       }
-    })
-    
+    });
   }
-  logout(){
-    localStorage.removeItem("token")
-    localStorage.removeItem("user_info")
-    this.authService.setLoggedIn(false)
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user_info');
+    this.authService.setLoggedIn(false);
   }
-
-
 }
