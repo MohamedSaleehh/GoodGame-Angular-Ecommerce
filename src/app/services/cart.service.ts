@@ -20,11 +20,19 @@ export class CartService {
     let flag: boolean = false;
     this.products.forEach((e: any) => {
       if (e._id == prod._id) {
-        e.amount++;
+        if(e.amount<e.quantity){
+          e.amount++;
         flag = true;
         this.saveCart();
         this.prodBehavior.next(this.products);
         this.getCounter()
+        }else{
+          e.amount;
+        flag = true;
+        this.saveCart();
+        this.prodBehavior.next(this.products);
+        this.getCounter()
+        }
       }
     });
     if (!this.products.length || !flag) {
@@ -82,13 +90,23 @@ export class CartService {
     this.products=this.getProducts()
     this.products?.forEach((e: any) => {
       if (e._id == id) {
-        e.amount++;
+        if(e.amount<e.quantity){
+          e.amount++;
+        this.saveCart();
+        this.prodBehavior.next(this.products);
+        this.getCounter()
+        }else{
+          e.amount;
+        this.saveCart();
+        this.prodBehavior.next(this.products);
+        this.getCounter()
+        }
       }
       this.prodBehavior.next(this.products);
     });
       this.getTotalPrice();
-      this.saveCart()
-      this.getCounter()
+      // this.saveCart()
+      // this.getCounter()
   }
   decreaseQuantity(id: string) {
     this.products=this.getProducts()

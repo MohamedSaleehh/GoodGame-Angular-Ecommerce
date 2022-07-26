@@ -15,5 +15,5 @@ export class AppComponent {
         this.authService.authenticate()
     })
   }
-  
+
 }

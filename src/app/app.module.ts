@@ -18,9 +18,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+// import { SearchFilterPipe } from './pipes/search-filter.pipe';
+
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, FooterComponent],
+  declarations: [AppComponent, NavBarComponent, FooterComponent,
+    // SearchFilterPipe
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,6 +40,8 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     NgbModule,
     CommonModule,
+    AutocompleteLibModule,
+    Ng2SearchPipeModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
@@ -43,7 +51,7 @@ import { environment } from '../environments/environment';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
-    
+
   ],
   bootstrap: [AppComponent],
 })

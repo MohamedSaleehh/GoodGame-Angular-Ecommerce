@@ -8,9 +8,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductComponent } from './product/product.component';
 import { FreePipe } from 'src/app/pipes/free.pipe';
 import { StockPipe } from 'src/app/pipes/stock.pipe';
-import {MatTabsModule} from '@angular/material/tabs'; 
-import {MatPaginatorModule} from '@angular/material/paginator'; 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -21,21 +20,27 @@ import { MatInputModule } from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker'; 
 import { SafePipe } from 'src/app/pipes/safe.pipe';
 import { EURToEGPPipe } from 'src/app/pipes/eurto-egp.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule} from '@angular/forms';
+import { SearchFilterPipe } from '../../pipes/search-filter.pipe';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 @NgModule({
   declarations: [
     CartComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    
     FreePipe,
-    StockPipe,    
+    StockPipe,
     ProductComponent,
     WishListComponent,
     PaymentComponent,
     SafePipe,
-    EURToEGPPipe
+    EURToEGPPipe,
 
     
+    SearchFilterPipe
   ],
   imports: [
     CommonModule,
@@ -48,7 +53,10 @@ import { EURToEGPPipe } from 'src/app/pipes/eurto-egp.pipe';
     MatSlideToggleModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    NgbModule,
+    FormsModule,
+    MatSnackBarModule
   ]
 })
 export class ShopModule { }

@@ -23,9 +23,8 @@
 <div class="container my-5" >
     <ng-container *ngIf="!loading" >
         <div class=" row"  >
-            
-            <app-product *ngFor="let product of filteredProducts | slice: (page-1) * pageSize : page * pageSize"  [productData]="product"
-
+            <!-- <input  [(ngModel)]="terms" name="terms"/> -->
+            <app-product *ngFor="let product of filteredProducts | searchFilter :terms| slice: (page-1) * pageSize : page * pageSize"  [productData]="product"
             (messageFromChild)="actionFromParent($event)"
             class=" col-lg-3 col-md-4 col-xl-3 col-12 d-flex justify-content-center">
         </app-product>
@@ -37,7 +36,7 @@
 </div>
 
 <ngb-pagination  class="d-flex justify-content-center"
-[collectionSize]="(productlist.length)"
-  [(page)]="page" 
+  [collectionSize]="(productlist.length)"
+  [(page)]="page"
   [pageSize]="pageSize" >
 </ngb-pagination>

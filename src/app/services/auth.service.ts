@@ -37,7 +37,7 @@ export class AuthService {
       console.log(res);
       this.setLoggedIn(true)
       return true
-      
+
     }catch(error){
       localStorage.removeItem('token')
       localStorage.removeItem('user_info')
