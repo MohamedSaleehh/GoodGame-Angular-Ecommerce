@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker'; 
 import { SafePipe } from 'src/app/pipes/safe.pipe';
+import { EURToEGPPipe } from 'src/app/pipes/eurto-egp.pipe';
 @NgModule({
   declarations: [
     CartComponent,
@@ -31,7 +32,8 @@ import { SafePipe } from 'src/app/pipes/safe.pipe';
     ProductComponent,
     WishListComponent,
     PaymentComponent,
-    SafePipe
+    SafePipe,
+    EURToEGPPipe
 
     
   ],

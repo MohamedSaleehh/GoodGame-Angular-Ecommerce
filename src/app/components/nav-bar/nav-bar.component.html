@@ -13,6 +13,23 @@
         class="bx bx-drink fas fa-shopping-cart  "></i><span
         class="position-absolute translate-middle badge cart-notif-m d-flex justify-content-center align-items-center">{{cartCounter}}</span></a>
     
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Currency
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li (click)="changeCurrency('euro')" class="dropdown-item">EURO</li>
+            <li (click)="changeCurrency('egypt')" class="dropdown-item">EGYPT POUND</li>
+            <li (click)="changeCurrency('dollar')" class="dropdown-item">Dollar</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
     <div *ngIf="!toggled" class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
