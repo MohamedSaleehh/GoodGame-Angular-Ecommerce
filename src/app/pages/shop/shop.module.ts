@@ -26,6 +26,7 @@ import { SearchFilterPipe } from '../../pipes/search-filter.pipe';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
+import { ComponentsModule } from 'src/app/components/components.module';
 @NgModule({
   declarations: [
     CartComponent,
@@ -56,7 +57,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatDatepickerModule,
     NgbModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ComponentsModule
   ]
 })
 export class ShopModule { }

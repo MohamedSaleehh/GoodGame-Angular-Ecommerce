@@ -13,7 +13,7 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $GoodGame-Angular-Ecommerce-primary: mat.define-palette(mat.$light-green-palette,A400);
-$GoodGame-Angular-Ecommerce-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$GoodGame-Angular-Ecommerce-accent: mat.define-palette(mat.$grey-palette,900);
 
 // The warn palette is optional (defaults to red).
 $GoodGame-Angular-Ecommerce-warn: mat.define-palette(mat.$red-palette);
@@ -34,7 +34,7 @@ $GoodGame-Angular-Ecommerce-theme: mat.define-light-theme((
 @include mat.all-component-themes($GoodGame-Angular-Ecommerce-theme);
 
 $primary: #76FF03;
-$body-bg: #1a1a1a;
+$body-bg: #212121;
 dy {
   background-color: #212529;
 }
