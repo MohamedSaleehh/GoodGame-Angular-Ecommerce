@@ -14,11 +14,6 @@ export class WishListComponent implements OnInit {
   wishListArr: Array<any> = [];
 
   constructor(private _CartService: CartService ,private _wishListService :WishListService,) {
-
-
-
-
-
     this._wishListService.getWishListArr().subscribe(data=>{
       this.wishListArr = data
       this._CartService.loadCart();

@@ -6,20 +6,21 @@ import { AuthService } from './services/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  template: `app-product-list [term]="term"> </app-product-list>`,
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'GoodGame-Angular-Ecommerce';
-  isLogged: boolean = false;
+  term(event: any) {
+    console.log(event);
+  }
   constructor(private authService: AuthService,private router: Router){
-    this.authService.loggedIn.subscribe(data=>{
-      this.isLogged = data;
-    })
+
     this.router.events.pipe(filter(event => event instanceof GuardsCheckStart)).subscribe(()=>{
-      if(this.isLogged){
+
         this.authService.authenticate()
-      }
+
     })
   }
-  
+
 }

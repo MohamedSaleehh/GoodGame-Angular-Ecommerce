@@ -13,8 +13,8 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   login(username:string, password:string){
-    // return this.http.post("https://gg-store.herokuapp.com/users/login",{username:username,password:password})
-    return this.http.post("http://localhost:3000/users/login",{username:username,password:password})
+    return this.http.post("https://gg-store.herokuapp.com/users/login",{username:username,password:password})
+    // return this.http.post("http://localhost:3000/users/login",{username:username,password:password})
   }
 
   register(firstname:string, lastname:string,username:string,email:string, password:string ){
@@ -37,7 +37,7 @@ export class AuthService {
       console.log(res);
       this.setLoggedIn(true)
       return true
-      
+
     }catch(error){
       localStorage.removeItem('token')
       localStorage.removeItem('user_info')

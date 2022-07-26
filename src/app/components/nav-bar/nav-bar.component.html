@@ -4,8 +4,6 @@
       <img  alt="" width="30" height="30" />
     </a>
     <a class="navbar-brand" href="#">Good Game</a>
-    
-
     <div
       *ngIf="!toggled"
       class="navbar-toggler ms-3"
@@ -43,7 +41,6 @@
             >Home</a
           >
         </li>
-
         <li class="nav-item">
           <a
             class="nav-link"
@@ -59,32 +56,43 @@
           <a *ngIf="loggedIn" (click)="logout()" class="nav-link d-none-xl" [routerLink]="['/']" [routerLinkActive]="'active'"
             >Logout<i class="fa-regular fa-user ms-1"></i
           ></a>
-          
         </li>
         <li><a *ngIf="loggedIn"  class="nav-link d-none-xl" [routerLink]="['/auth/profile']" [routerLinkActive]="'active'"
           >Edit profile<i class="fa-regular fa-user ms-1"></i
         ></a></li>
       </ul>
-      <div class="search-container mx-lg-3 ms-auto me-auto">
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Search..."
-          aria-label="Search"
-        />
-        <button id="search-btn" class="btn" type="submit">
+      <div class="search-container mx-lg-3 ms-auto me-auto ">
+          <form class="position-relative" (submit)="search()" [formGroup]="searchForm">
+            <input #myname [(ngModel)]="terms"
+            formControlName="name"
+            name="terms" class="w-100 bg-black form-control text-light" placeholder="Search..."/>
+            <button id="search-btn" class="btn position-absolute" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
+          </form>
+          <div class="position-absolute box-search  text-light" *ngIf="myname.value != ''">
+            <div  *ngFor="let item of data |filter : terms ">
+                <div  class="row my-2">
+                  <div class="col-4">
+                    <a [routerLink]="['/productdetails', item._id]"><img src="{{item.image}}" class="w-100"/></a>
+                  </div>
+                  <div class="col-8">
+                    <p>{{item.name}}</p>
+                  </div>
+                </div>
+                <hr style="background-color: aliceblue;"/>
+            </div>
 
+          </div>
       </div>
     </div>
     <a
       *ngIf="loggedIn"
-      class="mx-1 ms-auto d-none d-lg-block wish_list mt-2 mb-2 position-relative" 
+      class="mx-1 ms-auto d-none d-lg-block wish_list mt-2 mb-2 position-relative"
       [routerLink]="['shop/wishlist']"
       ><i class="fa fa-heart "></i
         ><span class="position-absolute  badge wish-notif d-flex justify-content-center align-items-center"
-        >{{ wishCounter }}</span
+        >{{ wishCounter  }}</span
       ></a
     >
     <a class="d-none d-lg-block cart mt-2 mb-2 position-relative" [routerLink]="['shop/cart']"
@@ -94,6 +102,5 @@
         {{cartCounter}}</span
       ></a
     >
-
   </div>
 </nav>

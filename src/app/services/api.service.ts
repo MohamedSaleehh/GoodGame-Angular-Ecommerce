@@ -6,6 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
+  term:any;
   constructor(private httpClient :HttpClient) { }
 
   getProducts() : Observable<any>{
