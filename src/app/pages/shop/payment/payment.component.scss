@@ -70,6 +70,18 @@ form {
     color: white;
     // opacity: 1!important;
 }
+::ng-deep .mat-datepicker-appearance-outline .mat-datepicker-outline {
+    color: white;
+    // opacity: 1!important;
+}
+.example-month-picker .mat-calendar-period-button {
+    pointer-events: none;
+    background-color: black;
+  }
+  
+  .example-month-picker .mat-calendar-arrow {
+    display: none;
+  }
 
 .inputgg {
     border: 1px solid rgba(0, 0, 0, 0.137);
@@ -166,7 +178,7 @@ input[type=checkbox] {
 }
 
 .scroll {
-    max-height: 400px;
+    max-height: 510px;
     overflow-y: scroll;
 }
 

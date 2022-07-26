@@ -20,6 +20,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   loading: boolean = false;
   page = 1;
   pageSize =4;
+  clicked: boolean = false;
   constructor(private activatedRoute:ActivatedRoute ,private apiService:ApiService,private _CartService:CartService) { 
   }
 
@@ -35,7 +36,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
         this.apiService.getProductById(this.productId).subscribe(res => {
     
           this.product= res ;
-          console.log(this.product.category);
+          console.log(this.product);
           
         this.filteredProducts =this.productlist.filter((product)=>
           product.category.find((x)=>{

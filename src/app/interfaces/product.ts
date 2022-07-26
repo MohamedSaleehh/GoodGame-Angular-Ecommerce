@@ -8,5 +8,6 @@ export interface Product {
     quantity: number,
     release_date: Date,
     amount?:number,
-    total?:number
+    total?:number,
+    videoLink?:string
 }

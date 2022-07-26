@@ -18,6 +18,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import { SafePipe } from 'src/app/pipes/safe.pipe';
 @NgModule({
   declarations: [
     CartComponent,
@@ -28,7 +30,8 @@ import { MatInputModule } from '@angular/material/input';
     StockPipe,    
     ProductComponent,
     WishListComponent,
-    PaymentComponent
+    PaymentComponent,
+    SafePipe
 
     
   ],
@@ -43,6 +46,7 @@ import { MatInputModule } from '@angular/material/input';
     MatSlideToggleModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDatepickerModule
   ]
 })
 export class ShopModule { }
