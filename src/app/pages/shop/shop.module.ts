@@ -11,7 +11,6 @@ import { StockPipe } from 'src/app/pipes/stock.pipe';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { WishListComponent } from './wish-list/wish-list.component';
-import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule} from '@angular/forms';
 import { SearchFilterPipe } from '../../pipes/search-filter.pipe';
@@ -35,7 +34,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatTabsModule,
     MatPaginatorModule,
     NgbModule,
-    Ng2SearchPipeModule,
     NgbModule,
     FormsModule,
     MatSnackBarModule
