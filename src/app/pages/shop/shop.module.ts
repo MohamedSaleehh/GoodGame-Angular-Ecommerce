@@ -12,6 +12,14 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatPaginatorModule} from '@angular/material/paginator'; 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WishListComponent } from './wish-list/wish-list.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import { SafePipe } from 'src/app/pipes/safe.pipe';
 @NgModule({
   declarations: [
     CartComponent,
@@ -21,7 +29,9 @@ import { WishListComponent } from './wish-list/wish-list.component';
     FreePipe,
     StockPipe,    
     ProductComponent,
-    WishListComponent
+    WishListComponent,
+    PaymentComponent,
+    SafePipe
 
     
   ],
@@ -30,7 +40,13 @@ import { WishListComponent } from './wish-list/wish-list.component';
     ShopRoutingModule,
     MatTabsModule,
     MatPaginatorModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule
   ]
 })
 export class ShopModule { }

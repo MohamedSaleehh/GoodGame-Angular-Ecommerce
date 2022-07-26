@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg fixed" (scroll)="onWindowScroll()">
+<nav class="navbar navbar-expand-lg fixed navbar-inverse" >
   <div class="container">
     <a class="Logo" [routerLink]="['/']">
-      <img src="../../../assets/imgs/Logo.svg" alt="" width="30" height="30" />
+      <img  alt="" width="30" height="30" />
     </a>
     <a class="navbar-brand" href="#">Good Game</a>
     <a class="mx-1 ms-auto d-lg-none wish_list position-relative mt-2 mb-2" [routerLink]="['shop/cart']">
@@ -12,6 +12,7 @@
     <a class="d-lg-none cart position-relative mt-2 mb-2" [routerLink]="['shop/cart']"><i
         class="bx bx-drink fas fa-shopping-cart  "></i><span
         class="position-absolute translate-middle badge cart-notif-m d-flex justify-content-center align-items-center">{{cartCounter}}</span></a>
+    
 
     <div *ngIf="!toggled" class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -56,11 +57,17 @@
 
       </div>
     </div>
-    <a *ngIf="loggedIn" class="mx-1 ms-auto d-none d-lg-block wish_list mt-2 mb-2 position-relative"
-      [routerLink]="['shop/wishlist']"><i class="fa fa-heart "></i><span
-        class="position-absolute  badge wish-notif d-flex justify-content-center align-items-center">{{ wishCounter
-        }}</span></a>
-    <a class="d-none d-lg-block cart mt-2 mb-2 position-relative" [routerLink]="['shop/cart']">
+    <a
+      *ngIf="loggedIn"
+      class="mx-1 ms-auto d-none d-lg-block wish_list mt-2 mb-2 position-relative" 
+      [routerLink]="['shop/wishlist']"
+      ><i class="fa fa-heart "></i
+        ><span class="position-absolute  badge wish-notif d-flex justify-content-center align-items-center"
+        >{{ wishCounter }}</span
+      ></a
+    >
+    <a class="d-none d-lg-block cart mt-2 mb-2 position-relative" [routerLink]="['shop/cart']"
+      >
       <i class="bx bx-drink fas fa-shopping-cart  "></i>
       <span class="position-absolute d-flex justify-content-center align-items-center  badge cart-notif">
         {{cartCounter}}</span></a>

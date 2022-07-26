@@ -10,6 +10,7 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   title = 'GoodGame-Angular-Ecommerce';
+<<<<<<< HEAD
   isLogged: boolean = false;
   constructor(private authService: AuthService,private router: Router){
     this.authService.loggedIn.subscribe(data=>{
@@ -19,6 +20,11 @@ export class AppComponent {
       if(this.isLogged){
         this.authService.authenticate()
       }
+=======
+  constructor(private authService: AuthService,private router: Router){
+    this.router.events.pipe(filter(event => event instanceof GuardsCheckStart)).subscribe(()=>{
+        this.authService.authenticate()
+>>>>>>> Payment
     })
   }
   

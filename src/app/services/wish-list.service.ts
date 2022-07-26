@@ -14,15 +14,7 @@ export class WishListService{
   }
 
 
-  getCounter(){
-    
-    this.getWishListArr().subscribe(data=>{
-      
-      this.counterBehaviour.next(data.length)
-    })
-    
-    return this.counterBehaviour
-  }
+
   getWishListArr(): Observable<any> {
     return this.http.get('https://gg-store.herokuapp.com/wishlist/index');
     }

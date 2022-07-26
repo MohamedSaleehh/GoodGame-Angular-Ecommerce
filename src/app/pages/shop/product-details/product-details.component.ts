@@ -20,6 +20,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   loading: boolean = false;
   page = 1;
   pageSize =4;
+  clicked: boolean = false;
   constructor(private activatedRoute:ActivatedRoute ,private apiService:ApiService,private _CartService:CartService) { 
   }
 

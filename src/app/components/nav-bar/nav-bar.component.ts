@@ -15,14 +15,7 @@ export class NavBarComponent implements OnInit {
   cartCounter: number = 0;
   loggedIn: boolean = false;
   @HostListener('window:scroll', ['$event'])
-  onWindowScroll() {
-    let element = document.querySelector('.navbar') as HTMLElement;
-    if (window.pageYOffset > 50) {
-      element.classList.add('navbar-inverse');
-    } else {
-      element.classList.remove('navbar-inverse');
-    }
-  }
+
   toggleAdd() {
     let element = document.querySelector('.navbar') as HTMLElement;
     this.toggled = true;
