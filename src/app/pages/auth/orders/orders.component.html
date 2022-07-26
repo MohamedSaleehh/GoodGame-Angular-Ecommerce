@@ -1,0 +1,55 @@
+<div class="container my-5 py-5">
+	<table mat-table [dataSource]="ordersList" class="mat-elevation-z8 bg-body ">
+
+		<!--- Note that these columns can be defined in any order.
+					The actual rendered columns are set as a property on the row definition" -->
+	
+		<!-- ORDER Column -->
+		<ng-container matColumnDef="ORDER" >
+			<th mat-header-cell *matHeaderCellDef > ORDER </th>
+			<td mat-cell *matCellDef="let element"> #{{element._id | slice:0:6}} </td>
+		</ng-container>
+	
+		<!-- PRODUCT Column -->
+		<ng-container matColumnDef="PRODUCTS">
+			<th mat-header-cell *matHeaderCellDef> PRODUCTS </th>
+			<td mat-cell *matCellDef="let element">
+				<div *ngFor="let product of $any(element.products | slice:0:2)">
+					
+					
+
+					{{product.product.name}} x{{product.amount }}
+				</div>
+			</td>
+		</ng-container>
+	
+		<!-- DATE Column -->
+		<ng-container matColumnDef="DATE">
+			<th mat-header-cell *matHeaderCellDef> DATE </th>
+			<td mat-cell *matCellDef="let element"> {{element.createdAt | date}} </td>
+		</ng-container>
+	
+		<!-- STATUS Column -->
+		<ng-container matColumnDef="STATUS">
+			<th mat-header-cell *matHeaderCellDef> STATUS </th>
+			<td mat-cell *matCellDef="let element" ><div *ngIf="element.status">Complete </div> <div *ngIf="!element.status">Pending </div></td>
+		</ng-container>
+
+		<!-- TOTAL Column -->
+		<ng-container matColumnDef="TOTAL">
+			<th mat-header-cell *matHeaderCellDef> TOTAL </th>
+			<td mat-cell *matCellDef="let element"> {{element.total_price}} </td>
+		</ng-container>
+
+		<!-- ACTIONS Column -->
+		<ng-container matColumnDef="ACTIONS">
+			<th mat-header-cell *matHeaderCellDef> ACTIONS </th>
+			<td mat-cell *matCellDef="let element"> <button mat-raised-button (click)="details(element)" color="primary" label="Log in" class="text-uppercase h-100 fw-bold mb-2" type="submit">View</button> </td>
+		</ng-container>
+	
+		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+	</table>
+	
+	
+</div>

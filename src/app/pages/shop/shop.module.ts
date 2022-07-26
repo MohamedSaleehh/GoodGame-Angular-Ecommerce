@@ -12,6 +12,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatPaginatorModule} from '@angular/material/paginator'; 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WishListComponent } from './wish-list/wish-list.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 @NgModule({
   declarations: [
     CartComponent,
@@ -30,7 +31,8 @@ import { WishListComponent } from './wish-list/wish-list.component';
     ShopRoutingModule,
     MatTabsModule,
     MatPaginatorModule,
-    NgbModule
+    NgbModule,
+    ComponentsModule
   ]
 })
 export class ShopModule { }

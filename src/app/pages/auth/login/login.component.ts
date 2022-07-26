@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder,  Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 @Component({
@@ -21,6 +20,7 @@ export class LoginComponent implements OnInit {
       ],
     ],
     password: ['', [Validators.required]],
+    remember:[false]
   });
   constructor(private fb: FormBuilder, private authService: AuthService, private router:Router) {
 
@@ -28,7 +28,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
   authenticate(){
-    this.authService.login(this.login.controls.username.value as string,this.login.controls.password.value as string).subscribe(
+    this.errorMessage = ""
+    this.authService.login(this.login.controls.username.value as string,this.login.controls.password.value as string, this.login.controls.remember.value as boolean).subscribe(
       res=>{
         localStorage.setItem("token",(res as any).token)
         localStorage.setItem("user_info",JSON.stringify((res as any).user_info))

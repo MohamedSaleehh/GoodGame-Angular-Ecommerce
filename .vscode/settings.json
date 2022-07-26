@@ -1,4 +1,7 @@
 {
+    "html.format.wrapAttributes": "auto",
+    "html.format.wrapLineLength": 0,
+    "prettier.printWidth": 300,
     "css.styleSheets": [
         "https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css",
     ]

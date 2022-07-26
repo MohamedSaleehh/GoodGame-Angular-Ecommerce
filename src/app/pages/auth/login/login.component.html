@@ -1,11 +1,4 @@
-<div class="cover mt-5 ">
-  <div class="container-fluid my-5 text-light">
-      <h3 class="display-5 mb-2 text-center text-uppercase font-weight-bold">LOGIN</h3>
-      <div class="mb-5">
-          <a class="text-light " [routerLink]="['/']"><i class="fas fa-arrow-left mr-2 text-light"></i> Home Page</a>
-      </div>
-  </div>
-</div>
+<app-header title="Login"></app-header>
 
 <div class="container-fluid ps-md-0">
   <div class="row g-0">
@@ -60,8 +53,8 @@
                 
 
                 <div class="mb-3 d-flex align-items-center">
-									<mat-slide-toggle color="primary" class="me-3 d-flex align-items-center "></mat-slide-toggle>
-                  <label class="form-check-label text-white " for="rememberPasswordCheck">
+									<mat-slide-toggle color="primary" formControlName="remember" class="me-3 d-flex align-items-center "></mat-slide-toggle>
+                  <label class="form-check-label text-white"  for="rememberPasswordCheck">
                     Remember me
                   </label>
                 </div>

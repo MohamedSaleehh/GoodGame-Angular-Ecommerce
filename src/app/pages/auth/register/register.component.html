@@ -1,12 +1,5 @@
 
-<div class="cover mt-5 ">
-  <div class="container-fluid my-5 text-light ">
-      <h3 class="display-5 mb-2 text-center text-uppercase font-weight-bold">REGISTER</h3>
-      <div class="mb-5">
-          <a class="text-light " [routerLink]="['/']"><i class="fas fa-arrow-left mr-2 text-light"></i> Home Page</a>
-      </div>
-  </div>
-</div>
+<app-header title="Register"></app-header>
 
 <div class="container-fluid ps-md-0">
   <div class="row g-0">
@@ -106,6 +99,7 @@
                       <input matInput type="password"  class="w-100" formControlName="confirmPassword">  
                       <mat-error  *ngIf="register.controls['confirmPassword'].touched && register.controls['confirmPassword'].invalid">
                         <mat-error *ngIf="register.controls['confirmPassword'].errors?.['confirmedValidator']" class="p-error block">Password Does not match</mat-error>
+                        <mat-error *ngIf="register.controls['confirmPassword'].errors?.['required']" class="p-error block">Password confirmation is required</mat-error>
                       </mat-error>  
                     </mat-form-field>
 									</div>

@@ -8,13 +8,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { OrdersComponent } from './orders/orders.component';
 
 //material modules
 import {MatButtonModule} from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-
+import {MatTableModule} from '@angular/material/table';
+import { OrderComponent } from './order/order.component';
+import { AccountComponent } from './account/account.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 
 
@@ -22,7 +27,10 @@ import {MatInputModule} from '@angular/material/input';
   declarations: [
     RegisterComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    OrdersComponent,
+    OrderComponent,
+    AccountComponent
   ],
   imports: [
     CommonModule,
@@ -32,6 +40,9 @@ import {MatInputModule} from '@angular/material/input';
     MatSlideToggleModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
+    MatTabsModule,
+    ComponentsModule
     
   ]
 })
