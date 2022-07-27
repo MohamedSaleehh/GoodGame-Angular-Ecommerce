@@ -20,7 +20,6 @@ export class NavBarComponent implements OnInit {
   cartCounter: number = 0;
   loggedIn: boolean = false;
   myproducts: Array<Product> = [];
-  @HostListener('window:scroll', ['$event'])
   keyword = 'name';
   terms:any;
   public searchFilter: any = '';

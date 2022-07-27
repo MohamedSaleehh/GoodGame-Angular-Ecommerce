@@ -11,6 +11,8 @@ import {MatDatepicker} from '@angular/material/datepicker';
 import * as _moment from 'moment';
 // tslint:disable-next-line:no-duplicate-imports
 import {default as _rollupMoment, Moment} from 'moment';
+import { Router } from '@angular/router';
+import { Order } from 'src/app/interfaces/order';
 
 const moment = _rollupMoment || _moment;
 export const MY_FORMATS = {
@@ -73,7 +75,7 @@ export class PaymentComponent implements OnInit {
   myproducts: Array<Product> = [];
   arrproducts: any = []
   url = 'https://gg-store.herokuapp.com/orders/create'
-  constructor(private _CartService: CartService, private fb: FormBuilder, private _HttpClient: HttpClient) {
+  constructor(private _CartService: CartService, private fb: FormBuilder, private _HttpClient: HttpClient, private router:Router) {
 
 
     this._CartService.getProduct().subscribe((data: any) => {
@@ -92,16 +94,18 @@ export class PaymentComponent implements OnInit {
     this.myproducts = this._CartService.getProducts();
   }
   order() {
-    this._HttpClient.post(this.url, { products: this.arrproducts, total_price: this.total }).subscribe()
-    localStorage.removeItem('cart_items')
+    if(this.arrproducts.length){
+      this._HttpClient.post(this.url, { products: this.arrproducts, total_price: this.total }).subscribe((order:any)=>{
+        localStorage.removeItem('cart_items')
+        console.log(order._id);
+        
+        this.router.navigate([`/auth/orders/${order._id}`]);
+      })
+    }
+    
+    
 
   }
-  realodPage() {
-    // setTimeout(()=>{
-    //   window.location.reload();
-    // }, 100);
- }
- // date = new FormControl(moment());
   date = new FormControl();
   setMonthAndYear(normalizedMonthAndYear: Moment, datepicker: MatDatepicker<Moment>) {
     const ctrlValue = this.date.value!;
