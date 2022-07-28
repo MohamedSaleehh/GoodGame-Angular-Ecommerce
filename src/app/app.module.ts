@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,12 +20,11 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-// import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { ChatbotComponent } from './components/chatbot/chatbot.component';
 
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, FooterComponent,
-    // SearchFilterPipe
+  declarations: [AppComponent, NavBarComponent, FooterComponent,ChatbotComponent
   ],
   imports: [
     BrowserModule,
@@ -54,5 +53,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
   ],
   bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}
