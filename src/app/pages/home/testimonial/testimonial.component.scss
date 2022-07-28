@@ -31,6 +31,7 @@
   background: #292945;
   border-radius: 14px;
   position: relative;
+  z-index: 1;
 }
 
 .testimonial .list-testimonials .list-item .testi-content {
@@ -51,6 +52,7 @@
   font-weight: 300;
   margin-bottom: 22px;
   width: 100%;
+  z-index: 1;
 }
 
 .testimonial .list-testimonials .list-item .testi-content .name {
@@ -70,6 +72,7 @@
   position: absolute;
   right: 0;
   bottom: 0;
+  z-index: -1;
 }
 
 @media screen and (max-width: 768px) {

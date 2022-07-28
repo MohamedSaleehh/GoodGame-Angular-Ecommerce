@@ -13,8 +13,11 @@
         Games in an Immersive environment.
       </div>
       <div class="col-12 d-flex justify-content-center">
-        <button type="button" [routerLink]="['auth/register']" id="HeaderBtn" class="btn btn-primary btn-sm mx-2">
+        <button *ngIf="!loggedIn" type="button" [routerLink]="['auth/register']" id="HeaderBtn" class="btn btn-primary btn-sm mx-2">
           Become a Member for Free!
+        </button>
+        <button *ngIf="loggedIn" type="button" [routerLink]="['shop/productlist']" id="HeaderBtn" class="btn btn-primary btn-sm mx-2">
+          Discover our Products
         </button>
       </div>
       <div class="col-12 d-flex justify-content-center">

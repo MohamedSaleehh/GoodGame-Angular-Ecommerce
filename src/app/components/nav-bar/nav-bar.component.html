@@ -1,117 +1,220 @@
-<nav class="navbar navbar-expand-lg fixed navbar-inverse" >
-  <div class="container">
-    <a class="Logo" [routerLink]="['/']">
-      <img  alt="" width="30" height="30" />
-    </a>
-    <a class="navbar-brand" href="#">Good Game</a>
-    <a class="mx-1 ms-auto d-lg-none wish_list position-relative mt-2 mb-2" [routerLink]="['shop/cart']">
+<nav class="navbar navshow navbar-expand-lg navbar-inverse">
+  <div class="container d-flex justify-content-between">
+    <div *ngIf="!toggled" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="open()" (click)="toggleAdd()">
+      <span class="navbar-toggler-icon"></span>
+    </div>
+    <div *ngIf="toggled" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="close()" (click)="toggleRemove()">
+      <span class="navbar-toggler-icon"></span>
+    </div>
+    <div>
+      <a class="Logo" [routerLink]="['/']">
+        <img src="../../../assets/imgs/Logo.svg" alt="" width="30" height="30" />
+      </a>
+      <a class="navbar-brand" href="#">Good Game</a>
+    </div>
+    <!-- <a *ngIf="loggedIn" class="mx-1 ms-auto d-lg-none wish_list position-relative mt-2 mb-2" [routerLink]="['shop/wishlist']">
       <i class="fa fa-heart "></i>
       <span
         class="position-absolute translate-middle badge wish-notif-m d-flex justify-content-center align-items-center">{{
-        wishCounter }}</span></a>
-    <a class="d-lg-none cart position-relative mt-2 mb-2" [routerLink]="['shop/cart']"><i
-        class="bx bx-drink fas fa-shopping-cart  "></i><span
-        class="position-absolute translate-middle badge cart-notif-m d-flex justify-content-center align-items-center">{{cartCounter}}</span></a>
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-      <ul class="navbar-nav">
+        wishCounter }}</span></a> -->
+    <a class="d-lg-none cart position-relative mt-2 mb-2" [routerLink]="['shop/cart']"><i class="bx bx-drink fas fa-shopping-cart  "></i><span class="position-absolute translate-middle badge cart-notif-m d-flex justify-content-center align-items-center">{{cartCounter}}</span></a>
+
+
+
+    <div class="collapse navbar-collapse">
+      <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">        -->
+      <ul class="navbar-nav  navbar_ul">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Currency
+            <i class="fas fa-light fa-baht-sign"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li (click)="changeCurrency('euro')" class="dropdown-item">EURO</li>
-            <li (click)="changeCurrency('egypt')" class="dropdown-item">EGYPT POUND</li>
-            <li (click)="changeCurrency('dollar')" class="dropdown-item">Dollar</li>
+            <li (click)="changeCurrency('euro')" class="dropdown-item"><i class="fas fa-light fa-euro-sign"></i><span class="mx-1">EUR</span></li>
+            <li (click)="changeCurrency('egypt')" class="dropdown-item"><i class="fas fa-light fa-sterling-sign"></i><span class="mx-1">EGP</span></li>
+            <li (click)="changeCurrency('dollar')" class="dropdown-item"><i class="fas fa-light fa-dollar-sign"></i><span class="mx-1">USD</span></li>
           </ul>
         </li>
       </ul>
-    </div>
 
-    <div *ngIf="!toggled" class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation" (click)="toggleAdd()">
-      <span class="navbar-toggler-icon"></span>
-    </div>
-    <div *ngIf="toggled" class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation" (click)="toggleRemove()">
-      <span class="navbar-toggler-icon"></span>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto mb-lg-0 align-items-center navbar_ul">
+      <div class="mx-lg-3 ms-auto me-auto ">
+        <form class="myform" action="" (submit)="search()" [formGroup]="searchForm">
+          <input onfocus="this.value=''" #myname [(ngModel)]="terms" formControlName="name" name="terms" class="myinp" type="search" required>
+          <a id="search-btn" type="submit">
+            <i class="fa fa-search"></i>
+          </a>
+        </form>
+        <div class="position-absolute box-search  text-light" *ngIf="myname.value != ''">
+          <div *ngFor="let item of $any( data |filter : terms) ">
+            <div class="row my-2">
+              <div class="col-4">
+                <a [routerLink]="['/productdetails', item._id]"><img src="{{item.image}}" class="w-75 h-75" /></a>
+              </div>
+              <div class="col-8">
+                <p>{{item.name}}</p>
+              </div>
+            </div>
+            <hr style="background-color: aliceblue;" />
+          </div>
+
+        </div>
+      </div>
+      <ul class="navbar-nav mx-auto mb-lg-0  navbar_ul">
+
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
-            [routerLink]="['/']">Home</a>
+          <a class="nav-link" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/']">Home</a>
+        </li>
+
+        <li>
+          <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['/shop/productlist']">Shop</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['/about']">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['/privacy']">Privacy Policy</a>
-        </li>
-        <li>
-          <a
-            class="nav-link"
-            [routerLinkActive]="'active'"
-            [routerLink]="['/shop/productlist']"
-            >Our Shop</a
-          >
-        </li>
-        <li class="nav-item">
-          <a *ngIf="!loggedIn" class="nav-link d-none-xl"[routerLink]="['auth/login']" [routerLinkActive]="'active'"
-            >Login<i class="fa-regular fa-user ms-1"></i
-          ></a>
-          <a *ngIf="loggedIn" (click)="logout()" class="nav-link d-none-xl" [routerLink]="['/']" [routerLinkActive]="'active'"
-            >Logout<i class="fa-regular fa-user ms-1"></i
-          ></a>
-        </li>
-        <li><a *ngIf="loggedIn"  class="nav-link d-none-xl" [routerLink]="['/auth/account']" [routerLinkActive]="'active'"
-          >Edit profile<i class="fa-regular fa-user ms-1"></i
-        ></a></li>
       </ul>
-      <div class="search-container mx-lg-3 ms-auto me-auto ">
-          <form class="position-relative" (submit)="search()" [formGroup]="searchForm">
-            <input #myname [(ngModel)]="terms"
-            formControlName="name"
-            name="terms" class="w-100 bg-black form-control text-light" placeholder="Search..."/>
-            <button id="search-btn" class="btn position-absolute" type="submit">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-          </form>
-          <div class="position-absolute box-search  text-light" *ngIf="myname.value != ''">
-            <div  *ngFor="let item of data |filter : terms ">
-                <div  class="row my-2">
+
+      <a class="d-none d-lg-block cart mt-3 mb-2 position-relative" [routerLink]="['shop/cart']">
+        <i class="bx bx-drink fas fa-shopping-cart  "></i>
+        <span class="position-absolute d-flex justify-content-center align-items-center  badge cart-notif">
+          {{cartCounter}}</span></a>
+
+
+      <li class=" dropdown mt-2 mb-2">
+        <a class=" nav-link drop-pad dropdown-toggle" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-light fa-user fa-xl m-2"></i>
+        </a>
+        <ul class="nav-item dropdown-menu dropdown-menu-dark text-small shadow dropdown-content" aria-labelledby="dropdown">
+          <li><a *ngIf="loggedIn" class="dropdown-item d-none-xl" [routerLink]="['/auth/account']"><i class="fa-regular fa-user m-1 ms-1"></i>Edit profile</a>
+          </li>
+          <li><a *ngIf="loggedIn" class="dropdown-item d-none-xl" [routerLink]="['/shop/wishlist']"><i class="fas fa-light fa-bookmark m-1 ms-1"></i>Wish List</a>
+          </li>
+          <li>
+            <hr *ngIf="loggedIn" class="dropdown-divider">
+          </li>
+          <li class="nav-item">
+            <a *ngIf="!loggedIn" class="nav-item dropdown-item d-none-xl" [routerLink]="['auth/login']"><i class="fa-regular fa-user ms-1"></i>
+              Login</a>
+            <a *ngIf="!loggedIn" class="nav-item dropdown-item d-none-xl" [routerLink]="['auth/register']">
+              <i class="fa-regular fa-user ms-1"></i>
+              Register</a>
+            <a *ngIf="loggedIn" (click)="logout()" class="nav-item dropdown-item d-none-xl" [routerLink]="['/']"><i class="fa-regular fa-user m-1 ms-1"></i>Log-out</a>
+          </li>
+        </ul>
+      </li>
+      <span class="text-white">{{username}}</span>
+
+    </div>
+
+
+  </div>
+
+</nav>
+
+<div class="container-fluid position-fixed overflow-hidden removeside d-lg-none " id="mySidebar">
+  <div class="row vh-100 overflow-auto ">
+    <div class="col-10 col-sm-6 col-md-6 col-xl-2 px-sm-2 px-0 sidecolor d-flex sticky-top">
+
+      <div class="d-flex flex-column flex-grow-1 align-items-start px-3 pt-2 text-white">
+        <ul class="nav nav-pills flex-column flex-nowrap flex-shrink-1  flex-grow-0 mb-auto mb-0 justify-content-center  align-items-start" id="menu">
+          <li>
+            <div class="d-flex justify-content-between nav-item">
+              <div class="col-10">
+                <a class="Logos" [routerLink]="['/']">
+                  <img src="../../../assets/imgs/Logo.svg" alt="" width="30" height="30" />
+                </a>
+                <a class="navbar-brand" href="#">Good Game</a>
+              </div>
+              <div class="col-2 sidebar-toggler navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="close()">
+                <span class="navbar-toggler-icon"></span>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item mt-5 col-12">
+            <form action="" (submit)="search()" [formGroup]="searchForm">
+
+              <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-12">
+                  <div class="searchz">
+                    <i class="faz fa-searchz"></i>
+                    <input #myname [(ngModel)]="terms" formControlName="name" name="terms" type="search" required type="text" class="form-control" placeholder="Search..">
+                    <button id="search-btn" type="submit" class="btn btn-primary" (click)="close()">Search</button>
+                  </div>
+
+                </div>
+
+              </div>
+            </form>
+            <div class="box-searchz  text-light" *ngIf="myname.value != ''">
+              <div *ngFor="let item of $any( data |filter : terms) ">
+                <div class="row my-2">
                   <div class="col-4">
-                    <a [routerLink]="['/productdetails', item._id]"><img src="{{item.image}}" class="w-100"/></a>
+                    <a [routerLink]="['/productdetails', item._id]"><img src="{{item.image}}" class="w-75 h-75" /></a>
                   </div>
                   <div class="col-8">
                     <p>{{item.name}}</p>
                   </div>
                 </div>
-                <hr style="background-color: aliceblue;"/>
-            </div>
+                <hr style="background-color: aliceblue;" />
+              </div>
 
-          </div>
+            </div>
+          </li>
+          <li class="nav-item mt-5">
+            <a [routerLink]="['/']" href="#" (click)="close()" class=" nav-link px-sm-0 px-2">
+              <i class="fas fa-light fa-user m-3"></i>
+              <i class="fs-5 bi-house"></i>
+              <span class="ms-1 d-inline pl-5 sidefont">Home</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['shop']" (click)="close()" href="#" class="nav-link px-sm-0 px-2">
+              <i class="fas fa-light fa-shop m-3"></i>
+              <i class="fs-5 bi-grid"></i><span class="ms-1 d-inline sidefont">Shop</span></a>
+          </li>
+          <li>
+            <a [routerLink]="['/shop/cart']" (click)="close()" href="#" class="nav-link px-sm-0 px-2">
+              <i class="fas fa-light fa-cart-shopping m-3"></i>
+              <i class="fs-5 bi-table"></i><span class="ms-1  d-inline sidefont">Cart</span></a>
+          </li>
+          <li>
+            <a *ngIf="loggedIn" [routerLink]="['/shop/wishlist']" (click)="close()" href="#" class="nav-link px-sm-0 px-2">
+              <i class="fas fa-light fa-bookmark m-3"></i>
+              <i class="fs-5 bi-table"></i><span class="ms-1  d-inline sidefont">Wish List</span></a>
+          </li>
+          <li>
+            <a [routerLink]="['/about']" (click)="close()" href="#" class="nav-link px-sm-0 px-2">
+              <i class="fas fa-light fa-eject m-3"></i>
+              <i class="fs-5 bi-table"></i><span class="ms-1  d-inline sidefont">About</span></a>
+          </li>
+          <li class="dropdown">
+            <a class=" nav-link dropdown-toggle px-sm-0 px-2" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-light fa-euro-sign m-3"></i>
+              <i class="fs-5 bi-bootstrap"></i><span class="ms-1 d-inline sidefont">Currency</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+              <li (click)="changeCurrency('euro')" (click)="close()" class="dropdown-item"><i class="fas fa-light fa-euro-sign"></i><span class="mx-1">EUR</span></li>
+              <li (click)="changeCurrency('egypt')" (click)="close()" class="dropdown-item"><i class="fas fa-light fa-sterling-sign"></i><span class="mx-1">EGP</span></li>
+              <li (click)="changeCurrency('dollar')" (click)="close()" class="dropdown-item"><i class="fas fa-light fa-dollar-sign"></i><span class="mx-1">USD</span></li>
+            </ul>
+          </li>
+
+        </ul>
+        <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1 mb-3">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://i.ibb.co/VpPNGXc/IMG-20200308-015118.jpg" alt="hugenerd" width="28" height="28" class="rounded-circle">
+            <span class=" d-inline mx-1">{{username}}</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow mb-3" aria-labelledby="dropdownUser1">
+            <li><a *ngIf="loggedIn" (click)="close()" class="dropdown-item" [routerLink]="['/auth/account']" href="#">Edit Profile</a></li>
+            <li *ngIf="loggedIn">
+              <hr class="dropdown-divider">
+            </li>
+            <li><a *ngIf="!loggedIn" (click)="close()" class="dropdown-item" [routerLink]="['auth/login']" href="#">Log-in</a></li>
+            <li><a *ngIf="!loggedIn" (click)="close()" class="dropdown-item" [routerLink]="['auth/register']" href="#">Register</a></li>
+            <li><a *ngIf="loggedIn" (click)="close()" (click)="logout()" class="dropdown-item" [routerLink]="['/']" href="#">Log-out</a></li>
+
+          </ul>
+        </div>
       </div>
     </div>
-    <a
-      *ngIf="loggedIn"
-      class="mx-1 ms-auto d-none d-lg-block wish_list mt-2 mb-2 position-relative"
-      [routerLink]="['shop/wishlist']"
-      ><i class="fa fa-heart "></i
-        ><span class="position-absolute  badge wish-notif d-flex justify-content-center align-items-center"
-        >{{ wishCounter  }}</span
-      ></a
-    >
-    <a class="d-none d-lg-block cart mt-2 mb-2 position-relative" [routerLink]="['shop/cart']"
-      >
-      <i class="bx bx-drink fas fa-shopping-cart  "></i>
-      <span class="position-absolute d-flex justify-content-center align-items-center  badge cart-notif">
-        {{cartCounter}}</span></a>
-
   </div>
-</nav>
+</div>
