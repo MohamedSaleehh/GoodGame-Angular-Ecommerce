@@ -49,7 +49,11 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
           
         this.filteredProducts =this.productlist.filter((product)=>
           product.category.find((x)=>{
-            return x == this.product.category ;
+            return x == this.product.category.find((y:any)=>{
+
+              return x == y
+
+            })
           }) && product._id != this.productId
           
           )
