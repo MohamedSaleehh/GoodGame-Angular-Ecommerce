@@ -1,4 +1,5 @@
-.mycard{
+@media only screen and (min-width: 900px) {
+    .mycard{
     width: 250px;
     height: 350px;
     background: #0d100d;
@@ -39,6 +40,7 @@ cursor: pointer;
     cursor: pointer;
 
 }
+
 .mycard:after{
     width: 100%;
     content: '';
@@ -142,6 +144,129 @@ cursor: pointer;
     font-size: 1.4rem;
     color: #000;
 }
+}
+@media only screen and (max-width: 900px) {
+    .mycard{
+        width: 250px;
+        height: 350px;
+        background: #0d100d;
+        border-radius: 30px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .25s ease;
+        backface-visibility: hidden;
+        cursor: pointer;
+    }
+ 
+    .mycard:after{
+        width: 100%;
+        content: '';
+        left: 0px;
+        bottom: 0px;
+        height: 150px;
+        position: absolute;
+        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+        z-index: 0;
+        transition: all .25s ease;
+    
+    }
+    
+    .mycard img{
+        height: 100%;
+        z-index: 0;
+        transition: all .25s ease;
+    
+    }
+    .mycard .con-text{
+        width: 100%;
+text-align: center;
+height: 100%;
+        z-index: 1;
+        position: absolute;
+        bottom: 0px;
+        color: #fff;
+        padding: 0px;
+        padding-bottom: 60px;
+    
+    }.mycard .con-text h2{        margin-top: 250px;
+    }
+    .mycard .con-text h3{
+        font-size: 1rem;
+        opacity: 1;
+        transition: all .25s ease;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    
+    }
+    .mycard .con-text h3 button{
+        border-radius: 12px;
+        background: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+        margin-top: 10px;
+        margin-left: auto;
+        cursor: pointer;
+        transition: all .25s ease;
+        font-size: .75rem;
+        outline: none;
+    }
+    .mycard .con-text p button:hover{
+        background: #fff;
+        color: #000;
+    }
+    .ul{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        z-index: 2;
+        border-radius: 14px;
+        padding-left: 0px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+        top: 0px;
+        opacity: 100%;
+        transform: translate(40%);
+        transition: all .25s ease;
+    
+    
+    }
+    .ul li {
+        background: #fff;
+        list-style: none;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: .7;
+        transition: all .25s ease;
+        backface-visibility: hidden;
+    }
+    .ul li:last-child {
+        border-radius: 12px 12px 12px 12px ;
+        margin: 1px;
+    }
+    .ul li:first-child {
+        border-radius: 12px 12px 12px 12px ;
+        margin: 1px;
+    }
+    .ul li:hover {
+        opacity: 1;
+        transform: translate(-7px,-4px);
+        border-radius: 6px;
+    
+    }
+    .ul li i{
+        font-size: 1.4rem;
+        color: #000;
+    }
+  }
 .Sold-out {
     position: absolute;
     color: #ffffff;
@@ -153,6 +278,9 @@ cursor: pointer;
 
 .Sold-out {
     left: 0;
+    right: 0;
+text-align: center;
+
     background-color: #444444;
 }
 .Free {
@@ -172,4 +300,14 @@ cursor: pointer;
 }
 .green-col{
     color: #00ff01;
+}
+
+::ng-deep .custom-style{
+    background-color:#1c1c27;
+    color:white;
+  }
+::ng-deep .mat-simple-snackbar-action{
+    background-color:#1c1c27;
+    color:#00ff01;
+
 }

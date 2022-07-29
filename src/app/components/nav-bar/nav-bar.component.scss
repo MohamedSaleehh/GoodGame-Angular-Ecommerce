@@ -1,16 +1,24 @@
 .navbar {
   width: 100%;
   position: fixed;
-  z-index: 1000;
+  z-index: 10;
   top: 0;
   left: 0;
+}
+.navy {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  margin-bottom: -57px;
 }
 .navbar-inverse {
   background-color: #1c1c27;
 }
 .Logo {
   margin-right: 8px;
-  background-image: url("../../../assets/imgs/Logo.svg");
+  border: none;
 }
 .wish_list {
   margin-bottom: 6px;
@@ -78,44 +86,20 @@
 }
 
 .navbar-toggler {
-  border-color: white;
+  color: rgba(255, 255, 255, 0.8);
+}
+.sidebar-toggler{
+  margin-right: 124px;
+}
+.navbar-toggler:hover {
+  border-color: rgb(74, 58, 102);
   color: rgba(255, 255, 255, 0.8);
 }
 .navbar-toggler-icon {
   color: #00ff01;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
-/* search navbar setting */
-.search-container {
-  // position: relative;
-  width: 219px;
-  margin-right: 8px;
-}
-.form-control {
-  width: 100%;
-  border: 1px solid #acb1c6;
-  border-radius: 34px;
-  line-height: 1;
-  box-sizing: border-box;
-  outline: none;
-  color: #acb1c6;
-}
-#search-btn {
-  background: linear-gradient(267.28deg, #00ff01 24%, #00ff01 73.95%);
-  position: absolute;
-  right: 5px;
-  top: 4px;
-  bottom: 5px;
-  border: 0;
-  color: #fff;
-  outline: none;
-  margin: 0;
-  padding: 0 10px;
-  border-radius: 100px;
-  z-index: 2;
-  width: 28px;
-  height: 28px;
-}
+
 #signInBtn {
   background: linear-gradient(267.28deg, #00ff01 24%, #00ff01 73.95%);
   border-radius: 20px;
@@ -165,5 +149,164 @@
   height: 300px;
   top: 84%;
   background-color: #1c1c27;
+}
+.box-searchz{
+  width: 100%;
+  cursor: pointer;
+  overflow-x: hidden;
+  padding: 5px;
+  height: 100px;
+  top: 84%;
+  background-color: #1c1c27;
   // border-radius: 34px;
+}
+.Logos {
+  margin-right: 8px;
+}
+.navbar-brand {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.showside{
+  display: block;
+  z-index: 11;
+}
+.removeside{
+  display: none;
+}
+.sidecolor{
+  background-color: #1c1c27;
+
+}
+.dropdown-content {
+  right: 0px;
+  left: auto;
+}
+
+.myform{
+  position: relative;
+  transition: all 1s;
+  width: 40px;
+  height: 40px;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid white;
+  padding: 5px;
+}
+
+.myinp{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  display: none;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+.fa{
+  box-sizing: border-box;
+  padding: 7px 5px 10px 17px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  color: #07051a;
+  text-align: center;
+  font-size: 1.2em;
+  transition: all 1s;
+}
+
+.myform:hover,
+.myform:valid{
+  width: 200px;
+  cursor: pointer;
+}
+
+.myform:hover .myinp,
+.myform:valid .myinp{
+  display: block;
+}
+.navhide{
+  display: none;
+}
+.navshow{
+  display: block;
+}
+// .myform:hover .fa,
+// .myform:valid .fa{
+//   padding: 7px 5px 10px 17px;
+
+//   background: #07051a;
+//   color: white;
+// }
+
+
+
+.sidefont{
+font-size: medium;
+}
+
+.searchz{
+  position: relative;
+  box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+  width: 100%;
+  }
+
+  .searchz input{
+
+   height: 60px;
+   text-indent: 25px;
+   border: 2px solid #d6d4d4;
+   background-color: #1c1c27;
+   color: white;
+
+
+  }
+
+
+  .searchz input:focus{
+
+   box-shadow: none;
+
+
+  }
+
+  .searchz .fa-searchz{
+
+   position: absolute;
+   top: 20px;
+   left: 16px;
+
+  }
+
+  .searchz button{
+
+   position: absolute;
+   top: 5px;
+   right: 5px;
+   height: 50px;
+   width: 80px;
+   background: #76ff03;
+   color: white;
+
+  }
+  ::ng-deep .custom-style{
+    background-color:#1c1c27;
+    color:white;
+  }
+::ng-deep .mat-simple-snackbar-action{
+    background-color:#1c1c27;
+    color:#00ff01;
+
 }

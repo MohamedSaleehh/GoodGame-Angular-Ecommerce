@@ -1,7 +1,7 @@
 <div class="mycard my-4" >
 
     <img class="w-100" src="{{ productData.image}}" alt="">
-    <span class="Sold-out" *ngIf="productData.quantity<=0" >Sold-out</span>
+    <span class="Sold-out" *ngIf="productData.quantity<=0" >Sold out</span>
     <span class="Free" *ngIf="productData.price<=0">Free</span>
 
 
@@ -16,8 +16,10 @@
         </h3>
     </div>
     <ul class="ul">
-      <li  (click)="addtocart(productData)" *ngIf="productData.quantity>0"><i class="bx bx-drink fas fa-shopping-cart "></i></li>
-      <li *ngIf="loggedIn"><a *ngIf="addedTOWishList" (click)="handleRemoveToWishList()"
+      <li (click)="showSnackbarTopPosition('Added to Cart','Close')"
+       (click)="addtocart(productData)" *ngIf="productData.quantity>0"><i class="bx bx-drink fas fa-shopping-cart "></i></li>
+      <li (click)="showSnackbarTopPosition('Added to Wish List','Close')"
+       *ngIf="loggedIn"><a *ngIf="addedTOWishList" (click)="handleRemoveToWishList()"
         ><i class="fa fa-heart"></i
       ></a>
 

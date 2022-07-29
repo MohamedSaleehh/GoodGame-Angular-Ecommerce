@@ -13,13 +13,12 @@
         Games in an Immersive environment.
       </div>
       <div class="col-12 d-flex justify-content-center">
-        <button type="button" [routerLink]="['auth/register']" id="HeaderBtn" class="btn btn-primary btn-sm mx-2">
+        <button *ngIf="!loggedIn" type="button" [routerLink]="['auth/register']" id="HeaderBtn" class="btn btn-primary btn-sm mx-2">
           Become a Member for Free!
         </button>
-      </div>
-      <div class="col-12 d-flex justify-content-center">
-        <p class="mx-2" id="scroll">Scroll down</p>
-        <span class="downward-arrow mt-1"><img src="../../../assets/imgs/arrow_downward_24px.svg" alt="" /></span>
+        <button *ngIf="loggedIn" type="button" [routerLink]="['shop/productlist']" id="HeaderBtn" class="btn btn-primary btn-sm mx-2">
+          Discover our Products
+        </button>
       </div>
     </div>
   </div>

@@ -2,14 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>GoodGameAngularEcommerce</title>
+  <title>Good Game</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://i.ibb.co/3rbWHyc/index.png">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="manifest" href="manifest.webmanifest">
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <!-- chatbot -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+      //To minimise the height of chatbox
+      $(document).ready(function() {
+          window.addEventListener('dfMessengerLoaded', function (event) {
+          $r1 = document.querySelector("df-messenger");
+          $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
+          $r3 = $r2.shadowRoot.querySelector("df-messenger-user-input"); //for other mods
+          var sheet = new CSSStyleSheet;
+          // manage box height from here
+          sheet.replaceSync( `div.chat-wrapper[opened="true"] { height: 450px }`);
+          $r2.shadowRoot.adoptedStyleSheets = [ sheet ];
+          });
+      });
+  </script>
+    <!-- chatbot -->
   <meta name="theme-color" content="#1976d2">
 </head>
 <body>

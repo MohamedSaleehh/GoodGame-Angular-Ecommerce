@@ -59,7 +59,8 @@
                                         </td>
                                         <td class="actions" data-th="">
                                             <div class="text-right my-4">
-                                                <i class="fas fa-trash m-1 fa-2x cursor-pointer"
+                                                <i (click)="showSnackbarTopPosition('Removed from Cart','Close')"
+                                                class="fas fa-trash m-1 fa-2x cursor-pointer"
                                                     style="color: rgb(168, 62, 62);" onmouseover="this.style.color='red';"
                                                     onmouseout="this.style.color='rgb(168, 62, 62)';
                                                     "

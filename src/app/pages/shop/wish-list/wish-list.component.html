@@ -45,7 +45,8 @@
                                     </td>
                                     <td data-th="Quantity">
                                         <div class="">
-                                            <i class="cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x"
+                                            <i (click)="showSnackbarTopPosition('Added to Cart','Close')"
+                                            class="cursor-pointer fas fa-duotone fa-cart-plus m-1 fa-2x"
                                                 style="color: #97de95;" onmouseover="this.style.color='#00ff01';"
                                                 onmouseout="this.style.color='#97de95';
                                             "
@@ -54,7 +55,8 @@
                                     </td>
                                     <td class="actions" data-th="">
                                         <div class="text-right">
-                                            <i class="fas fa-trash m-1 fa-2x cursor-pointer"
+                                            <i (click)="showSnackbarTopPosition('Removed from Wish List','Close')"
+                                            class="fas fa-trash m-1 fa-2x cursor-pointer"
                                                 style="color: rgb(168, 62, 62);" onmouseover="this.style.color='red';"
                                                 onmouseout="this.style.color='rgb(168, 62, 62)';
                                                 "

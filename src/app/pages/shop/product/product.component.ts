@@ -3,6 +3,7 @@ import { CartService } from 'src/app/services/cart.service';
 import { Product } from 'src/app/interfaces/product';
 import { WishListService } from './../../../services/wish-list.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-product',
@@ -25,12 +26,20 @@ export class ProductComponent implements OnInit {
   constructor(
       private _CartService:CartService ,
       private _wishListService :WishListService,
-      private authService:AuthService) {
+      private authService:AuthService,
+      private snackBar: MatSnackBar) {
         this.authService.loggedIn.subscribe(data=>{
           this.loggedIn = data
         })
       }
-
+      showSnackbarTopPosition(content:any, action:any) {
+        this.snackBar.open(content, action, {
+          duration: 2000,
+          panelClass: ["custom-style"],
+          verticalPosition: "bottom", // Allowed values are  'top' | 'bottom'
+          horizontalPosition: "center" // Allowed values are 'start' | 'center' | 'end' | 'left' | 'right'
+        });
+      }
 
   addtocart(product: Product) {
     this._CartService.addProduct(product)

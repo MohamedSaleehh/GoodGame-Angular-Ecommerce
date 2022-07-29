@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { Image } from './image.model';
 import { ImagesService } from './images.service';
 @Component({
@@ -10,9 +11,14 @@ export class SliderComponent implements OnInit {
   images: Image[] = [];
   actualImage: any;
   changeBackgroundCounter = 0;
-  constructor(private imagesService: ImagesService) {}
+  loggedIn: boolean = false;
+
+  constructor(private imagesService: ImagesService,private authService:AuthService) {}
 
   ngOnInit() {
+    this.authService.loggedIn.subscribe(res=>{
+      this.loggedIn = res
+    })
     this.images = this.imagesService.getImages();
     this.actualImage = this.images[0].image;
     setInterval(() => {
