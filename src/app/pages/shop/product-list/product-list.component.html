@@ -24,11 +24,10 @@
     <ng-container *ngIf="!loading" >
         <div class=" row"  >
             <!-- <input  [(ngModel)]="terms" name="terms"/> -->
-            <app-product *ngFor="let product of filteredProducts | searchFilter :terms| slice: (page-1) * pageSize : page * pageSize"  [productData]="product"
+            <app-product *ngFor="let product of filteredProducts |catPipe: filterCat| searchFilter :terms| slice: (page-1) * pageSize : page * pageSize"  [productData]="product"
             (messageFromChild)="actionFromParent($event)"
             class=" col-lg-3 col-md-4 col-xl-3 col-12 d-flex justify-content-center">
           </app-product>
-
     </div>
     </ng-container>
     <div *ngIf="loading" class="spinner-border d-flex justify-content-center m-auto mt-5 text-primary" role="status" style="text-align: center;">

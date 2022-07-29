@@ -6,7 +6,6 @@
             <a class="text-light " [routerLink]="['/productlist']"><i  class="fas fa-arrow-left mr-2 text-light"></i> Continue Shopping</a>
         </div>
     </div>
-
 </div>
 <div class="container">
     <div class="col-lg-12 p-3 text-white">
@@ -71,7 +70,7 @@
             <mat-tab label="Reviews">
                 <div class=" mt-4">
 
-                    
+
 
 
 
@@ -115,7 +114,7 @@
                 <li><i class="fas fa-star fa-sm"></i></li>
               </ul>
             </div>
-  
+
             <div class="col-lg-4 d-none d-lg-block">
               <img class="rounded-circle shadow-1-strong mb-4"
                 src="https://i.ibb.co/zncLTpV/1502826.webp" alt="avatar"
@@ -135,7 +134,7 @@ Bad game
                 </li>
               </ul>
             </div>
-  
+
             <div class="col-lg-4 d-none d-lg-block">
               <img class="rounded-circle shadow-1-strong mb-4"
                 src="https://i.ibb.co/zncLTpV/1502826.webp" alt="avatar"
@@ -183,7 +182,7 @@ Bad game
         </div>
         <div class=" row" >
             <!-- *ngIf="product.category== myproduct.category" -->
-           
+
             <app-product (click)="ngOnInit()" *ngFor="let myproduct of filteredProducts | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"   [productData]="myproduct"
             class=" col-lg-3 col-md-4 col-xl-3 col-12 d-flex justify-content-center">
             <ng-container >
@@ -191,8 +190,8 @@ Bad game
         </ng-container>
             </app-product>
             <ngb-pagination class="d-flex justify-content-center"
-            [collectionSize]="filteredProducts.length" 
-           [(page)]="page" [maxSize]="5" [rotate]="true" 
+            [collectionSize]="filteredProducts.length"
+           [(page)]="page" [maxSize]="5" [rotate]="true"
            [ellipses]="false"
            [directionLinks]="true"
            [pageSize]="pageSize">

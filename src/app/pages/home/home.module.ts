@@ -10,6 +10,7 @@ import { CardListComponent } from './card-list/card-list.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ExploreComponent } from './explore/explore.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TestimonialComponent } from './testimonial/testimonial.component';
     ExploreComponent,
     TestimonialComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule],
+  imports: [CommonModule, HomeRoutingModule,MatTabsModule],
 })
+
 export class HomeModule {}

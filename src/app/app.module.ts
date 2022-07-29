@@ -20,6 +20,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+// import { CatPipePipe } from './pipes/cat-pipe.pipe';
 // import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 

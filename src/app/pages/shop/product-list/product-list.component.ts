@@ -21,6 +21,7 @@ export class ProductListComponent implements OnInit {
   category: string = 'all';
   terms:any="" ;
   name:any;
+  filterCat:any=""
   constructor(private apiService:ApiService
     ,private _CartService: CartService,
     private route:ActivatedRoute) {
@@ -32,6 +33,11 @@ export class ProductListComponent implements OnInit {
         console.log(filters);
         this.terms = filters
     });
+    route.paramMap.subscribe(filterCategory => {
+        console.log(filterCategory);
+        this.filterCat = filterCategory;
+        console.log( this.filterCat );
+  });
   }
   async ngOnInit() {
 

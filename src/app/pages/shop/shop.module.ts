@@ -17,7 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { SafePipe } from 'src/app/pipes/safe.pipe';
 import { EURToEGPPipe } from 'src/app/pipes/eurto-egp.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -27,6 +27,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 import { ComponentsModule } from 'src/app/components/components.module';
+import { CatPipePipe } from 'src/app/pipes/cat-pipe.pipe';
 @NgModule({
   declarations: [
     CartComponent,
@@ -39,8 +40,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
     PaymentComponent,
     SafePipe,
     EURToEGPPipe,
-
-    
+    CatPipePipe,
     SearchFilterPipe
   ],
   imports: [

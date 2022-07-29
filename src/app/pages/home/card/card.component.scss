@@ -3,6 +3,9 @@ img {
   width: 100%;
   height: auto;
 }
+.imageCard{
+  height: 280px;
+}
 
 .listcard--card {
   background: rgba(24, 25, 32, 0.1);
@@ -71,7 +74,7 @@ img {
 
 .listcard--card--content .btn-CTA {
   white-space: nowrap;
-  background: #f68e5f;
+  background: #00ff01;
   border-radius: 64px;
   font-size: 90%;
   color: #fff;

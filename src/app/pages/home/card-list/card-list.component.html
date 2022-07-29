@@ -2,11 +2,27 @@
     <div class="header">
         <div class="header--title text-center text-white">Newly Released Games</div>
         <div class="header--menu d-flex justify-content-center align-items-center">
-            <div><a class="header--menu--items active" [routerLink]="['/cart']">All</a> </div>
-            <div><a class="header--menu--items " [routerLink]="['/cart']">PS4</a> </div>
-            <div><a class="header--menu--items " [routerLink]="['/cart']">PS5</a> </div>
-            <div><a class="header--menu--items " [routerLink]="['/cart']">Xbox</a> </div>
+          <mat-tab-group mat-align-tabs="center" class="mb-5 w-100" >
+            <mat-tab label="New Released" class="header--menu--items w-100 overflow-hidden">
+              <div class="mt-5 overflow-hidden">
+                <div class="listcard">
+                    <ul class="listcard--hor row ">
+                      <app-card *ngFor="let product of sortData" class="col-3 mb-4"  [productData]="product"></app-card>
+                      </ul>
+                    </div>
+              </div></mat-tab>
+              <mat-tab label="Featured Posts"class="header--menu--items w-100 overflow-hidden">
+                <div class="mt-5 overflow-hidden">
+                  <div class="listcard">
+                      <ul class="listcard--hor row ">
+                        <app-card *ngFor="let product of sortRating" class="col-3 mb-4"  [productData]="product"></app-card>
+                        </ul>
+                      </div>
+                </div>
+              </mat-tab>
+          </mat-tab-group>
         </div>
     </div>
-    <app-card></app-card>
+
+
 </section>

@@ -7,6 +7,8 @@ export interface Product {
     image?: string,
     quantity: number,
     release_date: Date,
+    rating: number,
+    createdAt: Date,
     amount?:number,
     total?:number,
     videoLink?:string
