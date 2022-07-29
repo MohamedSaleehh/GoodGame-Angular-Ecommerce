@@ -8,6 +8,8 @@ import { ApiService } from './../../services/api.service';
 import { Product } from 'src/app/interfaces/product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
+import { MatSnackBar } from "@angular/material/snack-bar";
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -73,11 +75,19 @@ export class NavBarComponent implements OnInit {
 
   constructor(private _wishListService:WishListService
     ,private _CartService:CartService,private authService: AuthService,
-    private apiService:ApiService,private router: Router,private currency:CurrencyServiceService
+    private apiService:ApiService,private router: Router,private currency:CurrencyServiceService,private snackBar: MatSnackBar
     ) {
 
     this.apiService.getProducts().subscribe((res)=>{
       this.data =res;
+    });
+  }
+  showSnackbarTopPosition(content:any, action:any) {
+    this.snackBar.open(content, action, {
+      duration: 2000,
+      panelClass: ["custom-style"],
+      verticalPosition: "bottom", // Allowed values are  'top' | 'bottom'
+      horizontalPosition: "center" // Allowed values are 'start' | 'center' | 'end' | 'left' | 'right'
     });
   }
   ngOnInit(): void {

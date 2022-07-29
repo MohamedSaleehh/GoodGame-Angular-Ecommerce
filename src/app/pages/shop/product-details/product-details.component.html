@@ -40,7 +40,7 @@
                         <div class="col-lg-12 mt-5">
                             <div class="row ">
                                 <div *ngIf="product.quantity>0" class="col-lg-6 pb-2 mt-lg-4">
-                                    <button class="btn btn-danger w-100" [disabled]="clicked"  (click)="addtocart(product); clicked = true;">Add To Cart</button>
+                                    <button (click)="showSnackbarTopPosition('Added to Cart','Close')" class="btn btn-danger w-100" (click)="addtocart(product);">Add To Cart</button>
                                 </div>
                                 <div class="col-lg-6  mt-lg-4">
                                     <a  [routerLink]="['/productlist']" class="btn btn-success w-100">Continue Shopping</a>

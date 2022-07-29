@@ -21,3 +21,12 @@ overflow: hidden;
 .fix{
   height: 1000px;
 }
+::ng-deep .custom-style{
+  background-color:#1c1c27;
+  color:white;
+}
+::ng-deep .mat-simple-snackbar-action{
+  background-color:#1c1c27;
+  color:#00ff01;
+
+}

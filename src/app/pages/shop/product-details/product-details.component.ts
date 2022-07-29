@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/interfaces/product';
 import { ApiService } from 'src/app/services/api.service';
 import { CartService } from 'src/app/services/cart.service';
+import { MatSnackBar } from "@angular/material/snack-bar";
+
 
 @Component({
   selector: 'app-product-details',
@@ -21,9 +23,16 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   page = 1;
   pageSize =4;
   clicked: boolean = false;
-  constructor(private activatedRoute:ActivatedRoute ,private apiService:ApiService,private _CartService:CartService) { 
+  constructor(private activatedRoute:ActivatedRoute ,private apiService:ApiService,private _CartService:CartService,private snackBar: MatSnackBar) { 
   }
-
+  showSnackbarTopPosition(content:any, action:any) {
+    this.snackBar.open(content, action, {
+      duration: 2000,
+      panelClass: ["custom-style"],
+      verticalPosition: "bottom", // Allowed values are  'top' | 'bottom'
+      horizontalPosition: "center" // Allowed values are 'start' | 'center' | 'end' | 'left' | 'right'
+    });
+  }
   ngOnInit(): void {
     this.page = 1;
     this.loading = true;

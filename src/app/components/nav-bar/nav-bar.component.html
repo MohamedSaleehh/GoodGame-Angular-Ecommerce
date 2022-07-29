@@ -29,9 +29,9 @@
             <i class="fas fa-light fa-baht-sign"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li (click)="changeCurrency('euro')" class="dropdown-item"><i class="fas fa-light fa-euro-sign"></i><span class="mx-1">EUR</span></li>
-            <li (click)="changeCurrency('egypt')" class="dropdown-item"><i class="fas fa-light fa-sterling-sign"></i><span class="mx-1">EGP</span></li>
-            <li (click)="changeCurrency('dollar')" class="dropdown-item"><i class="fas fa-light fa-dollar-sign"></i><span class="mx-1">USD</span></li>
+            <li (click)="showSnackbarTopPosition('Currency changed to EUR','Close')" (click)="changeCurrency('euro')" class="dropdown-item"><i class="fas fa-light fa-euro-sign"></i><span class="mx-1">EUR</span></li>
+            <li (click)="showSnackbarTopPosition('Currency changed to EGP','Close')" (click)="changeCurrency('egypt')" class="dropdown-item"><i class="fas fa-light fa-sterling-sign"></i><span class="mx-1">EGP</span></li>
+            <li (click)="showSnackbarTopPosition('Currency changed to USD','Close')" (click)="changeCurrency('dollar')" class="dropdown-item"><i class="fas fa-light fa-dollar-sign"></i><span class="mx-1">USD</span></li>
           </ul>
         </li>
       </ul>
@@ -191,9 +191,9 @@
               <i class="fs-5 bi-bootstrap"></i><span class="ms-1 d-inline sidefont">Currency</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
-              <li (click)="changeCurrency('euro')" (click)="close()" class="dropdown-item"><i class="fas fa-light fa-euro-sign"></i><span class="mx-1">EUR</span></li>
-              <li (click)="changeCurrency('egypt')" (click)="close()" class="dropdown-item"><i class="fas fa-light fa-sterling-sign"></i><span class="mx-1">EGP</span></li>
-              <li (click)="changeCurrency('dollar')" (click)="close()" class="dropdown-item"><i class="fas fa-light fa-dollar-sign"></i><span class="mx-1">USD</span></li>
+              <li (click)="showSnackbarTopPosition('Currency changed to EUR','Close')" (click)="changeCurrency('euro')" (click)="close()" class="dropdown-item"><i class="fas fa-light fa-euro-sign"></i><span class="mx-1">EUR</span></li>
+              <li (click)="showSnackbarTopPosition('Currency changed to EGP','Close')" (click)="changeCurrency('egypt')" (click)="close()" class="dropdown-item"><i class="fas fa-light fa-sterling-sign"></i><span class="mx-1">EGP</span></li>
+              <li (click)="showSnackbarTopPosition('Currency changed to USD','Close')" (click)="changeCurrency('dollar')" (click)="close()" class="dropdown-item"><i class="fas fa-light fa-dollar-sign"></i><span class="mx-1">USD</span></li>
             </ul>
           </li>
 
