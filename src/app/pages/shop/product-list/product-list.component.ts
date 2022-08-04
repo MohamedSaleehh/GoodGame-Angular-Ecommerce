@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
 import { ApiService } from 'src/app/services/api.service';
 import { CartService } from './../../../services/cart.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -21,22 +21,23 @@ export class ProductListComponent implements OnInit {
   category: string = 'all';
   terms:any="" ;
   name:any;
-  filterCat:any=""
+  filterCat:any="";
+  status: number = 0;
   constructor(private apiService:ApiService
     ,private _CartService: CartService,
-    private route:ActivatedRoute) {
+    private route:ActivatedRoute,private router:Router) {
     this.apiService.getProducts().subscribe(res =>{
       this.productlist =res;
     })
     // this.name = route.snapshot.paramMap.get("name")
     route.paramMap.subscribe(filters => {
-        console.log(filters);
+        // console.log(filters);
         this.terms = filters
     });
     route.paramMap.subscribe(filterCategory => {
-        console.log(filterCategory);
+        // console.log(filterCategory);
         this.filterCat = filterCategory;
-        console.log( this.filterCat );
+        // console.log( this.filterCat );
   });
   }
   async ngOnInit() {
@@ -66,21 +67,49 @@ export class ProductListComponent implements OnInit {
   getCategories(){
     this.categoriesList = ['Race' ,'Action','Knockout','Adventure','Sports']
   }
-  filterProduct(event:any){
-    this.category = event.target.value
-    console.log(this.category);
+  // filterProduct(event:any){
+  //   this.category = event.target.value
+  //   console.log(this.category);
 
-    if (this.category == "all"){
-      this.filteredProducts = this.productlist
-    }else{
+  //   if (this.category == "all"){
+  //     this.filteredProducts = this.productlist
+  //   }else{
 
-      this.filteredProducts=this.productlist.filter((product)=>
-      product.category.find((x)=>{
-        return x == this.category ;
-      })
-      )
-      console.log(this.filteredProducts);
-    }
-  }
+  //     this.filteredProducts=this.productlist.filter((product)=>
+  //     product.category.find((x)=>{
+  //       return x == this.category ;
+  //     })
+  //     )
+  //     console.log(this.filteredProducts);
+  //   }
+  // }
+
+
+
+  activeMenu(num:number){
+    this.status = num;
 
 }
+
+  // filterProduct(category:any){
+  //     this.filteredProducts=this.productlist.filter((a :any)=>{
+  //       if (a.category == category || category == 'all'){
+  //         return a
+  //       }
+  //     })
+  //   }
+  // }
+  filterProduct(category:any){
+    // this.name = this.route.snapshot.paramMap.get("name")
+    // // const params = this.route.snapshot.paramMap.get("name")
+    // delete this.name ;
+    this.router.navigate(['/productlist']);
+    if (category == "all"){
+          this.filteredProducts = this.productlist
+        }else{
+    this.filteredProducts=this.productlist.filter((a :any)=>{if(a.category.includes(category) || category == 'all'){return a}
+        })}
+  }
+}
+
+

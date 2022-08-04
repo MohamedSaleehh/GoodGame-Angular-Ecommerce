@@ -7,10 +7,10 @@ import { AuthService } from '../services/auth.service';
 })
 export class AuthGuard implements CanActivate {
   constructor(private authService:AuthService, private router: Router){}
- 
+
 
   async canActivate(): Promise<boolean>  {
-    
+
     const isLoggedin:boolean = await this.authService.authenticate()
     if(isLoggedin){
       return true
@@ -18,6 +18,6 @@ export class AuthGuard implements CanActivate {
       this.router.navigate(['/auth/login'])
       return false
     }
-  
+
   }
 }
