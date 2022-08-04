@@ -1,6 +1,7 @@
 import {  Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../interfaces/product';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Injectable({
@@ -14,7 +15,16 @@ export class CartService {
   cartCounter=new BehaviorSubject(0);
   total=new BehaviorSubject(0);
   prod!:Product;
+  constructor(private snackBar:MatSnackBar) {}
 
+  showSnackbarTopPosition(content:any, action:any) {
+    this.snackBar.open(content, action, {
+      duration: 2000,
+      panelClass: ["custom-style"],
+      verticalPosition: "bottom", // Allowed values are  'top' | 'bottom'
+      horizontalPosition: "center" // Allowed values are 'start' | 'center' | 'end' | 'left' | 'right'
+    });
+  }
   addProduct(prod: Product) {
     this.products=this.getProducts()
     let flag: boolean = false;
@@ -26,12 +36,14 @@ export class CartService {
         this.saveCart();
         this.prodBehavior.next(this.products);
         this.getCounter()
+        this.showSnackbarTopPosition('Added to Cart','Close')
         }else{
           e.amount;
         flag = true;
         this.saveCart();
         this.prodBehavior.next(this.products);
         this.getCounter()
+        this.showSnackbarTopPosition('You cant add more','Close')
         }
       }
     });
@@ -95,14 +107,17 @@ export class CartService {
         this.saveCart();
         this.prodBehavior.next(this.products);
         this.getCounter()
+        this.showSnackbarTopPosition('Added to Cart','Close')
         }else{
           e.amount;
         this.saveCart();
         this.prodBehavior.next(this.products);
         this.getCounter()
+        this.showSnackbarTopPosition('You cant add more','Close')
         }
       }
       this.prodBehavior.next(this.products);
+
     });
       this.getTotalPrice();
       // this.saveCart()
@@ -122,6 +137,7 @@ export class CartService {
     this.getTotalPrice();
     this.saveCart()
     this.getCounter()
+    this.showSnackbarTopPosition('Removed from Wish List','Close')
   }
   getCounter(): Observable<number> {
     this.loadCart()

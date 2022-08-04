@@ -1,4 +1,4 @@
-<nav class="navbar fixed navshow navbar-expand-lg navbar-inverse">
+<nav class="navbar sticky-top avshow navbar-expand-lg navbar-inverse">
   <div class="container d-flex justify-content-between">
     <div *ngIf="!toggled" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="open()" (click)="toggleAdd()">
       <span class="navbar-toggler-icon"></span>
@@ -58,16 +58,16 @@
 
         </div>
       </div>
-      <ul class="navbar-nav mx-auto mb-lg-0  navbar_ul">
+      <ul class="navbar-nav ms-auto mb-lg-0   " >
 
-        <li class="nav-item">
+        <li class="nav-item ">
           <a class="nav-link" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/']">Home</a>
         </li>
 
-        <li>
+        <li class="nav-item ">
           <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['/shop/productlist']">Shop</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item ">
           <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['/about']">About</a>
         </li>
       </ul>

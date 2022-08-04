@@ -19,9 +19,12 @@
 .news .header--menu--items {
   font-weight: 600;
   font-size: 1rem;
-  color: #fff;
+  color: #fff ;
   text-decoration: none;
   cursor: pointer;
+}
+:host ::ng-deep .mat-tab-label {
+  color: white !important;
 }
 
 .active {

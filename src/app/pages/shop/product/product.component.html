@@ -18,13 +18,13 @@
     <ul class="ul">
       <li (click)="showSnackbarTopPosition('Added to Cart','Close')"
        (click)="addtocart(productData)" *ngIf="productData.quantity>0"><i class="bx bx-drink fas fa-shopping-cart "></i></li>
-      <li (click)="showSnackbarTopPosition('Added to Wish List','Close')"
+      <li
        *ngIf="loggedIn"><a *ngIf="addedTOWishList" (click)="handleRemoveToWishList()"
-        ><i class="fa fa-heart"></i
+        ><i class="fa fa-heart" (click)="showSnackbarTopPosition('Removed from Wish List','Close')"></i
       ></a>
 
       <a *ngIf="!addedTOWishList" (click)="handleAddToWishList()"
-        ><i class="far fa-heart"></i
+        ><i class="far fa-heart" (click)="showSnackbarTopPosition('Added to Wish List','Close')"></i
       ></a></li>
   </ul>
 </div>

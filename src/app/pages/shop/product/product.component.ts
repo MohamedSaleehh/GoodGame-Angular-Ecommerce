@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
   }
 
 
-    
+
   constructor(
       private _CartService:CartService ,
       private _wishListService :WishListService,
@@ -45,15 +45,12 @@ export class ProductComponent implements OnInit {
     this._CartService.addProduct(product)
   }
   handleAddToWishList(): any {
-    this._wishListService.addToWishList(this.productData._id).subscribe(()=>{
-      this.addedTOWishList = true;
-    }
-    );
+    this._wishListService.addToWishList(this.productData._id)
+    this.addedTOWishList = true;
   }
   handleRemoveToWishList():any {
-    this._wishListService.removeFromWishList(this.productData._id).subscribe(()=>{
-      this.addedTOWishList = false;
-    });
+    this._wishListService.removeFromWishList(this.productData._id)
+    this.addedTOWishList = false;
   }
 
 }

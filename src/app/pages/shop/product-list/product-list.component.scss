@@ -39,7 +39,7 @@ margin-top: 56.5px;
 {
     color: #5a5a5a;
     background-color: #00ff01;
-    color: #fff;
+    // color: #fff;
 }
 
 .pagination > .active > a
@@ -57,12 +57,35 @@ ngb-pagination ::ng-deep a {
     color: white !important;
     background-color: #1a1a1a;
   }
-  
+
   ngb-pagination ::ng-deep .page-item.active .page-link {
     border-color: black;
     background-color: #76FF03;
   }
-  
+
   ngb-pagination ::ng-deep .page-link:not(:disabled):not(.disabled):active:focus {
     box-shadow: 0 0 0 0.1rem #76FF03;
   }
+  .anchor{
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+  }
+  .active{
+    cursor: pointer;
+    color: #00ff01;
+    border: 1px solid #00ff01;
+    padding: 9% 25% 11% 25%;
+    // background-color: #00ff01;
+    border-radius: 34px;
+    text-decoration: none;
+  }
+  .all{
+    width: 30%;
+  }
+  @media screen and (max-width: 768px) {
+    .all{
+      width: 60%;
+    }
+  }
+
