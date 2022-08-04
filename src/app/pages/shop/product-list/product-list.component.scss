@@ -83,3 +83,9 @@ ngb-pagination ::ng-deep a {
   .all{
     width: 30%;
   }
+  @media screen and (max-width: 768px) {
+    .all{
+      width: 60%;
+    }
+  }
+

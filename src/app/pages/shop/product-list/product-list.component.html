@@ -20,16 +20,16 @@
 <div class="container ">
   <div class="row all justify-content-around flex-wrap mx-auto mt-5 text-light">
     <div class="col-3 d-flex justify-content-center align-items-center">
-      <a (click)=" filterProduct('all')" (click)="activeMenu(1)" class="anchor text-center" [ngClass]="{ 'active' : status == 1 }" >All</a>
+      <a (click)=" filterProduct('all')" (click)="activeMenu('all')" class="anchor text-center" [ngClass]="{ 'active' : status == 'all' }" >All</a>
     </div>
     <div class="col-3 d-flex justify-content-center align-items-center">
-      <a (click)=" filterProduct('Xbox')" (click)="activeMenu(2)" class="anchor text-center" [ngClass]="{ 'active' : status == 2 }" >Xbox</a>
+      <a (click)=" filterProduct('Xbox')" (click)="activeMenu('Xbox')" class="anchor text-center" [ngClass]="{ 'active' : status == 'Xbox'}" >Xbox</a>
     </div>
     <div class="col-3 d-flex justify-content-center align-items-center">
-      <a (click)=" filterProduct('PS')"  (click)="activeMenu(3)" class="anchor text-center" [ngClass]="{ 'active' : status == 3 }" >Ps</a>
+      <a (click)=" filterProduct('PS')"  (click)="activeMenu('PS')" class="anchor text-center" [ngClass]="{ 'active' : status == 'PS' }" >Ps</a>
     </div>
     <div class="col-3 d-flex justify-content-center align-items-center">
-      <a (click)=" filterProduct('PC')" (click)="activeMenu(4)" class="anchor text-center" [ngClass]="{ 'active' : status == 4 }" >Pc</a>
+      <a (click)=" filterProduct('PC')" (click)="activeMenu('PC')" class="anchor text-center" [ngClass]="{ 'active' : status == 'PC' }" >Pc</a>
     </div>
   </div>
 </div>

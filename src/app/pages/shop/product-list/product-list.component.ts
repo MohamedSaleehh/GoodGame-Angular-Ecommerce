@@ -22,23 +22,29 @@ export class ProductListComponent implements OnInit {
   terms:any="" ;
   name:any;
   filterCat:any="";
-  status: number = 0;
+  status: string = '';
   constructor(private apiService:ApiService
     ,private _CartService: CartService,
     private route:ActivatedRoute,private router:Router) {
     this.apiService.getProducts().subscribe(res =>{
       this.productlist =res;
     })
-    // this.name = route.snapshot.paramMap.get("name")
+    this.name = route.snapshot.paramMap.get("name")
+    console.log(this.name);
+
     route.paramMap.subscribe(filters => {
         // console.log(filters);
         this.terms = filters
     });
     route.paramMap.subscribe(filterCategory => {
-        // console.log(filterCategory);
         this.filterCat = filterCategory;
-        // console.log( this.filterCat );
+        console.log(this.filterCat.params.category);
+        this.activeMenu('all')
+        if(this.filterCat.params.category){
+          this.activeMenu(this.filterCat.params.category)
+        }
   });
+
   }
   async ngOnInit() {
 
@@ -86,9 +92,8 @@ export class ProductListComponent implements OnInit {
 
 
 
-  activeMenu(num:number){
-    this.status = num;
-
+  activeMenu(cat:string){
+    this.status = cat;
 }
 
   // filterProduct(category:any){
@@ -104,12 +109,9 @@ export class ProductListComponent implements OnInit {
     // // const params = this.route.snapshot.paramMap.get("name")
     // delete this.name ;
     this.router.navigate(['/productlist']);
-    if (category == "all"){
-          this.filteredProducts = this.productlist
-        }else{
     this.filteredProducts=this.productlist.filter((a :any)=>{if(a.category.includes(category) || category == 'all'){return a}
         })}
   }
-}
+
 
 
