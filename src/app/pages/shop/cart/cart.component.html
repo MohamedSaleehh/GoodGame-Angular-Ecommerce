@@ -20,7 +20,7 @@
                             <h2 class="text-light">Cart</h2>
                         </div>
                     </div>
-       
+
                         <div *ngIf="myproducts.length > 0" class="table-slider">
                             <table id="shoppingCart" class="table  table-condensed table-responsive text-light">
                                 <thead>
@@ -49,12 +49,17 @@
                                             <div  #subTotalWrap class="my-4">{{product.price| eURToEGP}}</div>
                                         </td>
 
-                                        <td data-th="Quantity">
+                                        <td data-th="Quantity d-flex">
                                             <div class="my-4">
-
-                                                <button (click)="increaseQuantity(product._id)" >+</button>
-                                                <p class="green-col">{{product.amount}}</p>
-                                                <button (click)="decreaseQuantity(product._id)" >-</button>
+                                              <button mat-mini-fab color="white" (click)="increaseQuantity(product._id)"  aria-label="Example icon button with a plus one icon">
+                                                +
+                                              </button>
+                                                <!-- <button (click)="increaseQuantity(product._id)" >+</button> -->
+                                                <p class="green-col d-flex justify-content-start ms-3 mt-3">{{product.amount}}</p>
+                                                <button mat-mini-fab color="white" (click)="decreaseQuantity(product._id)"   aria-label="Example icon button with a plus one icon">
+                                                -
+                                                </button>
+                                                <!-- <button (click)="decreaseQuantity(product._id)" >-</button> -->
                                             </div>
                                         </td>
                                         <td class="actions" data-th="">
@@ -84,7 +89,7 @@
                                     onmouseout="this.style.backgroundColor='#198754';" [routerLink]="['/payment']">Checkout</a>
                             </div>
                         </div>
-                    
+
                     <div *ngIf="myproducts.length <= 0" class="d-flex justify-content-center m-auto">
                         <h1>Your Cart is Empty</h1>
                     </div>

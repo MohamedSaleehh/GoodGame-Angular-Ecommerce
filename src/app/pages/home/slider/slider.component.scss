@@ -29,6 +29,11 @@ header {
   color: white;
   margin-top: 24px;
 }
+@media screen and (max-width: 768px) {
+  #Text2 {
+    font-size: 32px;
+  }
+}
 
 #HeaderBtn {
   background: linear-gradient(267.28deg, #00ff01 24%, #6fda6f 73.95%);

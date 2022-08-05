@@ -58,7 +58,8 @@ import { CatPipePipe } from 'src/app/pipes/cat-pipe.pipe';
     NgbModule,
     FormsModule,
     MatSnackBarModule,
-    ComponentsModule
+    ComponentsModule,
+
   ]
 })
 export class ShopModule { }
