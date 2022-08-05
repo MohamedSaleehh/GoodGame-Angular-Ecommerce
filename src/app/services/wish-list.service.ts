@@ -20,7 +20,7 @@ export class WishListService{
     }
 
   addToWishList(Id: string){
-    return this.http.post(`https://gg-store.herokuapp.com/wishlist/add/${Id}`,{})
+    return this.http.post(`https://gg-store.herokuapp.com/wishlist/add/${Id}`,{}).subscribe()
   }
   removeFromWishList(productId: string) {
     return this.http.delete(`https://gg-store.herokuapp.com/wishlist/remove/${productId}`)
