@@ -81,23 +81,6 @@
                                 <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <!-- <form>
-                                            <span>Cardholder's name:</span>
-                                            <input class="form-control text-white bgblack border"
-                                                placeholder="Mohamed Saleh">
-                                            <span>Card Number:</span>
-                                            <input class="form-control text-white bgblack border"
-                                                placeholder="0125 6780 4567 9909">
-                                            <div class="row">
-                                                <div class="col-4"><span>Expiry date:</span>
-                                                    <input class="form-control text-white bgblack border"
-                                                        placeholder="YY/MM">
-                                                </div>
-                                                <div class="col-4"><span>CVV:</span>
-                                                    <input class="form-control text-white bgblack border" id="cvv">
-                                                </div>
-                                            </div>
-                                        </form> -->
                                         <form [formGroup]="card">
 
                                             <div class="form-floating mb-1">
@@ -129,7 +112,7 @@
                                                         appearance="outline">
                                                         <mat-label class="text-white">Card Number</mat-label>
                                                         <input matInput placeholder="4242 4242 4242 4242"
-                                                            type="cardname" class="text-white"
+                                                            type="text" class="text-white"
                                                             formControlName="cardname">
                                                         <mat-error
                                                             *ngIf="card.controls['cardname'].touched && card.controls['cardname'].invalid">
@@ -371,14 +354,14 @@
                                                         class="p-error block">Invalid coupon</mat-error>
                                                 </mat-error>
                                             </mat-form-field>
-                                            <button class="btn btn-primary text-white w-25 h-100 mt-3">Apply</button>
+                                            <button class="btn bg-primary w-25 h-100 mt-3">Apply</button>
                                         </div>
                                     </div>
 
                                 </form>
                             </div>
                         </div>
-                        <button (click)="order()" class="btn btn-primary ggbtn">Order Now</button>
+                        <button (click)="order()" class="btn bg-primary ggbtn">Order Now</button>
                         <p class="text-muted text-center">Complimentary Shipping & Returns</p>
                     </div>
                 </div>

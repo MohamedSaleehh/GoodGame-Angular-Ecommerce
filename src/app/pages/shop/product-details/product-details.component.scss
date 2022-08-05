@@ -80,3 +80,45 @@ margin-top: 56.5px;
     color:#00ff01;
 
 }
+
+.pagination > li > a
+{
+    background-color: #0d100d;
+    color: white;
+    border: none;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #5a5a5a;
+    background-color: #00ff01;
+    // color: #fff;
+}
+
+.pagination > .active > a
+{
+    color: #00ff01;
+    background-color: #5A4181 !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: #5A4181 !Important;
+}
+
+ngb-pagination ::ng-deep a {
+    color: white !important;
+    background-color: #1a1a1a;
+  }
+
+  ngb-pagination ::ng-deep .page-item.active .page-link {
+    border-color: black;
+    background-color: #76FF03;
+  }
+
+  ngb-pagination ::ng-deep .page-link:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 0.1rem #76FF03;
+  }

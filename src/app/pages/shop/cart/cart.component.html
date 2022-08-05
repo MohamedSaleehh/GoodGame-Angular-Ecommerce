@@ -51,15 +51,14 @@
 
                                         <td data-th="Quantity d-flex">
                                             <div class="my-4">
-                                              <button mat-mini-fab color="white" (click)="increaseQuantity(product._id)"  aria-label="Example icon button with a plus one icon">
+
+                                              <button mat-mini-fab color="grey" (click)="increaseQuantity(product._id)"  aria-label="Example icon button with a plus one icon">
                                                 +
                                               </button>
-                                                <!-- <button (click)="increaseQuantity(product._id)" >+</button> -->
-                                                <p class="green-col d-flex justify-content-start ms-3 mt-3">{{product.amount}}</p>
-                                                <button mat-mini-fab color="white" (click)="decreaseQuantity(product._id)"   aria-label="Example icon button with a plus one icon">
+                                                <p class="d-flex justify-content-start ms-3 mt-3">{{product.amount}}</p>
+                                                <button mat-mini-fab color="grey" (click)="decreaseQuantity(product._id)"   aria-label="Example icon button with a plus one icon">
                                                 -
                                                 </button>
-                                                <!-- <button (click)="decreaseQuantity(product._id)" >-</button> -->
                                             </div>
                                         </td>
                                         <td class="actions" data-th="">
@@ -84,7 +83,7 @@
                         </div>
                         <div *ngIf="myproducts.length > 0" class="row mt-4 d-flex align-items-center">
                             <div class="d-block mx-auto col-sm-6 order-md-2 text-center">
-                                <a class="btn btn-success mb-4 btn-lg pl-5 pr-5 "
+                                <a class="btn mb-4 btn-lg px-5 bg-primary"
                                     onmouseover="this.style.backgroundColor='#00ff01';"
                                     onmouseout="this.style.backgroundColor='#198754';" [routerLink]="['/payment']">Checkout</a>
                             </div>

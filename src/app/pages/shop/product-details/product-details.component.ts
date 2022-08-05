@@ -23,6 +23,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   page = 1;
   pageSize =4;
   clicked: boolean = false;
+  inputquantity:number = 1;
   constructor(private activatedRoute:ActivatedRoute ,private apiService:ApiService,private _CartService:CartService,private snackBar: MatSnackBar) { 
   }
   showSnackbarTopPosition(content:any, action:any) {
@@ -70,7 +71,10 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     
   }
   addtocart(product: Product) {
-    this._CartService.addProduct(product)
+    for(let i =0 ;i < this.inputquantity; i++){
+       this._CartService.addProduct(product)
+    }
+   
   }
   
   ngOnDestroy(){

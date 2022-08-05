@@ -1,6 +1,6 @@
 <li >
-  <div class="listcard--card">
-      <div class="card--img"> <img src="{{ productData.image}}" alt="" class="imageCard"></div>
+  <div class="listcard--card " >
+      <div class="card--img pointer"> <img [routerLink]="['/productdetails', productData._id]" src="{{ productData.image}}" alt="" class="imageCard"></div>
       <div class="listcard--card--content">
           <div class="game-info">
               <div class="game-name fw-500"> {{ productData.name}}</div>

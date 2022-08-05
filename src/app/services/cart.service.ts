@@ -135,7 +135,7 @@ export class CartService {
     this.getTotalPrice();
     this.saveCart()
     this.getCounter()
-    this.showSnackbarTopPosition('Removed from Wish List','Close')
+    this.showSnackbarTopPosition('Removed from Cart','Close')
   }
   getCounter(): Observable<number> {
     this.loadCart()
