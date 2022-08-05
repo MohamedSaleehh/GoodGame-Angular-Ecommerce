@@ -27,6 +27,6 @@ export class SliderComponent implements OnInit {
         this.changeBackgroundCounter = 0;
       }
       this.actualImage = this.images[this.changeBackgroundCounter].image;
-    }, 6000);
+    }, 3000);
   }
 }

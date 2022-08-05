@@ -10,8 +10,6 @@ export class SearchServiceService {
   _data : any;
   setData(val:any) {
       this._data = val;
-      console.log(val);
-
   }
   getData():Observable<any> {
       return this._data;

@@ -39,13 +39,10 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     this.sub= this.apiService.getProducts().subscribe(
       (res:any)=>{
         this.productlist=res;
-        console.log(this.productlist);
         this.productId = this.activatedRoute.snapshot.paramMap.get('id');
-        // this.product = this.productlist.filter((i:any)=> i.id == this.productId)
         this.apiService.getProductById(this.productId).subscribe(res => {
     
           this.product= res ;
-          console.log(this.product.category);
           
         this.filteredProducts =this.productlist.filter((product)=>
           product.category.find((x)=>{

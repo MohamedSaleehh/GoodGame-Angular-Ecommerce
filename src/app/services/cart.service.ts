@@ -120,8 +120,6 @@ export class CartService {
 
     });
       this.getTotalPrice();
-      // this.saveCart()
-      // this.getCounter()
   }
   decreaseQuantity(id: string) {
     this.products=this.getProducts()

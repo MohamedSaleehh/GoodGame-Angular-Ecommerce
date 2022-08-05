@@ -15,7 +15,6 @@ export class AuthService {
 
   login(username:string, password:string, rememeber:boolean = false){
     return this.http.post(this.baseURL+"/users/login",{username:username,password:password, rememeber})
-    // return this.http.post("http://localhost:3000/users/login",{username:username,password:password})
   }
 
   register(firstname:string, lastname:string,username:string,email:string, password:string ){

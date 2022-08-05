@@ -5,7 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CatPipePipe implements PipeTransform {
 transform(items: Array<any>, category: any): Array<any> {
-  // console.log(category.params.category);
 
   if(category.params.category == undefined ){
     return items

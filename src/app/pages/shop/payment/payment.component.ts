@@ -9,10 +9,8 @@ import {MatDatepicker} from '@angular/material/datepicker';
 
 
 import * as _moment from 'moment';
-// tslint:disable-next-line:no-duplicate-imports
 import {default as _rollupMoment, Moment} from 'moment';
 import { Router } from '@angular/router';
-import { Order } from 'src/app/interfaces/order';
 
 const moment = _rollupMoment || _moment;
 export const MY_FORMATS = {
@@ -97,7 +95,6 @@ export class PaymentComponent implements OnInit {
     if(this.arrproducts.length){
       this._HttpClient.post(this.url, { products: this.arrproducts, total_price: this.total }).subscribe((order:any)=>{
         localStorage.removeItem('cart_items')
-        console.log(order._id);
         
         this.router.navigate([`/auth/orders/${order._id}`]);
       })

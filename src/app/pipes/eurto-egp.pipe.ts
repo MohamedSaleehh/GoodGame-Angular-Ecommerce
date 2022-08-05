@@ -22,15 +22,13 @@ export class EURToEGPPipe implements PipeTransform {
     if(this.currencyPrice == "euro"){
       return (`${value} EUR`)
     }else if (this.currencyPrice == "egypt") {
-      console.log(this.currencyPrice);
+
       
       return (`${value * 20} EGP`)
     }else{
       return (`${value /2} $`)
     }
 
-    // return (value * 20) +" EGP";
     
   }
-//19.38
 }
