@@ -26,28 +26,27 @@ export class ProductListComponent implements OnInit {
   constructor(private apiService:ApiService
     ,private _CartService: CartService,
     private route:ActivatedRoute,private router:Router) {
+
     this.apiService.getProducts().subscribe(res =>{
       this.productlist =res;
     })
     this.name = route.snapshot.paramMap.get("name")
-    console.log(this.name);
+
 
     route.paramMap.subscribe(filters => {
-        // console.log(filters);
         this.terms = filters
     });
     route.paramMap.subscribe(filterCategory => {
         this.filterCat = filterCategory;
-        console.log(this.filterCat.params.category);
-        this.activeMenu('all')
-        if(this.filterCat.params.category){
-          this.activeMenu(this.filterCat.params.category)
-        }
   });
-
   }
-  async ngOnInit() {
-
+  ngOnInit() {
+    if(this.filterCat.params.category ){
+      this.activeMenu(this.filterCat.params.category)
+    }
+    else{
+      this.activeMenu('all')
+    }
     this.loading = true;
     this.sub= this.apiService.getProducts().subscribe(
       (res:any)=>{
@@ -73,42 +72,15 @@ export class ProductListComponent implements OnInit {
   getCategories(){
     this.categoriesList = ['Race' ,'Action','Knockout','Adventure','Sports']
   }
-  // filterProduct(event:any){
-  //   this.category = event.target.value
-  //   console.log(this.category);
-
-  //   if (this.category == "all"){
-  //     this.filteredProducts = this.productlist
-  //   }else{
-
-  //     this.filteredProducts=this.productlist.filter((product)=>
-  //     product.category.find((x)=>{
-  //       return x == this.category ;
-  //     })
-  //     )
-  //     console.log(this.filteredProducts);
-  //   }
-  // }
-
-
-
   activeMenu(cat:string){
     this.status = cat;
 }
-
-  // filterProduct(category:any){
-  //     this.filteredProducts=this.productlist.filter((a :any)=>{
-  //       if (a.category == category || category == 'all'){
-  //         return a
-  //       }
-  //     })
-  //   }
-  // }
   filterProduct(category:any){
-    // this.name = this.route.snapshot.paramMap.get("name")
-    // // const params = this.route.snapshot.paramMap.get("name")
-    // delete this.name ;
-    this.router.navigate(['/productlist']);
+    if(category == 'all'){
+      this.router.navigate(['/productlist']);
+    }else{
+    this.router.navigate(['/productlist', { category}]);
+    }
     this.filteredProducts=this.productlist.filter((a :any)=>{if(a.category.includes(category) || category == 'all'){return a}
         })}
   }
